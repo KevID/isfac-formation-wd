@@ -1,9 +1,12 @@
 <?php
-// Récupération du formulaire
-$submit = (isset($_GET["nom"]) OR isset($_GET["prenom"])) ? TRUE : FALSE; // Vérifie que le formulaire a été envoyé
-$nom = isset($_GET["nom"]) ? $_GET["nom"] : "";
-$prenom = isset($_GET["prenom"]) ? $_GET["prenom"] : "";
+    // Vérifie que le formulaire a été envoyé en GET (minimum un paramètre existe dans l'URL)
+    $submit = (isset($_GET["nom"]) OR isset($_GET["prenom"])) ? TRUE : FALSE;
+
+    // Récupération du formulaire
+    $nom = isset($_GET["nom"]) ? $_GET["nom"] : "";             // Retourne la valeur si elle existe ou ""
+    $prenom = isset($_GET["prenom"]) ? $_GET["prenom"] : "";    // Retourne la valeur si elle existe ou ""
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,9 +14,15 @@ $prenom = isset($_GET["prenom"]) ? $_GET["prenom"] : "";
     </head>
     <body>
 <?php
-    if (!empty($nom) && !empty($prenom)) { 
+    // Si $nom et $prenom ne sont pas vides
+    if (!empty($nom) && !empty($prenom))
+    { 
         echo "Merci " . $nom . " " . $prenom . ".";
-    } else {
+    }
+    
+    // Sinon on affiche le formulaire
+    else
+    {
 ?>
         <form methode="get">
             <p>
