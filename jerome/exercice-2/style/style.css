@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+#global {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid;
+  padding: 5px;
+}
+
+header {
+  border: 1px solid;
+  padding: 1%;
+}
+
+main {
+  border: 1px solid;
+  padding: 1%;
+}
+
+footer {
+  border: 1px solid;
+  padding: 1%;
+}
+
+footer p {
+  font-weight: bold;
+}
+
+#img-presentation {
+  width: 100%;
+  margin: 1% 0;
+}
+
+ul {
+  margin: 10px auto;
+}
+
+ul#equipe>li>h3 {
+  font-weight: bold;
+}
+
+ol#cursus>li>h3 {
+  font-weight: bold;
+}

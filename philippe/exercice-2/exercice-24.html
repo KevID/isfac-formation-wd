@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Exemple 2.4</title>
+</head>
+
+<body>
+
+	<form action="exercice-24.php" method="get">
+
+		<p>
+			GENRE:
+			<select name="genre" id="genre">
+				<option value="">--Veuillez choisir--</option>
+				<option value="homme">Homme</option>
+				<option value="femme">Femme</option>
+				<option value="inconnu">Inconnu</option>
+			</select>
+		</p>
+		<p>
+			NOM:
+			<input type="text" name="nom" id="nom">
+		</p>
+		<p>
+			PRENOM:
+			<input type="text" name="prenom" id="prenom">
+		</p>
+		<p>
+			CP:
+			<input type="text" name="cp" id="cp">
+		</p>
+		<p>
+			VILLE:
+			<input type="text" name="ville" id="ville">
+		</p>
+		<p>
+			Paiement:
+			<input type="radio" name="paiement" id="cb" value="cb">
+			<label for="cb">CB</lable>
+				<input type="radio" name="paiement" id="paypal" value="paypal">
+				<label for="paypal">Paypal</lable>
+		</p>
+		<p>
+			CGV:
+			<input type="checkbox" name="cgv" id="cgv"><label for="cgv">Je valide</label>
+		</p>
+		<p>
+			<button type="submit">OK</button>
+		</p>
+
+</body>
+
+</html>
