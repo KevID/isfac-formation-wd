@@ -59,7 +59,7 @@ if (!$error) {
 
 	// On termine par afficher le texte
 	echo "Bonjour $genreFormate $nom $prenom de $ville ($cp).<br>";
-	echo "Vous avez fait le choix de payez par $paiementFormate.";
+	echo "Vous avez fait le choix de payer par $paiementFormate.";
 }
 
 ?>
