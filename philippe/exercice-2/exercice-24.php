@@ -9,16 +9,44 @@ $ville = isset($_GET["ville"]) ? $_GET["ville"] : "";
 $paiement = isset($_GET["paiement"]) ? $_GET["paiement"] : "";
 $cgv = isset($_GET["cgv"]) ? TRUE : FALSE;
 
+// Déclaration des autres variables
+$genreListe = Array("homme", "femme", "inconnu");
+$paiementListe = Array("cb", "paypal");
 $error = 0;
-$genres = Array("homme", "femme", "inconnu");
 
-if (!in_array($genre, $genres)) {
-	echo "Veuillez corriger le Genre.<b>";
+// Vérification du contenu du formulaire envoyé
+if (!in_array($genre, $genreListe)) {
+	echo "Veuillez renseigner le Genre.<br>";
 	$error++;
 }
 
-if (empty($cp) OR !is_int($cp)) {
-	echo "Veuillez corriger le CP.<b>";
+if (empty($nom)) {
+	echo "Veuillez renseigner votre nom.<br>";
+	$error++;
+}
+
+if (empty($prenom)) {
+	echo "Veuillez renseigner votre prénom.<br>";
+	$error++;
+}
+
+if (empty($cp) OR !is_numeric($cp)) {
+	echo "Veuillez renseigner le CP (format numérique).<br>";
+	$error++;
+}
+
+if (empty($ville)) {
+	echo "Veuillez renseigner votre ville.<br>";
+	$error++;
+}
+
+if (!in_array($paiement, $paiementListe)) {
+	echo "Veuillez choisir un mode de paiement.<br>";
+	$error++;
+}
+
+if (!$cgv) {
+	echo "Veuillez accepter les CGU en cochant la case.<br>";
 	$error++;
 }
 
@@ -34,10 +62,6 @@ if ($cgv && $error == 0) {
 	if ($paiement == "cb") { echo "Vous payez en CB"; }
 	
 	if ($paiement == "paypal") { echo "Vous payez par: Paypal"; }
-
-
-} else {
-	echo "Veuillez valider les CGU.";
 }
 
 ?>

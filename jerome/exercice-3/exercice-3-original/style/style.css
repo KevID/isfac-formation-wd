@@ -51,40 +51,40 @@ ul {
     padding-inline-start: 0;
 }
 
-#header,
-#navbar,
-#main,
-#footer {
+.header,
+.navbar,
+.main,
+.footer {
     margin: 0 auto;
     width: 80%;
 }
 
-#header {
+.header {
     height: 80px;
     line-height: 80px;
 }
 
-#logo {
+.logo {
     width: 200px;
     vertical-align: middle;
 }
 
-#navbar {
+.navbar {
     margin-block-start: 0;
 }
 
-#navbar ul li {
+.navbar ul li {
     display: inline;
     list-style-type: none;
     padding-right: 10px;
 }
 
-#navbar a {
+.navbar a {
     color: #ffffff;
     text-decoration: none;
 }
 
-#main {
+.main {
     margin-top: 10px;
 }
 
