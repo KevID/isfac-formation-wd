@@ -12,56 +12,54 @@ $cgv = isset($_GET["cgv"]) ? TRUE : FALSE;
 // Déclaration des autres variables
 $genreListe = Array("homme", "femme", "inconnu");
 $paiementListe = Array("cb", "paypal");
-$error = 0;
+$error = FALSE;
 
 // Vérification du contenu du formulaire envoyé
 if (!in_array($genre, $genreListe)) {
 	echo "Veuillez renseigner le Genre.<br>";
-	$error++;
+	$error = TRUE;
 }
 
 if (empty($nom)) {
 	echo "Veuillez renseigner votre nom.<br>";
-	$error++;
+	$error = TRUE;
 }
 
 if (empty($prenom)) {
 	echo "Veuillez renseigner votre prénom.<br>";
-	$error++;
+	$error = TRUE;
 }
 
 if (empty($cp) OR !is_numeric($cp)) {
-	echo "Veuillez renseigner le CP (format numérique).<br>";
-	$error++;
+	echo "Veuillez renseigner le Code Postal (format numérique).<br>";
+	$error = TRUE;
 }
 
 if (empty($ville)) {
 	echo "Veuillez renseigner votre ville.<br>";
-	$error++;
+	$error = TRUE;
 }
 
 if (!in_array($paiement, $paiementListe)) {
 	echo "Veuillez choisir un mode de paiement.<br>";
-	$error++;
+	$error = TRUE;
 }
 
 if (!$cgv) {
-	echo "Veuillez accepter les CGU en cochant la case.<br>";
-	$error++;
+	echo "Veuillez accepter les CGV en cochant la case.<br>";
+	$error = TRUE;
 }
 
-if ($cgv && $error == 0) {
+// Si aucune erreur dans le formulaire alors on affiche le résultat
+if (!$error) {
 
-	if ($genre == "homme") { echo "Bonjour Monsieur";}
-	if ($genre == "femme") { echo "Bonjour Madame";}
-	if ($genre == "inconnu") { echo "Bonjour Inconnu";}
-	echo "<br>";
+	// On formate le texte du genre et du paiement
+	$genreFormate = strtr($genre, array("homme" => "Monsieur", "femme" => "Madame", "inconnu" => ""));
+	$paiementFormate = strtr($paiement, array("cb" => "Carte Bancaire", "paypal" => "Paypal"));	
 
-	echo $nom." ".$prenom." de ".$ville.".<br>";
-
-	if ($paiement == "cb") { echo "Vous payez en CB"; }
-	
-	if ($paiement == "paypal") { echo "Vous payez par: Paypal"; }
+	// On termine par afficher le texte
+	echo "Bonjour $genreFormate $nom $prenom de $ville ($cp).<br>";
+	echo "Vous avez fait le choix de payez par $paiementFormate.";
 }
 
 ?>
