@@ -30,23 +30,24 @@ nav {
     margin-block-start: 0;
 }
 
+main {
+    display: flex;
+}
+
 footer {
     height: 150px;
     margin-top: auto;
     background-color: #dce3e9;
-    /* clear: both; */
     padding: 0 10%;
 }
 
 section {
     width: 70%;
-    float: left;
 }
 
 aside {
-    width: 28%;
+    width: 30%;
     padding-left: 2%;
-    float: left;
 }
 
 #logo {
@@ -90,12 +91,10 @@ footer p {
 @media (max-width: 900px) {
     section {
         width: 100%;
-        float: none;
     }
 
     aside {
         width: 100%;
-        float: none;
         padding-left: 0;
     }
 }
