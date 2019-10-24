@@ -86,3 +86,16 @@ aside img {
 footer p {
     font-weight: bold;
 }
+
+@media (max-width: 900px) {
+    section {
+        width: 100%;
+        float: none;
+    }
+
+    aside {
+        width: 100%;
+        float: none;
+        padding-left: 0;
+    }
+}
