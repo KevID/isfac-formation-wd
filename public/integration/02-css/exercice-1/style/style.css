@@ -46,6 +46,7 @@ header nav {
 }
 
 header nav div.container>div {
+    width: 100%;
     display: flex;
 }
 
