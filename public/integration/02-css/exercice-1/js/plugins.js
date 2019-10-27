@@ -24,6 +24,7 @@
 // Place any jQuery/helper plugins in here.
 var morton = {};
 jQuery(document).ready(function (e) {
+  // Affiche dans le top l'avancement de la lecture
   var t = e(".lecture:first");
   t.length > 0 && (morton.$window = e(window), morton.lp = e('<div class="progress" style="width: 0%"></div>'), morton.lp.appendTo("#hrtop"), morton.lpmin = t.offset().top, morton.lph = t.height(), morton.$window.off("scroll.lecture").on("scroll.lecture", function (e) {
     clearTimeout(morton.lectureTimeout), morton.lectureTimeout = setTimeout(function () {

@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Le domaine de Morton</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="style/main.css">
-    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" />
 
     <meta name="theme-color" content="#fafafa">
 </head>
@@ -50,13 +50,36 @@
                     <div class="title-h1">
                         <h1>Bienvenue au Domaine de Morton</h1>
                     </div>
-                    <ul>
-                        <li><button onclick="window.location.hash='gite';">Le Gîte</button></li>
-                        <li><button onclick="window.location.hash='jardin';">Le Jardin</button></li>
-                        <li><button onclick="window.location.hash='potager';">Le Potager</button></li>
-                    </ul>
-                    <article>
-                        <h2></h2>
+
+                    <div class="section-nav">
+                        <div>
+                            <button onclick="window.location.hash='article-gite';">
+                                <svg width="120px" height="40px" viewBox="0 0 120 40">
+                                    <polyline points="115,5 115,35 5,35 5,5 115,5">
+                                </svg>
+                                <span>Le Gîte</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button onclick="window.location.hash='article-jardin';">
+                                <svg width="120px" height="40px" viewBox="0 0 120 40">
+                                    <polyline points="115,5 115,35 5,35 5,5 115,5">
+                                </svg>
+                                <span>Le Jardin</span>
+                            </button>
+                        </div>
+                        <div>
+                            <button onclick="window.location.hash='article-potager';">
+                                <svg width="120px" height="40px" viewBox="0 0 120 40">
+                                    <polyline points="115,5 115,35 5,35 5,5 115,5">
+                                </svg>
+                                <span>Le Potager</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <article id="article-gite">
+                        <h2>Le Gîte :</h2>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quasi, similique nemo eum
                             exercitationem ab velit voluptatem dolore autem maxime architecto laboriosam dolor beatae,
@@ -75,27 +98,89 @@
                             Commodi rerum ratione officiis. Nemo quidem
                             inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente.
                         </p>
-                        <img src="img/gite-1.jpg" alt="Gite 1" class="img-article-domaine" />
-                        <img src="img/gite-2.jpg" alt="Gite 2" class="img-article-domaine" />
-                        <img src="img/gite-3.jpg" alt="Gite 3" class="img-article-domaine" />
+                        <div class="article-photos">
+                            <div><img src="img/gite-1.jpg" alt="Gite 1" /></div>
+                            <div><img src="img/gite-2.jpg" alt="Gite 2" /></div>
+                            <div><img src="img/gite-3.jpg" alt="Gite 3" /></div>
+                        </div>
+                    </article>
+
+                    <article id="article-jardin">
+                        <h2>Le Jardin :</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quasi, similique nemo eum
+                            exercitationem ab velit voluptatem dolore autem maxime architecto laboriosam dolor beatae,
+                            fugit, eligendi deleniti fuga non rem!Inventore asperiores pariatur blanditiis
+                            exercitationem architecto sed veritatis, commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente iure,
+                            molestias voluptate obcaecati odit quod?
+                        </p>
+                        <p>
+                            Fuga non rem!Inventore asperiores pariatur blanditiis
+                            exercitationem architecto sed veritatis, commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente iure,
+                            molestias voluptate.
+                        </p>
+                        <p>
+                            Commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente.
+                        </p>
+                        <div class="article-photos">
+                            <div><img src="img/jardin-1.jpg" alt="Jardin 1" /></div>
+                            <div><img src="img/jardin-2.jpg" alt="Jardin 2" /></div>
+                            <div><img src="img/jardin-3.jpg" alt="Jardin 3" /></div>
+                        </div>
+                    </article>
+
+                    <article id="article-potager">
+                        <h2>Le Potager :</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet quasi, similique nemo eum
+                            exercitationem ab velit voluptatem dolore autem maxime architecto laboriosam dolor beatae,
+                            fugit, eligendi deleniti fuga non rem!Inventore asperiores pariatur blanditiis
+                            exercitationem architecto sed veritatis, commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente iure,
+                            molestias voluptate obcaecati odit quod?
+                        </p>
+                        <p>
+                            Fuga non rem!Inventore asperiores pariatur blanditiis
+                            exercitationem architecto sed veritatis, commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente iure,
+                            molestias voluptate.
+                        </p>
+                        <p>
+                            Commodi rerum ratione officiis. Nemo quidem
+                            inventore ipsa tenetur doloremque? Debitis aspernatur nesciunt quasi nostrum sapiente.
+                        </p>
+                        <div class="article-photos">
+                            <div><img src="img/potager-1.jpg" alt="Potager 1" /></div>
+                            <div><img src="img/potager-2.jpg" alt="Potager 2" /></div>
+                            <div><img src="img/potager-3.jpg" alt="Potager 3" /></div>
+                        </div>
                     </article>
 
                 </section>
                 <aside>
                     <figure>
-                        <a href="#" title="Home"><img src="img/img-home.jpg" alt="Home"></a>
+                        <div class="figure-img">
+                            <a href="#" title="Home"><img src="img/img-home.jpg" alt="Home"></a>
+                        </div>
                         <figcaption>Lorem, ipsum dolor sit amet.</figcaption>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi, enim eos
                             similique ratione harum.</p>
                     </figure>
                     <figure>
-                        <a href="#" title="Vegetables"><img src="img/img-vegetables.jpg" alt="Vegetables"></a>
+                        <div class="figure-img">
+                            <a href="#" title="Vegetables"><img src="img/img-vegetables.jpg" alt="Vegetables"></a>
+                        </div>
                         <figcaption>Lorem, ipsum dolor sit amet.</figcaption>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi, enim eos
                             similique ratione harum.</p>
                     </figure>
                     <figure>
-                        <a href="#" title="Chicken"><img src="img/img-chicken.jpg" alt="Chicken"></a>
+                        <div class="figure-img">
+                            <a href="#" title="Chicken"><img src="img/img-chicken.jpg" alt="Chicken"></a>
+                        </div>
                         <figcaption>Lorem, ipsum dolor sit amet.</figcaption>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati commodi, enim eos
                             similique ratione harum.</p>

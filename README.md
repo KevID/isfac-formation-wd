@@ -1,6 +1,6 @@
 # Introduction
 
-Formation "Développeur web et web mobile" à [l'ISFAC de Poitiers](https://www.formation-isfac.com) du 01 octobre 2019 au 12 juin 2020.
+Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.formation-isfac.com) du 01 octobre 2019 au 12 juin 2020.
 
 :boy: Kévin PAULMIER
 
