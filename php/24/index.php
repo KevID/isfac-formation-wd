@@ -10,29 +10,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Formulaire exemple 2.5</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Exercice 2.6</title>
     </head>
     <body>
 <?php
     // Si $nom et $prenom ne sont pas vides
-    if (!empty($nom) && !empty($prenom))
-    { 
+    if (!empty($nom) && !empty($prenom)) { 
         echo "Merci " . $nom . " " . $prenom . ".";
     }
     
     // Sinon on affiche le formulaire
-    else
-    {
+    else {
 ?>
         <form methode="get">
             <p>
                 NOM (*):
-                <input type="text" name="nom" id="nom" value="<?php echo $nom ?>">
+                <input type="text" name="nom" value="<?php echo $nom ?>">
                 <?php if ($submit && empty($nom)) { echo "Veuillez remplir le nom."; } ?>
             </p>
             <p>
                 PRENOM (*):
-                <input type="text" name="prenom" id="prenom" value="<?php echo $prenom ?>">
+                <input type="text" name="prenom" value="<?php echo $prenom ?>">
                 <?php if ($submit && empty($prenom)) { echo "Veuillez remplir le prénom."; } ?>
             </p>
             <p>

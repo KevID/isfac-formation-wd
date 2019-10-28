@@ -14,7 +14,9 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
     * Exercice 1 : Réalisation d'un mini site statique à partir d'une maquette visuelle (Le Domaine de Morton).
 
 ## PHP
-* Exercice 2
-    * 2.4 : Récupération des données d'un formulaire.
-    * 2.5 : Prise en compte des éventuels paramètres manquant après soumission du formulaire.
-    * 2.6 : Tout sur une même page. Boucle sur le formulaire jusqu'à parfaite saisie des infos demandées.
+* 20 : Récupération des données d'un formulaire.
+* 22 : Prise en compte des éventuels paramètres manquant après soumission du formulaire.
+* 24 : Tout sur une même page. Boucle sur le formulaire jusqu'à parfaite saisie des infos demandées.
+* -----
+* 34 : Tableau numéroté (indexé)
+* 36 : Tableaux associatifs
