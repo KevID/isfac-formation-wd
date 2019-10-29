@@ -1,4 +1,5 @@
 # Titre DWWM - Table Salariés
+
 **Elaborer les requêtes suivantes et mémoriser leur définition :**
 1. Trier les salariés par poste et par nom 
 2. Trier les salariés par Age décroissant et nom croissant 
@@ -9,12 +10,10 @@
 7. Qui sont les salariés de Paris travaillant au deuxième étage ? 
 8. Existe-t-il des salariés de Paris gagnant plus de 3000 € ? 
 9. Afficher les salaires des "Olivier" de cette entreprise.
-10. Y'a-t-il des salariés ayant le même prénom que vous ou le même nom que vous? 
-Afficher les salariés ayant un « Z » comme deuxième lettre du nom 
-11. Le salaire moyen en France étant de 1632 €, afficher le nom, prénom,salaire et 
-différence avec le salaire moyen pour chaque salarié 
-12. Afficher le nom, prénom, numéro de téléphone, âge des femmes dont le prénom fini 
-par “A” 
+10. Y'a-t-il des salariés ayant le même prénom que vous ou le même nom que vous?<br> 
+Afficher les salariés ayant un "Z" comme deuxième lettre du nom 
+11. Le salaire moyen en France étant de 1632 €, afficher le nom, prénom, salaire et différence avec le salaire moyen pour chaque salarié 
+12. Afficher le nom, prénom, numéro de téléphone, âge des femmes dont le prénom fini par "A" 
 13. Afficher la liste des salariés dont l'anniversaire tombe ce mois 
 14. Y'a t - il des salariés dont l'anniversaire tombe en même temps que vous ?
 
@@ -23,19 +22,20 @@ par “A”
 ## 1
 `SELECT *
 FROM dump
-ORDER BY poste, nom;`
+ORDER BY poste, nom;
+`
 
 ## 2
 `SELECT *
 FROM dump
-ORDER BY age DESC
-    AND nom;
+ORDER BY age DESC, nom;
 `
 
 ## 3
 `SELECT nom, prénom, n_enfants
 FROM dump
 WHERE sexe = 'femme';
+`
 
 ## 4
 `SELECT *
@@ -63,7 +63,7 @@ WHERE site = 'Paris'
 `
 
 ## 8
-`SELECT nom, prenom
+`SELECT *
 FROM dump
 WHERE site = 'Paris'
     AND salaire > 3000;
@@ -103,7 +103,7 @@ WHERE sexe = 'femme'
 ## 13
 `SELECT *
 FROM dump
-WHERE MONTH(date_naissance) = 10;
+WHERE MONTH(date_naissance) = MONTH(NOW());
 `
 
 ## 14
