@@ -8,6 +8,7 @@
     * Opérateurs spécialisés
         * BETWEEN (gestion des encadrements)
         * LIKE (recherche sur des extraits de chaînes de caractères)
+        * IN (recherche une valeur à l'intérieur d'un ensemble)
 
 # Exercices
 
@@ -95,6 +96,13 @@ FROM factures
 WHERE datefacture = '2016-11-19';
 `
 
+OR
+
+`SELECT *
+FROM factures
+WHERE MONTH(datefacture) = 3 AND YEAR(datefacture) = 2016;
+`
+
 ## 17
 `SELECT *
 FROM factures
@@ -108,9 +116,9 @@ WHERE datereglement BETWEEN '2016-01-01' AND '2016-12-25';
 `
 
 ## 19
-`SELECT *
+`SELECT nomacheteur
 FROM acheteurs
-WHERE prenomacheteur = "Stéphane';
+WHERE prenomacheteur = 'Stéphane';
 `
 
 ## 20
@@ -139,5 +147,27 @@ WHERE codefournisseur IN (17, 25, 32, 49);
 
 ## 24
 `SELECT codefacture, datefacture, nomacheteur, prenomacheteur
-FROM factures, acheteurs;
+FROM factures a, acheteurs b
+WHERE a.codeacheteur = b.codeacheteur;
+`
+
+OR
+
+`SELECT codefacture, datefacture, nomacheteur, prenomacheteur
+FROM factures a
+LEFT JOIN acheteurs b ON a.codeacheteur = b.codeacheteur;
+`
+
+## 25
+`SELECT a.*
+FROM factures a, fournisseurs b
+WHERE a.fournisseurs = b.fournisseurs
+    AND ville = 'honfleur';
+`
+
+## 26
+`SELECT a.*
+FROM lignesfactures a, factures b
+WHERE a.codefacture = b.codefacture
+    AND MONTH(b.datefacture) = 2;
 `
