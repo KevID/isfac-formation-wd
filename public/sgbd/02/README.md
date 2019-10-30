@@ -20,94 +20,109 @@ Afficher les salariés ayant un "Z" comme deuxième lettre du nom
 # Exercices
 
 ## 1
-`SELECT *
+```sql
+SELECT *
 FROM dump
 ORDER BY poste, nom;
-`
+```
 
 ## 2
-`SELECT *
+```sql
+SELECT *
 FROM dump
 ORDER BY age DESC, nom;
-`
+```
 
 ## 3
-`SELECT nom, prénom, n_enfants
+```sql
+SELECT nom, prénom, n_enfants
 FROM dump
 WHERE sexe = 'femme';
-`
+```
 
 ## 4
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE filiale = 'FSC';
-`
+```
 
 ## 5
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE tranche_age BETWEEN 3 AND 6;
-`
+```
 
 ## 6
-`SELECT nom, prenom
+```sql
+SELECT nom, prenom
 FROM dump
 WHERE salaire BETWEEN 1000 AND 1500;
-`
+```
 
 ## 7
-`SELECT nom, prenom
+```sql
+SELECT nom, prenom
 FROM dump
 WHERE site = 'Paris'
     AND etage = 2;
-`
+```
 
 ## 8
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE site = 'Paris'
     AND salaire > 3000;
-`
+```
 
 ## 9
-`SELECT nom, prenom, salaire
+```sql
+SELECT nom, prenom, salaire
 FROM dump
 WHERE prenom = 'olivier';
-`
+```
 
 ## 10
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE prenom = 'k_vin'
     OR nom = 'paulmier';
-`
+```
 
 ## 10 bis
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE nom LIKE '_Z%';
-`
+```
 
 ## 11
-`SELECT nom, prenom, salaire, ROUND(salaire - 1632, 2) AS diff_salaire_moyen
+```sql
+SELECT nom, prenom, salaire, ROUND(salaire - 1632, 2) AS diff_salaire_moyen
 FROM dump;
-`
+```
 
 ## 12
-`SELECT nom, prenom, telephone, age
+```sql
+SELECT nom, prenom, telephone, age
 FROM dump
 WHERE sexe = 'femme'
     AND prenom LIKE '%A';
-`
+```
 
 ## 13
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE MONTH(date_naissance) = MONTH(NOW());
-`
+```
 
 ## 14
-`SELECT *
+```sql
+SELECT *
 FROM dump
 WHERE date_naissance = '2000-01-01';
-`
+```

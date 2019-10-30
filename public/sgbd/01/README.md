@@ -13,167 +13,201 @@
 # Exercices
 
 ## 1
-`SELECT *
-FROM articles;`
+```sql
+SELECT *
+FROM articles;
+```
 
 ## 2
-`SELECT *
-FROM fournisseurs;`
+```sql
+SELECT *
+FROM fournisseurs;
+```
 
 ## 3
-`SELECT rs, ville
-FROM fournisseurs;`
+```sql
+SELECT rs, ville
+FROM fournisseurs;
+```
 
 ## 4
-`SELECT codefacture, datefacture
-FROM factures;`
+```sql
+SELECT codefacture, datefacture
+FROM factures;
+```
 
 ## 5
-`SELECT *, DATEDIFF(datereglement, datefacture) AS délaidepaiement
-FROM factures;`
+```sql
+SELECT *, DATEDIFF(datereglement, datefacture) AS délaidepaiement
+FROM factures;
+```
 
 ## 6
-`SELECT codefacture, prixunitaire, quantité
+```sql
+SELECT codefacture, prixunitaire, quantité
 FROM lignesfactures;
-`
+```
 
 ## 7
-`SELECT *
+```sql
+SELECT *
 FROM articles
 ORDER BY designation;
-`
+```
 
 ## 8
-`SELECT *
+```sql
+SELECT *
 FROM fournisseurs
 ORDER BY ville DESC;
-`
+```
 
 ## 9
-`SELECT *
+```sql
+SELECT *
 FROM fournisseurs
 ORDER BY cp, ville;
-`
+```
 ## 10
-`SELECT *
+```sql
+SELECT *
 FROM factures
 ORDER BY datefacture DESC;
-`
+```
 
 ## 11
-`SELECT codearticle, prixunitaire, quantité, ROUND(quantité * prixunitaire, 3) AS total
+```sql
+SELECT codearticle, prixunitaire, quantité, ROUND(quantité * prixunitaire, 3) AS total
 FROM lignesfactures
 ORDER BY prixunitaire DESC;
-`
+```
 
 ## 12
-`SELECT *
+```sql
+SELECT *
 FROM acheteurs
 ORDER BY prenomacheteur, nomacheteur;
-`
+```
 
 ## 13
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE codeacheteur = 'San';
-`
+```
 
 ## 14
-`SELECT *
+```sql
+SELECT *
 FROM lignesfactures
 WHERE quantité = 1;
-`
+```
 
 ## 15
-`SELECT *
+```sql
+SELECT *
 FROM articles
 WHERE désignation LIKE 'MOUSQUETON%';
-`
+```
 
 ## 16
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE datefacture = '2016-11-19';
-`
+```
 
 OR
 
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE MONTH(datefacture) = 3 AND YEAR(datefacture) = 2016;
-`
+```
 
 ## 17
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE datefacture LIKE '2016-12%';
-`
+```
 
 ## 18
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE datereglement BETWEEN '2016-01-01' AND '2016-12-25'; 
-`
+```
 
 ## 19
-`SELECT nomacheteur
+```sql
+SELECT nomacheteur
 FROM acheteurs
 WHERE prenomacheteur = 'Stéphane';
-`
+```
 
 ## 20
-`SELECT rs, adresse
+```sql
+SELECT rs, adresse
 FROM fournisseurs
 WHERE ville = 'Concarneau';
-`
+```
 
 ## 21
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE DATEDIFF(datereglement, datefacture) > 45;
-`
+```
 
 ## 22
-`SELECT *
+```sql
+SELECT *
 FROM lignesfactures
 WHERE quantité > 300 AND prixunitaire <= 80;
-`
+```
 
 ## 23
-`SELECT *
+```sql
+SELECT *
 FROM factures
 WHERE codefournisseur IN (17, 25, 32, 49);
-`
+```
 
 ## 24
-`SELECT codefacture, datefacture, nomacheteur, prenomacheteur
+```sql
+SELECT codefacture, datefacture, nomacheteur, prenomacheteur
 FROM factures, acheteurs
 WHERE factures.codeacheteur = acheteurs.codeacheteur;
-`
+```
 
 OR
 
-`SELECT codefacture, datefacture, nomacheteur, prenomacheteur
+```sql
+SELECT codefacture, datefacture, nomacheteur, prenomacheteur
 FROM factures fa
 LEFT JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
-`
+```
 
 ## 25
-`SELECT fa.*
+```sql
+SELECT fa.*
 FROM factures fa, fournisseurs fo
 WHERE fa.codefournisseur = fo.codefournisseur
     AND ville = 'honfleur';
-`
+```
 
 ## 26
-`SELECT lf.*
+```sql
+SELECT lf.*
 FROM lignesfactures lf, factures fa
 WHERE lf.codefacture = fa.codefacture
     AND MONTH(fa.datefacture) = 2;
-`
+```
 
 ## 27
-`SELECT DISTINCT ar.designation
+```sql
+SELECT DISTINCT ar.designation
 FROM articles ar, lignesfactures li, factures fa, acheteurs ac
 WHERE ac.codeacheteur = fa.codeacheteur
     AND fa.codefacture = li.codefacture
@@ -181,20 +215,22 @@ WHERE ac.codeacheteur = fa.codeacheteur
     AND ac.nomacheteur = 'COHEN'
     AND ac.prenomacheteur = 'Gerard'
 ORDER BY ar.designation;
-`
+```
 
 ## 28
-`SELECT fa.codefacture, ac.nomacheteur, fo.rs AS fournisseur
+```sql
+SELECT fa.codefacture, ac.nomacheteur, fo.rs AS fournisseur
 FROM factures fa, acheteurs ac, fournisseurs fo
 WHERE fa.codeacheteur = ac.codeacheteur
     AND fa.codefournisseur = fo.codefournisseur;
-`
+```
 
 OR
 
-`SELECT fa.codefacture, nomacheteur, rs AS fournisseur
+```sql
+SELECT fa.codefacture, nomacheteur, rs AS fournisseur
 FROM factures fa, acheteurs ac, fournisseurs fo
 WHERE fa.codeacheteur = ac.codeacheteur
     AND fa.codefournisseur = fo.codefournisseur;
-`
+```
 
