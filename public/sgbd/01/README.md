@@ -147,27 +147,54 @@ WHERE codefournisseur IN (17, 25, 32, 49);
 
 ## 24
 `SELECT codefacture, datefacture, nomacheteur, prenomacheteur
-FROM factures a, acheteurs b
-WHERE a.codeacheteur = b.codeacheteur;
+FROM factures, acheteurs
+WHERE factures.codeacheteur = acheteurs.codeacheteur;
 `
 
 OR
 
 `SELECT codefacture, datefacture, nomacheteur, prenomacheteur
-FROM factures a
-LEFT JOIN acheteurs b ON a.codeacheteur = b.codeacheteur;
+FROM factures fa
+LEFT JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
 `
 
 ## 25
-`SELECT a.*
-FROM factures a, fournisseurs b
-WHERE a.fournisseurs = b.fournisseurs
+`SELECT fa.*
+FROM factures fa, fournisseurs fo
+WHERE fa.codefournisseur = fo.codefournisseur
     AND ville = 'honfleur';
 `
 
 ## 26
-`SELECT a.*
-FROM lignesfactures a, factures b
-WHERE a.codefacture = b.codefacture
-    AND MONTH(b.datefacture) = 2;
+`SELECT lf.*
+FROM lignesfactures lf, factures fa
+WHERE lf.codefacture = fa.codefacture
+    AND MONTH(fa.datefacture) = 2;
 `
+
+## 27
+`SELECT DISTINCT ar.designation
+FROM articles ar, lignesfactures li, factures fa, acheteurs ac
+WHERE ac.codeacheteur = fa.codeacheteur
+    AND fa.codefacture = li.codefacture
+    AND li.codearticle = ar.codearticle
+    AND ac.nomacheteur = 'COHEN'
+    AND ac.prenomacheteur = 'Gerard'
+ORDER BY ar.designation;
+`
+
+## 28
+`SELECT fa.codefacture, ac.nomacheteur, fo.rs AS fournisseur
+FROM factures fa, acheteurs ac, fournisseurs fo
+WHERE fa.codeacheteur = ac.codeacheteur
+    AND fa.codefournisseur = fo.codefournisseur;
+`
+
+OR
+
+`SELECT fa.codefacture, nomacheteur, rs AS fournisseur
+FROM factures fa, acheteurs ac, fournisseurs fo
+WHERE fa.codeacheteur = ac.codeacheteur
+    AND fa.codefournisseur = fo.codefournisseur;
+`
+
