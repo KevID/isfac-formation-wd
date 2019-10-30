@@ -186,7 +186,7 @@ OR
 ```sql
 SELECT codefacture, datefacture, nomacheteur, prenomacheteur
 FROM factures fa
-LEFT JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
+    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
 ```
 
 ## 25
@@ -200,7 +200,10 @@ WHERE fa.codefournisseur = fo.codefournisseur
 OR
 
 ```sql
-
+SELECT fa.*
+FROM factures fa
+    INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur
+WHERE ville = 'honfleur';
 ```
 
 ## 26
@@ -214,7 +217,10 @@ WHERE lf.codefacture = fa.codefacture
 OR
 
 ```sql
-
+SELECT lf.*
+FROM lignesfactures lf
+    INNER JOIN factures fa ON lf.codefacture = fa.codefacture
+AND MONTH(fa.datefacture) = 2;
 ```
 
 ## 27
@@ -232,7 +238,14 @@ ORDER BY ar.designation;
 OR
 
 ```sql
-
+SELECT DISTINCT ar.designation
+FROM articles ar
+    INNER JOIN lignesfactures li ON ar.codearticle = li.codearticle
+    INNER JOIN factures fa ON li.codefacture = fa.codefacture
+    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+WHERE ac.nomacheteur = 'COHEN'
+    AND ac.prenomacheteur = 'Gerard'
+ORDER BY ar.designation;
 ```
 
 ## 28
@@ -255,5 +268,8 @@ WHERE fa.codeacheteur = ac.codeacheteur
 OR
 
 ```sql
-
+SELECT fa.codefacture, nomacheteur, rs AS fournisseur
+FROM factures fa
+    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+    INNER JOIN fournisseurs fo ON ac.codeacheteur = fo.codeacheteur;
 ```
