@@ -10,8 +10,15 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 01 - HTML
     * Exercice 2 :
     * Exercice 3 : Réalisation d'une page à partir d'une maquette visuelle.
+        * Exemple
+        * [Résultat](https://kevid.gitlab.io/isfac-formation-wd/integration/01-html/exercice-3/exercice-3-optimized/index.html)
 * 02 - CSS
     * Exercice 1 : Réalisation d'un mini site statique à partir d'une maquette visuelle (Le Domaine de Morton).
+        * [Exemple accueil](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/accueil.png)
+        * [Exemple domaine](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/domaine.png)
+        * [Exemple galerie](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/galerie.png)
+        * [Exemple contact](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/contact.png)
+        * [Résultat](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/index.html)
 
 ## PHP
 * 20 - Récupération des données d'un formulaire.
