@@ -268,10 +268,31 @@ article {
     margin-top: 30px;
 }
 
-.gallery img {
+.gallery div {
     width: 48%;
     border: 1px solid #999374;
     margin: 1%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.gallery img {
+    width: 100%;
+    -webkit-filter: sepia(0);
+    filter: sepia(0);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.gallery a:hover img {
+    -webkit-filter: sepia(1);
+    filter: sepia(1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
 .fancybox-progress {
