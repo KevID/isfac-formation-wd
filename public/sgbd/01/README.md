@@ -197,12 +197,24 @@ WHERE fa.codefournisseur = fo.codefournisseur
     AND ville = 'honfleur';
 ```
 
+OR
+
+```sql
+
+```
+
 ## 26
 ```sql
 SELECT lf.*
 FROM lignesfactures lf, factures fa
 WHERE lf.codefacture = fa.codefacture
     AND MONTH(fa.datefacture) = 2;
+```
+
+OR
+
+```sql
+
 ```
 
 ## 27
@@ -215,6 +227,12 @@ WHERE ac.codeacheteur = fa.codeacheteur
     AND ac.nomacheteur = 'COHEN'
     AND ac.prenomacheteur = 'Gerard'
 ORDER BY ar.designation;
+```
+
+OR
+
+```sql
+
 ```
 
 ## 28
@@ -234,3 +252,8 @@ WHERE fa.codeacheteur = ac.codeacheteur
     AND fa.codefournisseur = fo.codefournisseur;
 ```
 
+OR
+
+```sql
+
+```

@@ -1,21 +1,21 @@
 # Titre DWWM - Table Salariés
 
 **Elaborer les requêtes suivantes et mémoriser leur définition :**
-1. Trier les salariés par poste et par nom 
-2. Trier les salariés par Age décroissant et nom croissant 
-3. Afficher uniquement le nom, le prénom et le nombre d'enfants pour les femmes 
-4. Afficher les salariés de la filiale "FSC"
-5. Afficher les salariés des tranches d'âge de 3 à 6 
-6. Afficher le nom et le prénom des salariés gagnant entre 1000 et 1500 € 
-7. Qui sont les salariés de Paris travaillant au deuxième étage ? 
-8. Existe-t-il des salariés de Paris gagnant plus de 3000 € ? 
-9. Afficher les salaires des "Olivier" de cette entreprise.
-10. Y'a-t-il des salariés ayant le même prénom que vous ou le même nom que vous?<br> 
-Afficher les salariés ayant un "Z" comme deuxième lettre du nom 
-11. Le salaire moyen en France étant de 1632 €, afficher le nom, prénom, salaire et différence avec le salaire moyen pour chaque salarié 
-12. Afficher le nom, prénom, numéro de téléphone, âge des femmes dont le prénom fini par "A" 
-13. Afficher la liste des salariés dont l'anniversaire tombe ce mois 
-14. Y'a t - il des salariés dont l'anniversaire tombe en même temps que vous ?
+1. Trier les salariés par poste et par nom [*Résultat*](#anchor-1)
+2. Trier les salariés par Age décroissant et nom croissant [*Résultat*](#anchor-2)
+3. Afficher uniquement le nom, le prénom et le nombre d'enfants pour les femmes [*Résultat*](#anchor-3)
+4. Afficher les salariés de la filiale "FSC" [*Résultat*](#anchor-4)
+5. Afficher les salariés des tranches d'âge de 3 à 6 [*Résultat*](#anchor-5)
+6. Afficher le nom et le prénom des salariés gagnant entre 1000 et 1500 € [*Résultat*](#anchor-6)
+7. Qui sont les salariés de Paris travaillant au deuxième étage ? [*Résultat*](#anchor-7)
+8. Existe-t-il des salariés de Paris gagnant plus de 3000 € ? [*Résultat*](#anchor-8)
+9. Afficher les salaires des "Olivier" de cette entreprise. [*Résultat*](#anchor-9)
+10. Y'a-t-il des salariés ayant le même prénom que vous ou le même nom que vous? [*Résultat*](#anchor-10)<br> 
+Afficher les salariés ayant un "Z" comme deuxième lettre du nom [*Résultat*](#10-bis)
+11. Le salaire moyen en France étant de 1632 €, afficher le nom, prénom, salaire et différence avec le salaire moyen pour chaque salarié [*Résultat*](#anchor-11)
+12. Afficher le nom, prénom, numéro de téléphone, âge des femmes dont le prénom fini par "A" [*Résultat*](#anchor-12)
+13. Afficher la liste des salariés dont l'anniversaire tombe ce mois [*Résultat*](#anchor-13)
+14. Y'a t - il des salariés dont l'anniversaire tombe en même temps que vous ? [*Résultat*](#anchor-14)
 
 # Exercices
 
