@@ -1,116 +1,132 @@
 # SQL - Cas Facturation
 
-
 * Critères de restriction
-    * Opérateurs de comparaison :  < > <= >= = <> !=
-    * Opérateurs arithmetiques : * / - +
-    * Opérateurs logiques : AND OR
-    * Opérateurs spécialisés
-        * BETWEEN (gestion des encadrements)
-        * LIKE (recherche sur des extraits de chaînes de caractères)
-        * IN (recherche une valeur à l'intérieur d'un ensemble)
+  * Opérateurs de comparaison :  < > <= >= = <> !=
+  * Opérateurs arithmetiques : * / - +
+  * Opérateurs logiques : AND OR
+  * Opérateurs spécialisés
+    * BETWEEN (gestion des encadrements)
+    * LIKE (recherche sur des extraits de chaînes de caractères)
+    * IN (recherche une valeur à l'intérieur d'un ensemble)
 
-# Exercices
+## Exercices
 
-## 1
+### 1
+
 ```sql
 SELECT *
 FROM articles;
 ```
 
-## 2
+### 2
+
 ```sql
 SELECT *
 FROM fournisseurs;
 ```
 
-## 3
+### 3
+
 ```sql
 SELECT rs, ville
 FROM fournisseurs;
 ```
 
-## 4
+### 4
+
 ```sql
 SELECT codefacture, datefacture
 FROM factures;
 ```
 
-## 5
+### 5
+
 ```sql
 SELECT *, DATEDIFF(datereglement, datefacture) AS délaidepaiement
 FROM factures;
 ```
 
-## 6
+### 6
+
 ```sql
 SELECT codefacture, prixunitaire, quantité
 FROM lignesfactures;
 ```
 
-## 7
+### 7
+
 ```sql
 SELECT *
 FROM articles
 ORDER BY designation;
 ```
 
-## 8
+### 8
+
 ```sql
 SELECT *
 FROM fournisseurs
 ORDER BY ville DESC;
 ```
 
-## 9
+### 9
+
 ```sql
 SELECT *
 FROM fournisseurs
 ORDER BY cp, ville;
 ```
-## 10
+
+### 10
+
 ```sql
 SELECT *
 FROM factures
 ORDER BY datefacture DESC;
 ```
 
-## 11
+### 11
+
 ```sql
 SELECT codearticle, prixunitaire, quantité, ROUND(quantité * prixunitaire, 3) AS total
 FROM lignesfactures
 ORDER BY prixunitaire DESC;
 ```
 
-## 12
+### 12
+
 ```sql
 SELECT *
 FROM acheteurs
 ORDER BY prenomacheteur, nomacheteur;
 ```
 
-## 13
+### 13
+
 ```sql
 SELECT *
 FROM factures
 WHERE codeacheteur = 'San';
 ```
 
-## 14
+### 14
+
 ```sql
 SELECT *
 FROM lignesfactures
 WHERE quantité = 1;
 ```
 
-## 15
+### 15
+
 ```sql
 SELECT *
 FROM articles
 WHERE désignation LIKE 'MOUSQUETON%';
 ```
 
-## 16
+### 16
+
 ```sql
 SELECT *
 FROM factures
@@ -125,56 +141,64 @@ FROM factures
 WHERE MONTH(datefacture) = 3 AND YEAR(datefacture) = 2016;
 ```
 
-## 17
+### 17
+
 ```sql
 SELECT *
 FROM factures
 WHERE datefacture LIKE '2016-12%';
 ```
 
-## 18
+### 18
+
 ```sql
 SELECT *
 FROM factures
-WHERE datereglement BETWEEN '2016-01-01' AND '2016-12-25'; 
+WHERE datereglement BETWEEN '2016-01-01' AND '2016-12-25';
 ```
 
-## 19
+### 19
+
 ```sql
 SELECT nomacheteur
 FROM acheteurs
 WHERE prenomacheteur = 'Stéphane';
 ```
 
-## 20
+### 20
+
 ```sql
 SELECT rs, adresse
 FROM fournisseurs
 WHERE ville = 'Concarneau';
 ```
 
-## 21
+### 21
+
 ```sql
 SELECT *
 FROM factures
 WHERE DATEDIFF(datereglement, datefacture) > 45;
 ```
 
-## 22
+### 22
+
 ```sql
 SELECT *
 FROM lignesfactures
 WHERE quantité > 300 AND prixunitaire <= 80;
 ```
 
-## 23
+### 23
+
 ```sql
 SELECT *
 FROM factures
 WHERE codefournisseur IN (17, 25, 32, 49);
 ```
 
-## 24
+### 24
+
 ```sql
 SELECT codefacture, datefacture, nomacheteur, prenomacheteur
 FROM factures, acheteurs
@@ -186,15 +210,16 @@ OR
 ```sql
 SELECT codefacture, datefacture, nomacheteur, prenomacheteur
 FROM factures fa
-    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
+  INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur;
 ```
 
-## 25
+### 25
+
 ```sql
 SELECT fa.*
 FROM factures fa, fournisseurs fo
 WHERE fa.codefournisseur = fo.codefournisseur
-    AND ville = 'honfleur';
+  AND ville = 'honfleur';
 ```
 
 OR
@@ -202,16 +227,17 @@ OR
 ```sql
 SELECT fa.*
 FROM factures fa
-    INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur
+  INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur
 WHERE ville = 'honfleur';
 ```
 
-## 26
+### 26
+
 ```sql
 SELECT lf.*
 FROM lignesfactures lf, factures fa
 WHERE lf.codefacture = fa.codefacture
-    AND MONTH(fa.datefacture) = 2;
+  AND MONTH(fa.datefacture) = 2;
 ```
 
 OR
@@ -219,19 +245,20 @@ OR
 ```sql
 SELECT lf.*
 FROM lignesfactures lf
-    INNER JOIN factures fa ON lf.codefacture = fa.codefacture
+  INNER JOIN factures fa ON lf.codefacture = fa.codefacture
 AND MONTH(fa.datefacture) = 2;
 ```
 
-## 27
+### 27
+
 ```sql
 SELECT DISTINCT ar.designation
 FROM articles ar, lignesfactures li, factures fa, acheteurs ac
 WHERE ac.codeacheteur = fa.codeacheteur
-    AND fa.codefacture = li.codefacture
-    AND li.codearticle = ar.codearticle
-    AND ac.nomacheteur = 'COHEN'
-    AND ac.prenomacheteur = 'Gerard'
+  AND fa.codefacture = li.codefacture
+  AND li.codearticle = ar.codearticle
+  AND ac.nomacheteur = 'COHEN'
+  AND ac.prenomacheteur = 'Gerard'
 ORDER BY ar.designation;
 ```
 
@@ -240,20 +267,21 @@ OR
 ```sql
 SELECT DISTINCT ar.designation
 FROM articles ar
-    INNER JOIN lignesfactures li ON ar.codearticle = li.codearticle
-    INNER JOIN factures fa ON li.codefacture = fa.codefacture
-    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+  INNER JOIN lignesfactures li ON ar.codearticle = li.codearticle
+  INNER JOIN factures fa ON li.codefacture = fa.codefacture
+  INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
 WHERE ac.nomacheteur = 'COHEN'
-    AND ac.prenomacheteur = 'Gerard'
+  AND ac.prenomacheteur = 'Gerard'
 ORDER BY ar.designation;
 ```
 
-## 28
+### 28
+
 ```sql
 SELECT fa.codefacture, ac.nomacheteur, fo.rs AS fournisseur
 FROM factures fa, acheteurs ac, fournisseurs fo
 WHERE fa.codeacheteur = ac.codeacheteur
-    AND fa.codefournisseur = fo.codefournisseur;
+  AND fa.codefournisseur = fo.codefournisseur;
 ```
 
 OR
@@ -262,7 +290,7 @@ OR
 SELECT fa.codefacture, nomacheteur, rs AS fournisseur
 FROM factures fa, acheteurs ac, fournisseurs fo
 WHERE fa.codeacheteur = ac.codeacheteur
-    AND fa.codefournisseur = fo.codefournisseur;
+  AND fa.codefournisseur = fo.codefournisseur;
 ```
 
 OR
@@ -270,6 +298,6 @@ OR
 ```sql
 SELECT fa.codefacture, nomacheteur, rs AS fournisseur
 FROM factures fa
-    INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
-    INNER JOIN fournisseurs fo ON ac.codeacheteur = fo.codeacheteur;
+  INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+  INNER JOIN fournisseurs fo ON ac.codeacheteur = fo.codeacheteur;
 ```
