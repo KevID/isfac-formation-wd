@@ -24,7 +24,8 @@ header {
 
 .header {
     height: 180px;
-    line-height: 180px;
+    display: flex;
+    align-items: center;
 }
 
 .header img {
@@ -41,48 +42,41 @@ header a {
    ========================================================================== */
 header nav {
     width: 100%;
-    height: 50px;
     background: #999374;
 }
 
-header nav div.container>div {
-    width: 100%;
+header nav div.container div {
     display: flex;
 }
 
 header nav ul {
     padding: 0;
     margin: 0;
-    list-style-type: none;
+    display: flex;
+}
+
+header nav ul:last-child {
+    margin-left: auto;
+    font-size: 30px;
 }
 
 header nav li {
-    display: inline;
+    display: flex;
+    align-items: center;
 }
 
-header nav a {
-    display: inline-block;
-    line-height: 50px;
-    text-decoration: none;
-    text-align: left;
-    color: #fff;
-    background: #999374;
+header nav ul:first-child li {
+    margin-right: 30px;
+}
+
+header nav ul:last-child li {
+    margin-left: 10px;
 }
 
 header nav a:hover {
     color: #DCDCDC;
     text-decoration: underline;
     text-shadow: 0px 0px 10px black;
-}
-
-header nav div.container div ul:first-child li {
-    margin-right: 30px;
-}
-
-header nav div.container div ul:last-child {
-    padding-left: 10px;
-    margin-left: auto;
-    font-size: 30px;
 }
 
 /* ==========================================================================
@@ -264,16 +258,16 @@ article {
    Section - Gallery with Fancybox (JQuery)
    ========================================================================== */
 .gallery {
-    font-size: 0;
     margin-top: 30px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-.gallery div {
+.gallery a {
     width: 48%;
-    border: 1px solid #999374;
     margin: 1%;
+    border: 1px solid #999374;
     overflow: hidden;
-    display: inline-block;
 }
 
 .gallery img {
