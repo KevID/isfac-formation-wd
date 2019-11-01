@@ -121,6 +121,12 @@ header nav a:hover {
     margin: 0 0 20px 0;
 }
 
+.footer-menu a:hover {
+    color: #DCDCDC;
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px black;
+}
+
 .footer-menu .container {
     display: flex;
     align-items: center;
