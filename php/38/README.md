@@ -6,7 +6,7 @@
   - [Créer une boucle indiquant la création de chaque fantôme sur sa propre ligne : "création du fantôme 1", "création…](#créer-une-boucle-indiquant-la-création-de-chaque-fantôme-sur-sa-propre-ligne--création-du-fantôme-1-création)
   - [Créer une boucle permettant de créer une ligne avec 10 *](#créer-une-boucle-permettant-de-créer-une-ligne-avec-10-)
   - [idem mais en créant un carré de 10 * 10](#idem-mais-en-créant-un-carré-de-10--10)
-  - [En repartant du 3°, alterner une ligne en rouge et une en vert.](#en-repartant-du-3°-alterner-une-ligne-en-rouge-et-une-en-vert)
+  - [En repartant du 3°, alterner une ligne en rouge et une en vert](#en-repartant-du-3°-alterner-une-ligne-en-rouge-et-une-en-vert)
   - [Refaire ce type de construction avec une boucle](#refaire-ce-type-de-construction-avec-une-boucle)
 
 <!-- /TOC -->
@@ -62,21 +62,36 @@ for ($i = 1; $i <= 10; $i++) {
 echo $etoiles;
 ```
 
-### 4. En repartant du 3°, alterner une ligne en rouge et une en vert.
+### 4. En repartant du 3°, alterner une ligne en rouge et une en vert
 
 ```php
 for ($i = 1; $i <= 10; $i++) {
-  if ($i %2 === 1) {
+  if ($i%2) {
     $color = "red";
   } else {
     $color = "green";
   }
-  echo '<font color="'.$color.'">';
+  echo '<span style="color: '.$color.'">';
   for ($j = 1; $j <= 10; $j++) {
-    echo "*"." &nbsp;";
+    echo "*";
   }
-  echo "</font><br />";
+  echo "</span><br />";
 }
+```
+
+OR
+
+```php
+$msg = "";
+for ($i = 1; $i <= 10; $i++) {
+  $color = ($i%2) ? "red" : "green";
+  $msg .= '<p style="color: '.$color.'">';
+  for ($j = 1; $j <= 10; $j++) {
+    $msg .= "*";
+  }
+  $msg .= "</p>";
+}
+echo $msg;
 ```
 
 ### 5. Refaire ce type de construction avec une boucle

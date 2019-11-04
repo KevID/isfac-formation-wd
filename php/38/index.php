@@ -31,18 +31,16 @@ for ($i = 1; $i <= 10; $i++) {
 
 echo "<br /><hr /><br />";
 
+$msg = "";
 for ($i = 1; $i <= 10; $i++) {
-    if ($i %2 === 1) {
-      $color = "red";
-    } else {
-      $color = "green";
-    }
-    echo '<font color="'.$color.'">';
-    for ($j = 1; $j <= 10; $j++) {
-      echo "*"." &nbsp;";
-    }
-    echo "</font><br />";
+  $color = ($i%2) ? "red" : "green";
+  $msg .= '<p style="color: '.$color.'">';
+  for ($j = 1; $j <= 10; $j++) {
+    $msg .= "*";
+  }
+  $msg .= "</p>";
 }
+echo $msg;
 
 echo "<br /><hr /><br />";
 

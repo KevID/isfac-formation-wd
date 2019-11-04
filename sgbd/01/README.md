@@ -299,5 +299,5 @@ OR
 SELECT fa.codefacture, nomacheteur, rs AS fournisseur
 FROM factures fa
   INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
-  INNER JOIN fournisseurs fo ON ac.codeacheteur = fo.codeacheteur;
+  INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur;
 ```
