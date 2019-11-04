@@ -1,17 +1,14 @@
-# Les boucles
+# La boucle FOR
 
 <!-- TOC -->
 
-- [Boucle FOR](#boucle-for)
-  - [Créer une boucle indiquant la création de chaque fantôme sur sa propre ligne : "création du fantôme 1", "création…](#créer-une-boucle-indiquant-la-création-de-chaque-fantôme-sur-sa-propre-ligne--création-du-fantôme-1-création)
-  - [Créer une boucle permettant de créer une ligne avec 10 *](#créer-une-boucle-permettant-de-créer-une-ligne-avec-10-)
-  - [idem mais en créant un carré de 10 * 10](#idem-mais-en-créant-un-carré-de-10--10)
-  - [En repartant du 3°, alterner une ligne en rouge et une en vert](#en-repartant-du-3°-alterner-une-ligne-en-rouge-et-une-en-vert)
-  - [Refaire ce type de construction avec une boucle](#refaire-ce-type-de-construction-avec-une-boucle)
+- [Créer une boucle indiquant la création de chaque fantôme sur sa propre ligne : "création du fantôme 1", "création…](#créer-une-boucle-indiquant-la-création-de-chaque-fantôme-sur-sa-propre-ligne--création-du-fantôme-1-création)
+- [Créer une boucle permettant de créer une ligne avec 10 *](#créer-une-boucle-permettant-de-créer-une-ligne-avec-10-)
+- [idem mais en créant un carré de 10 * 10](#idem-mais-en-créant-un-carré-de-10--10)
+- [En repartant du 3°, alterner une ligne en rouge et une en vert](#en-repartant-du-3°-alterner-une-ligne-en-rouge-et-une-en-vert)
+- [Refaire ce type de construction avec une boucle](#refaire-ce-type-de-construction-avec-une-boucle)
 
 <!-- /TOC -->
-
-## Boucle FOR
 
 ```php
 // for(initialisation, condition de sortie, incrémentation) {}
@@ -22,7 +19,7 @@ for ($position = 0; $position < 5; $position++)
 }
 ```
 
-### 1. Créer une boucle indiquant la création de chaque fantôme sur sa propre ligne : "création du fantôme 1", "création…
+## 1. Créer une boucle indiquant la création de chaque fantôme sur sa propre ligne : "création du fantôme 1", "création…
 
 ```php
 for ($i = 1; $i < 11; $i++) {
@@ -30,7 +27,7 @@ for ($i = 1; $i < 11; $i++) {
 }
 ```
 
-### 2. Créer une boucle permettant de créer une ligne avec 10 *
+## 2. Créer une boucle permettant de créer une ligne avec 10 *
 
 ```php
 for ($i = 0; $i < 10; $i++) {
@@ -38,7 +35,7 @@ for ($i = 0; $i < 10; $i++) {
 }
 ```
 
-### 3. idem mais en créant un carré de 10 * 10
+## 3. idem mais en créant un carré de 10 * 10
 
 ```php
 for ($i = 0; $i < 10; $i++) {
@@ -62,7 +59,7 @@ for ($i = 1; $i <= 10; $i++) {
 echo $etoiles;
 ```
 
-### 4. En repartant du 3°, alterner une ligne en rouge et une en vert
+## 4. En repartant du 3°, alterner une ligne en rouge et une en vert
 
 ```php
 for ($i = 1; $i <= 10; $i++) {
@@ -94,7 +91,7 @@ for ($i = 1; $i <= 10; $i++) {
 echo $msg;
 ```
 
-### 5. Refaire ce type de construction avec une boucle
+## 5. Refaire ce type de construction avec une boucle
 
 ```php
 for ($i = 1; $i <= 10; $i++)
@@ -103,5 +100,17 @@ for ($i = 1; $i <= 10; $i++)
   {
     echo "*";
   }
+  echo "<br />";
+}
+```
+
+OR
+
+```php
+$etoiles = "";
+for ($i = 1; $i <= 10; $i++)
+{
+  $etoiles .= "*";
+  echo $etoiles."<br />";
 }
 ```

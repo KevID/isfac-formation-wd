@@ -52,3 +52,46 @@ for ($i = 1; $i <= 10; $i++)
   }
   echo "<br />";
 }
+
+echo "<br /><hr /><br />";
+
+// Sapin de noël
+echo "<div style=\"width: 100px; text-align: center; color: green\">";
+$etoiles = "";
+for ($i = 1; $i <= 10; $i++)
+{
+  $etoiles .= "*";
+  echo $etoiles."<br />";
+}
+echo "</div>";
+echo "<div style=\"width: 100px; text-align: center; color: brown\">";
+for ($i = 1; $i <= 5; $i++)
+{
+  echo "*<br />";
+}
+echo "</div>";
+/*
+
+
+echo "<br /><hr /><br />";
+
+
+
+$numbers = array(1,2,3,4,5,6,7,8,1,1,1,1,9);
+$colors  = array("green","green","green","green","green","green","green","green", "brown","brown","brown","brown","black");
+$dessin = array_combine($numbers, $colors);
+
+var_dump($dessin);
+
+echo "<div style=\"width: 100px; text-align: center;\">";
+
+foreach ($dessin AS $number => $color)
+{
+    echo '<span style="color: '.$color.'">';
+    for ($i=1; $i <= $number; $i++) {
+        echo "*";
+    }
+    echo "</span><br />";
+}
+echo "</div>";
+*/
