@@ -70,28 +70,28 @@ for ($i = 1; $i <= 5; $i++)
   echo "*<br />";
 }
 echo "</div>";
-/*
-
 
 echo "<br /><hr /><br />";
 
-
-
-$numbers = array(1,2,3,4,5,6,7,8,1,1,1,1,9);
-$colors  = array("green","green","green","green","green","green","green","green", "brown","brown","brown","brown","black");
-$dessin = array_combine($numbers, $colors);
-
-var_dump($dessin);
-
-echo "<div style=\"width: 100px; text-align: center;\">";
-
-foreach ($dessin AS $number => $color)
+// Sapin de noël 2
+$dessin = array();
+$numbers = array(1,1,2,3,4,5,6,7,8,2,2,2,2,20);
+$colors  = array("yellow","green","green","green","green","green","green","green","green", "brown","brown","brown","brown","black");
+$characters  = array("*","^","^","^","^","^","^","^","^","|","|","|","|","-");
+for ($i = 0; $i < count($numbers); $i++)
 {
-    echo '<span style="color: '.$color.'">';
-    for ($i=1; $i <= $number; $i++) {
-        echo "*";
-    }
-    echo "</span><br />";
+  $dessin[$i][0] = $numbers[$i];
+  $dessin[$i][1] = $colors[$i];
+  $dessin[$i][2] = $characters[$i];
 }
-echo "</div>";
-*/
+echo "<div style=\"text-align: center; font-weight: bold\">\n";
+foreach ($dessin AS $ligne)
+{
+    echo '<span style="color: '.$ligne[1].'">';
+    for ($i=1; $i <= $ligne[0]; $i++) {
+        echo $ligne[2];
+    }
+    echo "</span><br />\n";
+}
+echo "<span style=\"color: red\">JOYEUX NOËL !</span>\n";
+echo "</div>\n";
