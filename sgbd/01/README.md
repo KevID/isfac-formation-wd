@@ -296,8 +296,94 @@ WHERE fa.codeacheteur = ac.codeacheteur
 OR
 
 ```sql
-SELECT fa.codefacture, nomacheteur, rs AS fournisseur
+SELECT nomacheteur, fa.codefacture, rs AS fournisseur
 FROM factures fa
   INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
-  INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur;
+  INNER JOIN fournisseurs fo ON fa.codefournisseur = fo.codefournisseur
+ORDER BY nomacheteur, fa.codefacture;
+```
+
+### 29. Afficher le prix unitaire le + élevé
+
+```sql
+SELECT MAX(prixunitaire)
+FROM lignesfactures
+```
+
+OR
+
+```sql
+SELECT codefacture, prixunitaire
+FROM lignesfactures
+ORDER BY prixunitaire DESC
+LIMIT 1;
+```
+
+### 30. Afficher la dernière date de facture
+
+```sql
+SELECT MAX(datefacture)
+FROM factures
+```
+
+OR
+
+```sql
+SELECT codefacture, datefacture
+FROM factures
+ORDER BY datefacture DESC
+LIMIT 1;
+```
+
+### 31. Afficher le nombre de factures par jour
+
+```sql
+SELECT datefacture, count(*)
+FROM factures
+GROUP BY datefacture;
+```
+
+### 32. Affichez, pour chaque article, la qte totale achetée
+
+```sql
+SELECT codearticle, SUM(quantité) AS total_acheté
+FROM lignesfactures
+GROUP BY codearticle;
+```
+
+### 33. Indiquez le nombre de factures passées par nom d'acheteur
+
+```sql
+SELECT nomacheteur, count(*) AS nb_factures
+FROM factures fa
+  RIGHT JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+GROUP BY fa.codeacheteur;
+```
+
+### 34. Affichez le CA total gagné par chaque fournisseur
+
+```sql
+SELECT fo.codefournisseur, rs, ROUND(SUM(prixunitaire*quantité), 2) AS ca_total
+FROM fournisseurs fo
+  LEFT JOIN factures fa ON fo.codefournisseur = fa.codefournisseur
+  INNER JOIN lignesfactures lf ON fa.codefacture = lf.codefacture
+GROUP BY fo.codefournisseur;
+```
+
+### 35. Affichez, pour chaque article, le montant total acheté et le prix unitaire moyen
+
+```sql
+SELECT codearticle, ROUND(SUM(prixunitaire*quantité), 2) AS montant_total_acheté, ROUND(AVG(prixunitaire), 2) AS prix_unitaire_moyen
+FROM lignesfactures
+GROUP BY codearticle;
+```
+
+### 36. Affichez le total de quantité vendues pour chaque article, uniquement si ce sont des lampes
+
+```sql
+SELECT ar.codearticle, designation, SUM(quantité) AS total_qte_vendue
+FROM articles ar
+  INNER JOIN lignesfactures lf ON ar.codearticle = lf.codearticle
+WHERE designation LIKE '%lampe%'
+GROUP BY ar.codearticle;
 ```
