@@ -246,7 +246,7 @@ OR
 SELECT lf.*
 FROM lignesfactures lf
   INNER JOIN factures fa ON lf.codefacture = fa.codefacture
-AND MONTH(fa.datefacture) = 2;
+WHERE MONTH(fa.datefacture) = 2;
 ```
 
 ### 27
@@ -266,10 +266,10 @@ OR
 
 ```sql
 SELECT DISTINCT ar.designation
-FROM articles ar
-  INNER JOIN lignesfactures li ON ar.codearticle = li.codearticle
-  INNER JOIN factures fa ON li.codefacture = fa.codefacture
-  INNER JOIN acheteurs ac ON fa.codeacheteur = ac.codeacheteur
+FROM acheteurs ac
+  INNER JOIN factures fa ON ac.codeacheteur = fa.codeacheteur
+  INNER JOIN lignesfactures li ON fa.codefacture = li.codefacture
+  INNER JOIN articles ar ON li.codearticle = ar.codearticle
 WHERE ac.nomacheteur = 'COHEN'
   AND ac.prenomacheteur = 'Gerard'
 ORDER BY ar.designation;
