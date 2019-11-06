@@ -159,3 +159,21 @@ foreach ($keys AS $keysValue)
 }
 // J'affiche mon nouveau array $final
 print_r($final);
+
+
+
+echo "\n<br><hr><br>\n";
+
+
+
+$keys = array("a"=>"prems","b"=>"deux","c"=>"trois");
+$values = array("f1val"=>"veau","f2val"=>"vache","f3val"=>"cochon");
+
+$i = 0;
+$final = array();
+foreach ($keys AS $KeysValue)
+{
+  $i++;
+  $final[$KeysValue] = $values["f".$i."val"];
+}
+print_r($final);
