@@ -59,6 +59,15 @@ $tab = array("y"=>array("ert"=>0,"po"=>1),"a"=>array("gyh"=>2,"z"=>array("xyz"=>
 
 OR
 
+|Niv. 1   |Niv. 1   |Niv. 2   |Niv. 2   |Niv. 3   |Niv. 3   |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| **Key** |**Value**| **Key** |**Value**| **Key** |**Value**|
+|||||||
+| [y]     | Array   | [ert]   | 0       |         |         |
+|         |         | [po]    | 1       |         |         |
+| [a]     | Array   | [gyh]   | 2       |         |         |
+|         |         | [z]     | Array   | [xyz]   | 3       |
+
 ```php
 $tab = array("y"=>array("ert"=>0,"po"=>1),"a"=>array("gyh"=>2,"z"=>array("xyz"=>3)));
 
@@ -105,6 +114,7 @@ array("bleu"=>"bleu","rouge"=>"rouge","vert"=>"vert")
 ```php
 // Je crée un Array $couleurs ayant pour valeurs bleu, rouge, vert.
 $couleurs = array("bleu","rouge","vert");
+// $couleurs = ["bleu","rouge","vert"];   // Est une autre notation pour faire la même chose
 
 // Je déclare une nouvelle variable $newArray pour le moment vide qui serra un Array.
 $newArray = array();
