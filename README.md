@@ -36,6 +36,7 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 38 - for()
 * 41 - array() et foreach() - Exercices 1 à 3
 * 43 - array() et foreach() - Exercices 4 à 9
+* 47 - include() / require()
 
 ### SGBD
 
@@ -43,6 +44,15 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
   * 01 - Cas Facturation (exercices select)
   * 02 - Table Salariés (exercices select)
   * 03 - MACIF (exercices jointures)
+
+## Communication
+
+* 2019-11-08
+  * Technique SMART
+  * Les états de moi, analyse transactionnelle
+  * Parlez à tous ! Suivez le guide !
+
+## Planning
 
 ```mermaid
 gantt
