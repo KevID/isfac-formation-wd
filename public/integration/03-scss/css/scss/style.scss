@@ -1,0 +1,25 @@
+@import '_variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background: $color1;
+
+    main {
+        height: 100vh;
+        color: $color2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 30vh;
+            color: $color2;
+            font-weight: bold;
+        }
+    }
+}
