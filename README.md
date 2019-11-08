@@ -20,6 +20,7 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
     * [Exemple galerie](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/galerie.png)
     * [Exemple contact](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/contact.png)
     * [Résultat](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/index.html)
+* 03 - SASS / SCSS - Premier test sous VSCode avec compilation en temps réel (Plugin: Live Sass Compiler)
 
 ### PHP
 
@@ -31,6 +32,10 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 32 - Tableau numéroté array()
 * 34 - Exercice avec un tableau numéroté
 * 36 - Exercice avec un tableau associatif
+* 37 - Tableaux relationnels - array()
+* 38 - for()
+* 41 - array() et foreach() - Exercices 1 à 3
+* 43 - array() et foreach() - Exercices 4 à 9
 
 ### SGBD
 
@@ -47,4 +52,18 @@ gantt
     PHP - Tableaux numérotés et associatifs     :   28-10-2019, 1d
     SQL - Select, jointures                     :   29-10-2019, 2d
     Assimilation                                :   31-10-2019, 1d
+```
+
+```mermaid
+gantt
+  dateFormat  DD-MM-YYYY
+  title Planning semaine 5
+  section semaine 5
+    PHP                 : 04-10-2019, 1d
+    SQL                 : 1d
+    PHP                 : 12h
+    Assimilation        : 12h
+    Intégration         : 1d
+    PHP                 : 12h
+    Communication       : 12h
 ```

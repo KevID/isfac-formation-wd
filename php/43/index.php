@@ -28,6 +28,10 @@ $array = array( 'fruits' => array( 'pommes', 'tomates', 'abricots' ),
                 'animaux' => array( 'chats', 'chiens' ),
                 'pays' => array( 'Suisse', 'France', 'Angleterre' ) );
 
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+
 foreach ($array AS $type=>$typeValeurs)
 {
     echo "<h1>$type</h1>\n";
@@ -44,7 +48,9 @@ echo "\n<br><hr><br>\n";
 
 $tab = array("y"=>array("ert"=>0,"po"=>1),"a"=>array("gyh"=>2,"z"=>array("xyz"=>3)));
 
-var_dump($tab);
+echo "<pre>";
+print_r($tab);
+echo "</pre>";
 
 echo $tab['a']['z']['xyz'];
 
@@ -177,3 +183,7 @@ foreach ($keys AS $KeysValue)
   $final[$KeysValue] = $values["f".$i."val"];
 }
 print_r($final);
+
+echo "<pre>";
+print_r($_SERVER);
+echo "</pre>";
