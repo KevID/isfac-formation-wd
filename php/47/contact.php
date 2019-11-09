@@ -4,7 +4,7 @@
 ?>
 
         <main>
-            Ceci est le contenu de ma page contact.php
+            <h1>Ceci est le contenu de ma page  <?= basename($_SERVER['SCRIPT_NAME']); ?></h1>
         </main>
 
 <?php

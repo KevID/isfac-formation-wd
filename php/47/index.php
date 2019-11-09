@@ -4,7 +4,7 @@
 ?>
 
         <main>
-            Ceci est le contenu de ma page index.php
+            <h1>Ceci est le contenu de ma page <?php echo basename($_SERVER['SCRIPT_NAME']); ?></h1>
         </main>
 
 <?php
