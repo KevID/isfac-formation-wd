@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>Le domaine de Morton</title>
+    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet"/>
+    <link href="css/jquery.pagepiling.css" rel="stylesheet"/>
+    <link href="css/style2.css" rel="stylesheet"/>
+</head>
+<body class="body-full-page menu-is-closed pp-viewing-page1" data-offset="90" data-spy="scroll" data-target=".navbar">
+
+<div class="loader" style="display: none;">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+
+<div class="menu">
+    <span class="close-menu icon-cross2"></span>
+    <ul class="menu-list">
+        <li data-menuanchor="page1">
+            <a href="#page1">Accueil</a>
+        </li>
+        <li data-menuanchor="page2">
+            <a href="#page2">L'appartement</a>
+        </li>
+        <li data-menuanchor="page3">
+            <a href="#page3">Le quartier</a>
+        </li>
+        <li data-menuanchor="page4">
+            <a href="#page4">Les actualités</a>
+        </li>
+        <li data-menuanchor="page5">
+            <a href="#page5">Contact et réservation</a>
+        </li>
+    </ul>
+    <div class="menu-footer ">
+        <div class="social-list">
+            <a class="icon" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="icon" href=""><i class="fab fa-twitter"></i></a>
+            <a class="icon" href=""><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="cg social-list">
+            <button class="btn btn-primary" onClick="openModal('#modalCGU');" type="button">Mentions légales</button>
+            <button class="btn btn-primary" onClick="openModal('#modalCGV');" type="button">CGV</button>
+        </div>
+        <div class="copy">© KevID 2019. All Rights Reserved.</div>
+    </div>
+</div>
+
+<header>
+
+    <!-- start navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-white">
+        <div class="container-fluid boxed  p-relative">
+
+            <a class="navbar-brand logo" href="index.html" title="Logo">
+                <img alt="K-SHOES" class="b-logo" src="images/brand.png">
+            </a>
+
+            <address class="navbar-address"><i class="fas fa-phone"></i> <span>(+33) 6 00 00 00 00</span></address>
+
+            <div class="social-list hidden-xs">
+                <a class="icon" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="icon" href=""><i class="fab fa-twitter"></i></a>
+                <a class="icon" href=""><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Recherche" aria-label="Recherche"
+                           aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Recherche</button>
+                    </div>
+                </div>
+            </div>
+
+            <button aria-expanded="false" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+</header>
+
+<div class="copy-bottom boxed">© KevID 2019. All Rights Reserved.</div>
+
+<div class="pagepiling" id="pagepiling" style="overflow: hidden; touch-action: none;">
+
+    <div class="pp-scrollable section section-1 home pp-section pp-easing active" data-anchor="page1"
+         style="z-index: 7; transform: translate3d(0px, 0px, 0px);">
+        <div class="scroll-wrap">
+            <div class="section-bg" data-background="img/bg/1.jpg" data-overlay-light="7"
+                 style="background-image: url(&quot;img/bg/1.jpg&quot;);"></div>
+            <div class="section-vertical boxed boxed-inner">
+                <div class="vertical-title "><span>Interior design</span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <p class="subtitle-top">Welcome</p>
+                            <h1 class="display-2">We are <br> classic &amp; <span class="text-primary">Modern</span>
+                                <br>Architecture <span class="text-primary">Interior design</span></h1>
+                            <div class="hr-bottom"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pp-scrollable section section-2 about pp-section pp-easing" data-anchor="page2"
+         style="z-index: 6; transform: translate3d(0px, 0px, 0px);">
+        <div class="scroll-wrap">
+            <div class="section-bg" data-background="img/bg/2.jpg" data-overlay-light="7"
+                 style="background-image: url(&quot;img/bg/2.jpg&quot;);"></div>
+            <div class="section-vertical boxed boxed-inner">
+                <div class="vertical-title  hidden-xs hidden-sm"><span>what I do</span></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <p class="subtitle-top ">About</p>
+                            <h2 class="title-uppercase"> Welcome ! We are <b class="text-primary"> Architecture
+                                Agency</b>.</h2>
+                            Bring to the table win-win survival strategies to ensure proactive domination. At the
+                            end of the day, going forward, a new normal that has evolved from generation X is on the
+                            runway heading towards a streamlined cloud solution. User generated content in real-time
+                            will have multiple touchpoints for offshoring.
+                        </div>
+                        <div class="col-lg-5 offset-lg-2 ">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pp-scrollable  section section-3 portfolio pp-section pp-easing" data-anchor="page3"
+         style="z-index: 5; transform: translate3d(0px, 0px, 0px);">
+        <div class="scroll-wrap">
+            <div class="section-bg" data-background="img/bg/3.jpg" data-overlay-light="7"
+                 style="background-image: url(&quot;img/bg/3.jpg&quot;);"></div>
+            <div class="section-vertical boxed boxed-inner">
+                <div class="vertical-title hidden-xs hidden-sm"><span>my works</span></div>
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                    <div class="gallery row" style="position: relative; height: 570px;">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pp-scrollable section section-4 services pp-section pp-easing" data-anchor="page4"
+         style="z-index: 4; transform: translate3d(0px, 0px, 0px);">
+        <div class="scroll-wrap">
+            <div class="section-bg" data-background="img/bg/4.jpg" data-overlay-light="7"
+                 style="background-image: url(&quot;img/bg/4.jpg&quot;);"></div>
+            <div class="section-vertical boxed boxed-inner">
+                <div class="vertical-title  hidden-xs hidden-sm"><span>Services</span></div>
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pp-scrollable section section-5 contact pp-section pp-easing" data-anchor="page5"
+         style="z-index: 1; transform: translate3d(0px, 0px, 0px);">
+        <div class="scroll-wrap">
+            <div class="section-bg" data-background="img/bg/5.jpg" data-overlay-light="7"
+                 style="background-image: url(&quot;img/bg/5.jpg&quot;);"></div>
+            <div class="section-vertical boxed boxed-inner">
+                <div class="vertical-title  hidden-xs hidden-sm"><span>contact</span></div>
+                <div class="container">
+                    <div class="overflow-hidden">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="title-uppercase">Get In Touch</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="con-info">
+                                    <div class="info-item">
+                                        <!-- ICON -->
+                                        <span>
+                                                <i aria-hidden="true" class="fa fa-home"></i>
+                                            </span>
+                                        <!-- CONTENT -->
+                                        <p>Main Street, City Australia</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <!-- ICON -->
+                                        <span>
+                                                <i aria-hidden="true" class="fa fa-phone"></i>
+                                            </span>
+                                        <!-- CONTENT -->
+                                        <p>+1 023 456 789, +2 987 654 321</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <!-- ICON -->
+                                        <span>
+                                                <i aria-hidden="true" class="fa fa-envelope"></i>
+                                            </span>
+                                        <!-- CONTENT -->
+                                        <p>company@mail.com</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <!-- ICON -->
+                                        <span>
+                                                <i aria-hidden="true" class="fa fa-clock-o"></i>
+                                            </span>
+                                        <!-- CONTENT -->
+                                        <p>Mon-Fri - 9:00 AM to 5:00 PM</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-lg-6">
+
+                                <div class=" contact-form">
+                                    <div id="form-messages"></div>
+                                    <form class="needs-validation" id="ajax-contact" novalidate="">
+                                        <div class="row">
+                                            <div class="form-group col-lg-6">
+                                                <input class="form-control" id="name" name="name"
+                                                       placeholder="Your Name" required="" type="text">
+                                            </div>
+                                            <div class="form-group col-lg-6">
+
+                                                <input class="form-control" id="email" name="email"
+                                                       placeholder="Your Email" required="" type="email">
+
+                                            </div>
+
+                                            <div class="form-group col-lg-12">
+                                                <textarea class="form-control" id="message" name="message"
+                                                          placeholder="Your Message"
+                                                          required="" rows="8"></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <button class="btn btn-lg btn-black" type="submit">Send</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div aria-hidden="true" aria-labelledby="modalCGULabel" class="modal fade modalCGU" id="modalCGU" role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCGUTitle">Mentions légales</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                HÉBERGEMENT
+                Le Site est hébergé sur les serveurs de Gitlab
+
+                LE CONTENU ÉDITORIAL
+                Le Site propose un contenu éditorial (guides, actualités) dans un seul but documentaire et à titre
+                indicatif. Ce contenu doit être pris comme des éléments de réflexion. Les Utilisateurs sont invités par
+                l'Editeur à exploiter ces informations avec un esprit critique et discernement.
+
+                SERVICE PETITES ANNONCES
+                L'Editeur déploie des efforts permanents en termes humain, technique et financier pour assurer un
+                service Petites Annonces de qualité professionnelle en faveur des Utilisateurs du Site. En dépit de ses
+                efforts, l'Editeur ne pourra en aucun cas être tenu pour toute erreur involontaire de sa part ayant pour
+                conséquence l'absence d'exactitude, de fiabilité, de pertinence, d'exhaustivité, d'actualité des
+                informations insérées sur le service "Petites Annonces" du Site. Il en est de même pour la disponibilité
+                juridique des biens cités dans les annonces.
+
+                SERVICES DE SIMULATIONS
+                Les utilisateurs du Site ont à leur disposition des "simulateurs" permettant d'effectuer aisément un
+                certain nombre de calculs. Ces services de simulation n'ont pour ambition que de fournir une estimation
+                approximative concernant les valeurs calculées. Les résultats ne pouvant pas être garantis pour exacts,
+                l'utilisateur exploitera ces calculs avec un esprit critique et discernement.
+
+                LIENS HYPERTEXTES VERS DES SITES TIERS
+                Le Site propose des liens hypertextes pointant vers des sites Internet édités par des tiers. La mise en
+                place de ces liens ne signifie pas l'approbation par l'éditeur du contenu des dits sites. L'Editeur ne
+                peut pas réaliser en permanence un contrôle du contenu des dits sites, et ne peut donc garantir :
+                l'exactitude, la fiabilité, la pertinence, la mise à jour, ou l'exhaustivité de leur contenu ; leur
+                accès et bon fonctionnement technique. Par conséquent, la responsabilité de l'Editeur ne pourra être
+                retenue en cas d'éventuel litige entre un site référencé sur le Site et un Utilisateur. Seule la
+                responsabilité des éditeurs des sites référencés sur le Site pourra être engagée.
+
+                LA PROTECTION DE LA VIE PRIVÉE ET DES DONNÉES PERSONNELLES
+                Le Site collecte les informations personnelles fournies par les Utilisateurs à l'occasion de leur visite
+                sur le Site. Cette collecte permet : L'établissement de statistiques générales sur le trafic sur le Site
+                ; L'envoi vers les adresses mails fournies par les Utilisateurs de réponses, d'informations diverses ou
+                annonces provenant de l'Editeur. La collecte et le traitement des informations personnelles sur Internet
+                doivent se faire dans le respect des droits fondamentaux des personnes. Par conséquent, l'Editeur
+                s'engage à une politique de traitement en conformité avec la loi n°2004-575 du 21 juin 2004 pour la
+                confiance dans l'économie numérique. Tout utilisateur du Site dispose d'un droit d'accès, modification,
+                de rectification ou de suppression aux données personnelles le concernant. Il peut exercer ces droits en
+                contactant l'Editeur aux coordonnées indiquées en haut de page. Pour faciliter l'exercice de ces droits,
+                les Utilisateurs du Site peuvent se désinscrire en cliquant sur les liens hypertextes de désinscription
+                présents sur les mails adressés. Les ordinateurs se connectant aux serveurs du Site reçoivent sur leur
+                disque dur un ou plusieurs fichiers au format texte très légers appelés communément " Cookies ". Les
+                cookies enregistrent des informations relatives à la navigation sur le Site effectuée à partir de
+                l'ordinateur sur lequel est stocké le "cookie" (les pages consultées, la date et l'heure de la
+                consultation, etc.). Ils permettent d'identifier les visites successives faites à partir d'un même
+                ordinateur. Les personnes connectées au Site ont la liberté de s'opposer à l'enregistrement de
+                "cookies". Pour se faire, elles peuvent employer les fonctionnalités correspondantes sur leur
+                navigateur. Cependant, l'Editeur attire l'attention des Utilisateurs que, dans un tel cas, l'accès à
+                certains services du Site peut se révéler altérée, voire impossible.
+
+                LA SÉCURITÉ DES ÉCHANGES
+                L'Editeur s'engage à prendre toutes les mesures juridiques et techniques pour sécuriser les échanges. A
+                ce titre, L'Editeur s'engage à une obligation de moyen pour bloquer les détournements de données, et à
+                respecter les réglementations applicables. Néanmoins, les Utilisateurs du Site connaissent les
+                particularités techniques du réseau Internet et les risques afférents. Par conséquent, L'Editeur ne peut
+                garantir à ses Utilisateurs que les données échangées via les services proposés par le Site ne soient
+                pas récoltées de façon frauduleuse par des tiers.
+
+                LES DROITS DE PROPRIÉTÉ INTELLECTUELLE
+                L'Editeur est titulaire de droits concernant certaines données protégées par le Code de la propriété
+                intellectuelle. Il en est notamment ainsi pour sa ou ses marques, sa charte graphique, sa base de
+                données. Par conséquent, leur exploitation offline ou online, à titre gratuit ou onéreux, de tout ou
+                partie de ces données sans le consentement expresse de l'Editeur est interdite.
+
+                LA DISPONIBILITÉ DES SERVICES
+                L'Editeur dispose d'une obligation de moyens en terme d'accessibilité de service et met en place les
+                structures nécessaires pour rendre le Site accessible 7 jours sur 7 et 24 heures sur 24. Néanmoins,
+                L'Editeur peut suspendre l'accès sans préavis, notamment pour des raisons de maintenance et de mises à
+                niveau. L'Editeur n'est en aucun cas responsable des éventuels préjudices qui peuvent en découler pour
+                l'Utilisateur ou tout tiers. L'Editeur peut à tout moment supprimer tout ou partie de ses Services ou en
+                modifier leurs teneur notamment pour des raisons techniques, et cela sans préavis. L'Editeur se réserve
+                la faculté de refuser, unilatéralement et sans notification préalable, à tout Utilisateur l'accès à tout
+                ou partie du Site. Une telle décision pourrait notamment être prise en cas de non-respect des termes du
+                présent texte par un Utilisateur.
+
+                DROIT APPLICABLE
+                Le présent texte est soumis au droit français. L'Editeur se réserve le droit d'en amender à tout moment
+                les termes, conditions et mentions d'avertissement.
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="modalCGVLabel" class="modal fade modalCGV" id="modalCGV"
+     role="dialog"
+     tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCGVTitle">Conditions Générales de Vente</h5>
+                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                CONDITIONS GÉNÉRALES DE VENTE
+                VOTRE RÉSERVATION
+                Votre réservation vous sera confirmée à réception du paiement. Ce paiement devra être versé directement
+                par carte de crédit sur notre site Web via notre système de paiement sécurisé.
+
+                Dès réception du paiement, nous vous enverrons un e-mail vous détaillant votre réservation intégrant
+                votre contrat de location, l'adresse de la propriété, nos coordonnées, le solde et toutes les
+                instructions d'arrivée et de départ.
+
+                LE PAIEMENT
+                Le paiement devra être effectué par carte de crédit via notre propre site Web ou celui d’un de nos
+                partenaires.
+
+                Dans le cadre de circonstances exceptionnelles, le paiement peut également être réalisé par virement
+                bancaire si les conditions suivantes sont respectées:
+
+                Le montant net correspondant soit reçu sur notre compte bancaire 7 jours avant l'arrivée
+                Nous recevons une confirmation écrite notifiant que le virement a bien été effectué
+                Tous les frais bancaires sont facturés au client
+                CAUTION
+                Les clients devront verser une caution entre 300 et 500 euros pour un appartement ou entre 1500 et 4000
+                euros pour une maison ou villa, qui sera demandée à l’arrivée pour tout dommage causé dans le logement
+                et ainsi qu’à son équipement.
+
+                Veuillez noter qu’en acceptant nos Conditions générales, vous acceptez que les dommages causés, par vous
+                ou les personnes vous accompagnant, seront déduits de votre caution. En cas de dommages supplémentaires,
+                le client en sera également responsable.
+
+                Cette caution sera gérée pendant l'entrée dans les locaux via une emprunte bancaire qui sera
+                automatiquement annulée entre 4 à 7 jours après le départ et après inspection de la propriété.
+
+                POLITIQUE D'ANNULATION
+                Toutes demandes d’annulation ou de modification doivent être faites par courrier électronique. Les
+                annulations ou modifications par téléphone ne sont pas acceptées.
+
+                En cas d'annulation 30% du paiement ne sera pas remboursé
+
+                En cas d'annulation 7 jours avant votre arrivée, des frais supplémentaires seront appliqués
+                correspondant à un total de 50% du montant total
+
+                Tout changement de dates ou d’appartements sera considéré comme une nouvelle réservation et sera soumise
+                aux procédures d'annulation standards.
+
+                Nous vous conseillons fortement de souscrire à une assurance annulation de séjour.
+
+                Si, après réception de l'e-mail de confirmation, Bordeaux Locations est incapable de proposer au client
+                le logement qui a été réservé, ou une propriété avec des caractéristiques similaires ou meilleures, le
+                client sera alors remboursé selon les conditions suivantes :
+
+                Remboursement de la totalité du paiement avant votre arrivée
+                Remboursement du montant correspondant aux jours non utilisés de votre réservation
+                VOS CONTACTS PENDANT VOTRE SÉJOUR
+                Dans votre e-mail de confirmation, vous trouverez le nom et le numéro de téléphone de votre Hôte, la
+                personne qui vous accueillera, vous présentera le bien réservé et vous remettra les clés de la
+                propriété.
+
+                Merci de tenir informée cette personne de votre heure d'arrivée la plus précise possible afin que nous
+                puissions planifier votre entrée.
+
+                En cas de modifications ou retards, merci de veiller à bien l’informer des changements.
+
+                VOTRE ARRIVÉE
+                Il est extrêmement important que nous ayons votre heure d'arrivée exacte. Sans cette information, votre
+                entrée dans les lieux sera potentiellement retardée.
+
+                Lors de votre arrivée à l'aéroport (ou 1 heure avant d'arriver à votre ville de destination), vous devez
+                informer votre Hôte afin que celui-ci commence à se diriger vers votre bien réservé pour vous accueillir
+                et partager toutes les instructions.
+
+                Veuillez noter que l’entrée doit être organisée entre 15 heures et 21heures. Si vous souhaitez entrer
+                dans les lieux plus tôt, nous essaierons, dans la mesure du possible de répondre positivement à cette
+                demande.
+
+                Toute arrivée au-delà de 21h sera facturée 10 euros supplémentaire par heure par le Hôte.
+
+                VOTRE DÉPART
+                Il est prévu que vous devez quitter la propriété entre 8h00 et 10h00. L’horaire de votre départ aura été
+                programmée lors de votre entrée dans la propriété. Le jour de votre départ, votre Hôte viendra pour
+                inspecter la propriété et reprendre possession des clés.
+
+                Veuillez noter qu’une sortie effectuée après 10h00 sans autorisation préalable sera facturée 40 euros.
+
+                Si vous avez besoin de quitter la propriété après 10h, merci de veiller à nous solliciter en amont. Nous
+                ferons tout pour répondre à votre demande si nous ne disposons pas d'une arrivée le même jour. Si la
+                propriété est disponible, vous pourrez rester dans la propriété jusqu'à 17 heures, mais un supplément de
+                50% du prix de la location appartement par nuit vous sera alors demandé. Après 17 heures, nous
+                demanderons de régler le prix total de la location par nuit de la propriété.
+
+                LE MÉNAGE
+                La propriété aura été nettoyée avant votre arrive et les lits auront été faits.
+
+                Avant de partir, le client est obligé de quitter la propriété dans des conditions correctes, la
+                vaisselle faite, les poubelles vidées et la propriété rangée. Dans le cas contraire des frais
+                supplémentaires de nettoyage de 50 euros vous seront alors facturés.
+
+                NOMBRE ET IDENTITÉ DES LOCATAIRES
+                Le locataire doit informer Bordeaux Locations du nombre de personnes concernées par la réservation.
+
+                Seules les personnes indiquées dans cette même réservation pourront entrer dans la propriété, à moins
+                d’une validation de Bordeaux Locations.
+
+                Le nombre de personnes associées à cette réservation ne doit pas dépasser le numéro prévu dans la
+                réservation, sauf dans le cas de bébés de moins de deux ans.
+
+                Les animaux domestiques ne sont pas admis, sauf autorisation spécialement accordée.
+
+                Si le client ne se conforme pas à l'une de ces conditions, Bordeaux Locations se réserve le droit de
+                demander au client de quitter la propriété sans que le locataire ne puisse demander toute forme de
+                compensation.
+
+                LES RÈGLES DE CONDUITE DANS LA PROPRIÉTÉ
+                Les clients sont obligés de respecter le voisinage et la copropriété. La musique et les fêtes sont
+                strictement interdites. Pendant votre séjour, nous demandons aux locataires de limiter le bruit, plus
+                particulièrement entre 21 heures et 9 heures.
+
+                En cas de plainte de la part du voisinage, Bordeaux Locations se réserve le droit de demander au
+                locataire de quitter immédiatement les lieux quelque soit l’heure, le jour ou la nuit.
+
+                Avec la signature du contrat bail, le locataire accepte l’ensemble des conditions notamment de se
+                comporter de façon responsable et correcte. En cas de comportement non respectueux et incorrecte,
+                Bordeaux Locations se réserve le droit de demander aux locataires de quitter la propriété. Dans ce cas
+                exceptionnel, le client perdra tous les paiements effectués, y compris la location de la propriété et le
+                dépôt.
+
+                LES RESPONSABILITÉS
+                Ni Bordeaux Locations ni le propriétaire ne sera tenu responsable des dommages directs ou indirects
+                causés à la propriété comme conséquence de l'utilisation par le locataire. Cela comprend les dommages,
+                l'assurance, la perte due à un incendie, le vol, et mauvaise conduite.
+
+                Dans le cas où le client ne respecte pas les Conditions générales mentionnées ci-dessus, Bordeaux
+                Locations se réserve le droit de demander au client de quitter la propriété, et le client en question ne
+                pourra demander aucune forme de compensation.
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-message fade" id="success" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span aria-label="Close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></span>
+                <h2 class="modal-title">Thank you</h2>
+                <p class="modal-subtitle">Your message is successfully sent...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal modal-message fade" id="error" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span aria-label="Close" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></span>
+                <h2 class="modal-title">Sorry</h2>
+                <p class="modal-subtitle"> Something went wrong </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.pagepiling.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
