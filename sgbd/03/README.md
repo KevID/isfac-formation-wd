@@ -420,6 +420,26 @@ VALUES ('Nom', 'Prénom')
 
 ### 4.1 Afficher les informations d’une palette dont la référence est rentrée par l’utilisateur
 
+```sql
+SELECT *
+FROM palettes
+WHERE RefPalette = ':RefPalette';
+```
+
 ### 4.2 Afficher les transports de palette compris dans une borne chronologique indiquée par l’utilisateur
 
+```sql
+SELECT *
+FROM transport
+WHERE date_trans BETWEEN ':date_min' AND ':date_max';
+```
+
 ### 4.3 Indiquer le nombre d’enlevement réalisés par un transporteur dont le code est saisi par l’utilisateur
+
+```sql
+SELECT code_transporteur, COUNT(*) AS nb_transport
+FROM transport
+WHERE type = 'S'
+GROUP BY code_transporteur
+HAVING code_transporteur = ':code_transporteur';
+```

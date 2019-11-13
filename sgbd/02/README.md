@@ -147,3 +147,146 @@ SELECT *
 FROM dump
 WHERE date_naissance = '2000-01-01';
 ```
+
+## Exercices LEVEL 2
+
+>Via phpmyadminAjoutezla table aurevoir( n°) et insérezdans celle-ci les valeurs ( 10,36,47,52,240)Ajoutezla table CODE(Codematr, libellé) et inserezdans celle-çi les valeurs(1, Marié), (2, Veuf/veuve), (3,Seul),(4, Divorcé)
+>Elaborer ensuite les vues suivantes:
+
+### 1. Nom et prénom des salariés mariés
+
+```sql
+CREATE VIEW exo1
+AS
+SELECT matricule, nom, prenom
+FROM dump d
+    INNER JOIN code c ON d.CodeMatr = c.codematr
+WHERE c.libellé = 'Marié';
+```
+
+### 2. Nom, prénom, date de naissance des salariés dont l’identifiant figure dans la table aurevoir
+
+```sql
+CREATE VIEW exo2
+AS
+SELECT matricule, nom, prenom, date_naissance
+FROM dump
+WHERE matricule IN (SELECT number FROM aurevoir);
+```
+
+### 3. Liste des salariés ne faisant pas partie de la liste des id de la table aurevoir
+
+```sql
+CREATE VIEW exo3
+AS
+SELECT matricule, nom, prenom, date_naissance
+FROM dump
+WHERE matricule NOT IN (SELECT number FROM aurevoir);
+```
+
+### 4. Liste des salariés qui sont soit des niçois gagnant plus de 3000 € par mois, soit des parisiens gagnant entre 2000 et 2500 € par mois
+
+```sql
+CREATE VIEW exo4
+AS
+SELECT  matricule, nom, prenom, site, salaire
+FROM dump
+WHERE (site = 'Nice' AND salaire > 3000)
+    OR (site = 'Paris' AND salaire BETWEEN 2000 AND 2500);
+```
+
+### 5. Calculer le nombre de salariés par tranche d’Age
+
+```sql
+CREATE VIEW exo5
+AS
+SELECT tranche_age, count(tranche_age) AS nb_salaries
+FROM dump
+GROUP BY tranche_age
+ORDER BY tranche_age;
+```
+
+### 6. Calculer le salaire moyen, min et max par poste
+
+```sql
+CREATE VIEW exo6
+AS
+SELECT  poste,
+        ROUND(AVG(salaire), 2) AS salaire_moyen,
+        ROUND(MIN(salaire), 2) AS salaire_min,
+        ROUND(MAX(salaire), 2) AS salaire_max
+FROM dump
+GROUP BY poste
+ORDER BY poste;
+```
+
+### 7. Afficher le nombre de salariésseuls ou divorcés
+
+```sql
+CREATE VIEW exo7
+AS
+SELECT matricule, nom, prenom
+FROM dump d
+    INNER JOIN code c ON d.CodeMatr = c.codematr
+WHERE c.libellé IN ('Marié', 'Seul');
+```
+
+### 8. Trouver le prénom le plus représenté dans cette entreprise
+
+```sql
+CREATE VIEW exo8
+AS
+SELECT prenom
+FROM dump
+GROUP BY prenom
+HAVING COUNT(prenom) = (SELECT count(prenom)
+                            FROM dump
+                            GROUP BY prenom
+                            ORDER BY COUNT(prenom) DESC
+                            LIMIT 1
+                        )
+ORDER BY prenom;
+```
+
+### 9. Trouver le prénom le plus représenté dans cette entreprise
+
+```sql
+CREATE VIEW exo9
+AS
+SELECT matricule, nom, prenom
+FROM exo1
+WHERE prenom IN ('Jeanine', 'Jacques');
+```
+
+### 10. Dans la vue n°1, ne garder que les techniciens
+
+```sql
+CREATE VIEW exo10
+AS
+SELECT m.matricule, m.nom, m.prenom
+FROM exo1 m
+    INNER JOIN dump d ON m.matricule = d.matricule
+WHERE poste = 'Technicien';
+```
+
+### 11. Afficher le poste qui permet, en moyenne, de gagner le plus
+
+```sql
+CREATE VIEW exo11
+AS
+SELECT poste, salaire_moyen
+FROM exo6
+ORDER BY salaire_moyen DESC
+LIMIT 1;
+```
+
+### 12. Afficher le nombre de salariés par nombre d’enfants
+
+```sql
+CREATE VIEW exo12
+AS
+SELECT n_enfants, count(matricule) AS nb_salaries
+FROM dump
+GROUP BY n_enfants
+ORDER BY n_enfants;
+```

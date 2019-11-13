@@ -387,3 +387,84 @@ FROM articles ar
 WHERE designation LIKE '%lampe%'
 GROUP BY ar.codearticle;
 ```
+
+## Effectuez les opérations suivantes:
+
+### 1. Ajoutez-vous à la liste des acheteurs
+
+```sql
+INSERT INTO acheteurs (codeacheteur, nomacheteur, prenomacheteur) VALUES ('PKe', 'PAULMIER', 'Kevin');
+```
+
+### 2. Enregistrer une facture associée à votre nom
+
+```sql
+INSERT INTO factures (codeacheteur, codefournisseur, datefacture, datereglement) VALUES ('PKe', '55', '2019-11-12', '2019-11-13');
+INSERT INTO lignesfactures (codeligne, codefacture, codearticle, prixunitaire, quantité) VALUES (1, '645', '7290', '313.62', '2');
+```
+
+### 3. Ajoutez votre entreprise à la liste des fournisseurs
+
+```sql
+INSERT INTO fournisseurs (rs, adresse, cp, ville) VALUES ('KevID', '17 rue Albin Haller', '86000', 'POITIERS');
+```
+
+### 4. Calculez le total de chaque ligne facture
+
+```sql
+ALTER TABLE lignesfactures ADD total DOUBLE;
+UPDATE lignesfactures SET total = ROUND((prixunitaire * quantité), 2);
+```
+
+### 5. Supprimez de la base les articles d'AQUAPAC
+
+```sql
+DELETE
+FROM articles
+WHERE designation LIKE '%AQUAPAC%';
+```
+
+## Répondre aux questions ouvertes suivantes
+
+### 1. Combien d'acheteurs ont le même prénom
+
+```sql
+SELECT prenomacheteur, COUNT(prenomacheteur) AS nbSameFirstname
+FROM acheteurs
+GROUP BY prenomacheteur;
+```
+
+### 2. Y'a t-il des factures réglées le jour même de leur émission
+
+```sql
+SELECT codefacture, datefacture, datereglement
+FROM factures
+WHERE datefacture = datereglement;
+```
+
+### 3. Y'a t-il des factures de plus de 10 lignes
+
+```sql
+SELECT codefacture, COUNT(codefacture)
+FROM lignesfactures
+GROUP BY codefacture
+HAVING COUNT(codefacture) > 10;
+```
+
+### 4. Existe-t-il des acheteurs ayant enregistré aucune facture
+
+```sql
+SELECT a.codeacheteur, nomacheteur, prenomacheteur
+FROM acheteurs a
+    LEFT JOIN factures f ON a.codeacheteur = f.codeacheteur
+WHERE f.codefacture IS NULL;
+```
+
+### 5. Imprimer la liste des articles qui n'nont jamais été achetés
+
+```sql
+SELECT a.codearticle, designation
+FROM articles a
+    LEFT JOIN lignesfactures l ON a.codearticle = l.codearticle
+WHERE l.codearticle IS NULL;
+```
