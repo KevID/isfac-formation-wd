@@ -33,7 +33,7 @@
 }
 
 .social-list a:hover {
-    color: #ecb647;
+    color: #BA55D3;
     text-decoration: none;
 }
 
@@ -57,14 +57,15 @@ button.navbar-toggle {
     position: fixed;
     top: 0;
     bottom: 0;
-    right: 0;
+    left: 0;
     width: 35%;
     z-index: 9999;
     background-color: #fff;
-    -webkit-transform: translateX(100%);
-    -ms-transform: translateX(100%);
-    -o-transform: translateX(100%);
-    transform: translateX(100%);
+    font-family: 'Kalam', cursive;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
     -webkit-transition: all .6s ease;
     -o-transition: all .6s ease;
     transition: all 0.6s ease;
@@ -84,14 +85,14 @@ button.navbar-toggle {
 }
 
 .close-menu:hover {
-    color: #ecb647;
+    color: #BA55D3;
 }
 
 .menu-list {
     opacity: 0;
     position: absolute;
     left: 0;
-    top: 9rem;
+    top: 4rem;
     bottom: 10.5rem;
     padding-left: 15%;
     overflow-x: hidden;
@@ -99,7 +100,6 @@ button.navbar-toggle {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: touch;
     font-weight: 600;
-    letter-spacing: -.025rem;
     list-style: none;
     margin: 0;
     -webkit-transform: translateY(3rem);
@@ -118,7 +118,7 @@ button.navbar-toggle {
 .menu-list .active > a,
 .menu-list li a:hover {
     text-decoration: none;
-    color: #ecb647;
+    color: #BA55D3;
 }
 
 .menu-list > li {
@@ -175,7 +175,7 @@ button.navbar-toggle {
 }
 
 .menu-footer .social-list a:hover {
-    color: #ecb647;
+    color: #BA55D3;
 }
 
 .menu-footer .copy {
@@ -204,14 +204,6 @@ button.navbar-toggle {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.07);
 }
 
-.menu-is-opened .menu .menu-lang {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
-    -o-transform: translate(0);
-    transform: translate(0);
-    opacity: 1;
-}
-
 .menu-is-opened .menu-list {
     -webkit-transform: translate(0);
     -ms-transform: translate(0);
@@ -229,18 +221,208 @@ button.navbar-toggle {
     opacity: 1;
 }
 
-.menu-is-closed .menu .menu-lang,
-.menu-is-closed .menu .menu-list {
-    opacity: 0;
-    -webkit-transition-delay: 0s;
-    -o-transition-delay: 0s;
-    transition-delay: 0s;
+/* ===================================
+   pagepiling
+====================================== */
+
+.pagepiling .section {
+    background: #fff;
+    padding-top: 11.3rem;
+    padding-bottom: 7rem;
 }
 
-.menu-is-closed .menu .menu-footer .social-list,
-.menu-is-closed .menu .menu-footer .copy {
-    opacity: 0;
-    -webkit-transition-delay: 0s;
-    -o-transition-delay: 0s;
-    transition-delay: 0s;
+.pagepiling .section-1.pp-scrollable .vertical-centred {
+    padding-top: 10rem;
+    padding-bottom: 11rem;
+}
+
+.pagepiling .pp-scrollable {
+    padding: 0;
+}
+
+.pp-scrollable .vertical-centred {
+    padding-top: 11.3rem;
+    padding-bottom: 7rem;
+}
+
+.scroll-wrap {
+    position: relative;
+    min-height: 100%;
+}
+
+/*-------------------------------------------------------
+          [ Overlay Effect Bg image ]
+-------------------------------------------------------*/
+.section .container {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4,
+.section h5,
+.section h6 {
+    color: #322515;
+    font-family: 'Kalam', cursive;
+}
+
+.section span,
+.section p {
+    color: #322515;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.section-bg:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    opacity: 0.7;
+}
+
+.copy-bottom {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    bottom: 2.4rem;
+    color: #000;
+}
+
+#pp-nav li .active span {
+    background: #9932CC;
+}
+
+#pp-nav span {
+    border: 1px solid #9932CC;
+}
+
+.menu .map {
+    width: 300px%;
+    height: 200px;
+}
+
+/* ===================================
+   Responsive
+====================================== */
+@media screen and (max-width: 991px) {
+    .section-vertical.boxed.boxed-inner {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: baseline;
+    }
+
+    .vertical-title {
+        display: none;
+    }
+
+    .dots-image-2 .experience-info {
+        position: absolute;
+        left: 0;
+        margin-top: -4.4rem;
+        top: 100%;
+    }
+
+    .con-info {
+        margin-bottom: 50px;
+    }
+
+    .menu {
+        width: 50%;
+    }
+
+    .copy-bottom {
+        display: none;
+    }
+
+    .home .section-vertical {
+        padding-top: 25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #pp-nav {
+        display: none;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    img.b-logo {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .boxed {
+        padding-left: 1.2857rem;
+        padding-right: 1.2857rem;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .display-2 {
+        font-size: 4.14rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navbar-brand {
+        display: none;
+    }
+
+    .display-2 {
+        font-size: 2.14rem;
+    }
+}
+
+
+.modal-body {
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.modal-title {
+}
+
+/* Home */
+.home .section-vertical {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+
+.home section {
+    width: 70%;
+    height: 300px;
+    border: 1px solid red;
+}
+
+.home aside {
+    width: 30%;
+    height: 300px;
+    border: 1px solid red;
 }

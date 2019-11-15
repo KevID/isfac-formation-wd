@@ -37,6 +37,7 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 41 - array() et foreach() - Exercices 1 à 3
 * 43 - array() et foreach() - Exercices 4 à 9
 * 47 - include() / require()
+* 48 - PHP/BDD (connexion, requêtes, manipulation de résultats)
 
 ### SGBD
 

@@ -5,25 +5,21 @@
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
-    <title>Le domaine de Morton</title>
+    <title>Au coeur de Montmartre</title>
     <link href="favicon.ico" rel="icon" type="image/x-icon"/>
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Kalam:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
     <link href="css/jquery.pagepiling.css" rel="stylesheet"/>
-    <link href="css/style2.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
 </head>
-<body class="body-full-page menu-is-closed pp-viewing-page1" data-offset="90" data-spy="scroll" data-target=".navbar">
 
-<div class="loader" style="display: none;">
-    <div class="spinner">
-        <div class="double-bounce1"></div>
-        <div class="double-bounce2"></div>
-    </div>
-</div>
+<body class="body-full-page pp-viewing-page1" data-offset="90" data-spy="scroll" data-target=".navbar">
 
 <div class="menu">
-    <span class="close-menu icon-cross2"></span>
+    <span class="close-menu"><i class="fas fa-times"></i></span>
     <ul class="menu-list">
         <li data-menuanchor="page1">
             <a href="#page1">Accueil</a>
@@ -43,26 +39,34 @@
     </ul>
     <div class="menu-footer ">
         <div class="social-list">
-            <a class="icon" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="icon" href=""><i class="fab fa-twitter"></i></a>
-            <a class="icon" href=""><i class="fab fa-instagram"></i></a>
+            <a class="icon" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a class="icon" href="#"><i class="fab fa-twitter"></i></a>
+            <a class="icon" href="#"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="cg social-list">
+        <div class="cg-list">
             <button class="btn btn-primary" onClick="openModal('#modalCGU');" type="button">Mentions légales</button>
             <button class="btn btn-primary" onClick="openModal('#modalCGV');" type="button">CGV</button>
         </div>
-        <div class="copy">© KevID 2019. All Rights Reserved.</div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d6239.8055254417495!2d2.3360919364261354!3d48.88652070090356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smontmartre!5e0!3m2!1sfr!2sfr!4v1573740122161!5m2!1sfr!2sfr"
+                    frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+        <div class="copy">© Kévin PAULMIER 2019. Projet pédagogique</div>
     </div>
 </div>
 
 <header>
 
-    <!-- start navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-white">
         <div class="container-fluid boxed  p-relative">
 
+            <button aria-expanded="false" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <a class="navbar-brand logo" href="index.html" title="Logo">
-                <img alt="K-SHOES" class="b-logo" src="images/brand.png">
+                <img alt="Au coeur de Montmartre" class="b-logo" src="images/brand.png">
             </a>
 
             <address class="navbar-address"><i class="fas fa-phone"></i> <span>(+33) 6 00 00 00 00</span></address>
@@ -83,36 +87,46 @@
                 </div>
             </div>
 
-            <button aria-expanded="false" class="navbar-toggle" data-target="#navbar-collapse" data-toggle="collapse"
-                    type="button">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
         </div>
     </nav>
 
 </header>
 
-<div class="copy-bottom boxed">© KevID 2019. All Rights Reserved.</div>
+<div class="copy-bottom boxed">© KevID 2019.</div>
 
 <div class="pagepiling" id="pagepiling" style="overflow: hidden; touch-action: none;">
 
     <div class="pp-scrollable section section-1 home pp-section pp-easing active" data-anchor="page1"
          style="z-index: 7; transform: translate3d(0px, 0px, 0px);">
         <div class="scroll-wrap">
-            <div class="section-bg" data-background="img/bg/1.jpg" data-overlay-light="7"
-                 style="background-image: url(&quot;img/bg/1.jpg&quot;);"></div>
+            <div class="section-bg" data-background="img/bg/1.jpg"
+                 style="background-image: url(&quot;img/bg/1.jpg&quot;);">
+
+            </div>
             <div class="section-vertical boxed boxed-inner">
-                <div class="vertical-title "><span>Interior design</span></div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-10">
-                            <p class="subtitle-top">Welcome</p>
-                            <h1 class="display-2">We are <br> classic &amp; <span class="text-primary">Modern</span>
-                                <br>Architecture <span class="text-primary">Interior design</span></h1>
-                            <div class="hr-bottom"></div>
+                        <div class="col-lg-8">
+                            <h1>Au coeur de Montmartre</h1>
+                            <p>Montmartre est un quartier au charme authentique, célèbre pour la basilique du Sacré-Cœur
+                                et sa vue magnifique sur Paris. Le haut de la colline se découvre en empruntant le
+                                funiculaire, au prix d’un ticket de métro. Les plus sportifs effectuent l’ascension des
+                                222 marches à travers le square Louise Michel. Après l’incontournable visite de la
+                                basilique, les visiteurs partent pour une flânerie historique sur la Butte Montmartre :
+                                la place du Tertre et ses célèbres caricaturistes, l’espace Dalí, les vignes de
+                                Montmartre, le cabaret du Lapin Agile, le musée Montmartre… La balade se poursuit en
+                                redescendant vers le Moulin Rouge, cabaret historique aux soirées endiablées et
+                                mondialement connues. Sur leur chemin, les visiteurs apprécient les vitrines créatives
+                                et tendance des rues des Abbesses et Tardieu, les commerces de la rue Lepic, le
+                                cosmopolisme de la rue de Steinkerque, le quartier coquin de Pigalle (sex-shops) et le
+                                cimetière de Montmartre. À quelques minutes à pied du Moulin Rouge, dans SoPi (South
+                                Pigalle), le salon de thé du jardin du musée de la Vie Romantique est idéal pour une
+                                pause gourmande.</p>
                         </div>
-
+                        <div class="col-lg-4">
+                            <h1>Actualité</h1>
+                            Aside
+                        </div>
                     </div>
                 </div>
             </div>
@@ -122,26 +136,10 @@
     <div class="pp-scrollable section section-2 about pp-section pp-easing" data-anchor="page2"
          style="z-index: 6; transform: translate3d(0px, 0px, 0px);">
         <div class="scroll-wrap">
-            <div class="section-bg" data-background="img/bg/2.jpg" data-overlay-light="7"
+            <div class="section-bg" data-background="img/bg/2.jpg"
                  style="background-image: url(&quot;img/bg/2.jpg&quot;);"></div>
             <div class="section-vertical boxed boxed-inner">
-                <div class="vertical-title  hidden-xs hidden-sm"><span>what I do</span></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <p class="subtitle-top ">About</p>
-                            <h2 class="title-uppercase"> Welcome ! We are <b class="text-primary"> Architecture
-                                Agency</b>.</h2>
-                            Bring to the table win-win survival strategies to ensure proactive domination. At the
-                            end of the day, going forward, a new normal that has evolved from generation X is on the
-                            runway heading towards a streamlined cloud solution. User generated content in real-time
-                            will have multiple touchpoints for offshoring.
-                        </div>
-                        <div class="col-lg-5 offset-lg-2 ">
 
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -149,19 +147,10 @@
     <div class="pp-scrollable  section section-3 portfolio pp-section pp-easing" data-anchor="page3"
          style="z-index: 5; transform: translate3d(0px, 0px, 0px);">
         <div class="scroll-wrap">
-            <div class="section-bg" data-background="img/bg/3.jpg" data-overlay-light="7"
+            <div class="section-bg" data-background="img/bg/3.jpg"
                  style="background-image: url(&quot;img/bg/3.jpg&quot;);"></div>
             <div class="section-vertical boxed boxed-inner">
-                <div class="vertical-title hidden-xs hidden-sm"><span>my works</span></div>
-                <div class="container">
-                    <div class="row">
 
-                    </div>
-                    <div class="gallery row" style="position: relative; height: 570px;">
-
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -169,7 +158,7 @@
     <div class="pp-scrollable section section-4 services pp-section pp-easing" data-anchor="page4"
          style="z-index: 4; transform: translate3d(0px, 0px, 0px);">
         <div class="scroll-wrap">
-            <div class="section-bg" data-background="img/bg/4.jpg" data-overlay-light="7"
+            <div class="section-bg" data-background="img/bg/4.jpg"
                  style="background-image: url(&quot;img/bg/4.jpg&quot;);"></div>
             <div class="section-vertical boxed boxed-inner">
                 <div class="vertical-title  hidden-xs hidden-sm"><span>Services</span></div>
@@ -185,86 +174,9 @@
     <div class="pp-scrollable section section-5 contact pp-section pp-easing" data-anchor="page5"
          style="z-index: 1; transform: translate3d(0px, 0px, 0px);">
         <div class="scroll-wrap">
-            <div class="section-bg" data-background="img/bg/5.jpg" data-overlay-light="7"
+            <div class="section-bg" data-background="img/bg/5.jpg"
                  style="background-image: url(&quot;img/bg/5.jpg&quot;);"></div>
             <div class="section-vertical boxed boxed-inner">
-                <div class="vertical-title  hidden-xs hidden-sm"><span>contact</span></div>
-                <div class="container">
-                    <div class="overflow-hidden">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="title-uppercase">Get In Touch</h2>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="con-info">
-                                    <div class="info-item">
-                                        <!-- ICON -->
-                                        <span>
-                                                <i aria-hidden="true" class="fa fa-home"></i>
-                                            </span>
-                                        <!-- CONTENT -->
-                                        <p>Main Street, City Australia</p>
-                                    </div>
-                                    <div class="info-item">
-                                        <!-- ICON -->
-                                        <span>
-                                                <i aria-hidden="true" class="fa fa-phone"></i>
-                                            </span>
-                                        <!-- CONTENT -->
-                                        <p>+1 023 456 789, +2 987 654 321</p>
-                                    </div>
-                                    <div class="info-item">
-                                        <!-- ICON -->
-                                        <span>
-                                                <i aria-hidden="true" class="fa fa-envelope"></i>
-                                            </span>
-                                        <!-- CONTENT -->
-                                        <p>company@mail.com</p>
-                                    </div>
-                                    <div class="info-item">
-                                        <!-- ICON -->
-                                        <span>
-                                                <i aria-hidden="true" class="fa fa-clock-o"></i>
-                                            </span>
-                                        <!-- CONTENT -->
-                                        <p>Mon-Fri - 9:00 AM to 5:00 PM</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-lg-6">
-
-                                <div class=" contact-form">
-                                    <div id="form-messages"></div>
-                                    <form class="needs-validation" id="ajax-contact" novalidate="">
-                                        <div class="row">
-                                            <div class="form-group col-lg-6">
-                                                <input class="form-control" id="name" name="name"
-                                                       placeholder="Your Name" required="" type="text">
-                                            </div>
-                                            <div class="form-group col-lg-6">
-
-                                                <input class="form-control" id="email" name="email"
-                                                       placeholder="Your Email" required="" type="email">
-
-                                            </div>
-
-                                            <div class="form-group col-lg-12">
-                                                <textarea class="form-control" id="message" name="message"
-                                                          placeholder="Your Message"
-                                                          required="" rows="8"></textarea>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <button class="btn btn-lg btn-black" type="submit">Send</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -547,8 +459,8 @@
 </div>
 
 <script crossorigin="anonymous"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script crossorigin="anonymous"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -557,7 +469,6 @@
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script src="js/jquery.pagepiling.min.js"></script>
-<script src="js/jquery.fancybox.min.js"></script>
 <script src="js/main.js"></script>
 
 
