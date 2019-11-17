@@ -1,0 +1,53 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css?family=Kalam:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+// Import fontawesome
+@import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
+// Import scss children
+@import 'params';
+@import 'pagepiling';
+@import 'topmenu';
+@import 'mainmenu';
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+form, fieldset, input, textarea, p, blockquote, th, td {
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primary-color;
+  font-family: 'Kalam', cursive;
+}
+
+a {
+  color: $primary-color-text;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Scrallbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}

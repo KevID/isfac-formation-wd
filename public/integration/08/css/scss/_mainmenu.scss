@@ -1,0 +1,96 @@
+.mainMenu {
+  position: absolute;
+
+  .background {
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+  }
+
+  .container {
+    position: absolute;
+    z-index: 1000;
+    width: 30vw;
+    height: 100vh;
+    align-content: space-between;
+    background-color: $mainMenu-background-color;
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -moz-transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    -o-transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
+    transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
+
+
+    .closeIcon {
+      margin: 2vw 2vw 0 0;
+      text-align: right;
+      font-size: x-large;
+      opacity: 1;
+      -webkit-transition: opacity 2s ease-in-out;
+      -moz-transition: opacity 2s ease-in-out;
+      -ms-transition: opacity 2s ease-in-out;
+      -o-transition: opacity 2s ease-in-out;
+
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin-block-start: 0;
+      margin-left: 2vw;
+    }
+
+    a {
+      font-size: 2vw;
+      font-family: 'Kalam', cursive;
+    }
+
+    .map {
+      width: 100%;
+
+      iframe {
+        width: inherit;
+      }
+    }
+  }
+
+}
+
+.mainMenu.close {
+  .background {
+    z-index: 0;
+    opacity: 0;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+  }
+
+  .container {
+    transform: translate3d(-100%, 0, 0);
+
+    .closeIcon {
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -ms-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
+    }
+  }
+}
