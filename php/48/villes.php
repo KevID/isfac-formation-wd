@@ -1,3 +1,15 @@
+<?php
+$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+if ($page < 1) {
+    $page = 1;
+}
+
+$step = (isset($_GET['step'])) ? (int)$_GET['step'] : 10;
+if ($step < 0) {
+    $step = 10;
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +28,45 @@
 try {
     $bdd = new PDO('mysql:host=localhost;dbname=test_pdo', 'root', 'root', [PDO::ATTR_ERRMODE =>
                                                                                 PDO::ERRMODE_EXCEPTION]);
-    $requete = 'SELECT ville_id, ville_nom, ville_code_postal from villes_france_free LIMIT 20';
+    $requete = 'SELECT ville_id, ville_nom, ville_code_postal from villes_france_free LIMIT ' . (($page - 1) * $step) .
+        ', ' . $step . '';
     $reponse = $bdd->query($requete);
+
+    // Précédent
+    if ($page > 1) {
+        echo '<a href="?page=' . ($page - 1) . '&step=' . $step . '">Précédent</a>';
+    } else {
+        echo 'Précédent';
+    }
+
+    echo '&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ';
+
+    // Suivant
+    echo ' <a href="?page=' . ($page + 1) . '&step=' . $step . '">Suivant</a><br><br>';
+    ?>
+
+    <form method="GET">
+        <input type="hidden" name="page" value="<?= $page; ?>">
+        <select name="step">
+            <?php
+            for ($i = 10; $i <= 100; $i = $i + 10) {
+                if ($step == $i) {
+                    echo '<option value="' . $i . '" selected>' . $i . '</option>';
+                } else {
+                    echo '<option value="' . $i . '">' . $i . '</option>';
+                }
+            }
+            ?>
+        </select>
+        <input type="submit" value="Change">
+    </form>
+    <br>
+    <a href="villes_add.php" title="Ajouter une nouvelle ville">Ajouter une nouvelle ville</a>
+    <br><br>
+
+    <?php
 
     echo '<table>';
     echo '<tr>';
