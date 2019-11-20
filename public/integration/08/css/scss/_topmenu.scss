@@ -1,7 +1,8 @@
 .topMenu {
   position: absolute;
   display: flex;
-  justify-content: space-evenly;
+  flex-flow: row wrap;
+  justify-content: space-around;
   z-index: 990;
   width: 100%;
   height: 8vh;
@@ -9,20 +10,14 @@
   align-items: center;
   overflow: hidden;
   color: $primary-color;
-  font-size: 5vh;
+  font-size: 2vh;
 
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
   transition: all 1s;
 
   .item {
-    flex: auto;
-    flex-grow: 1;
-    justify-content: center;
+    text-align: center;
   }
 
   // mainMenu Icon
@@ -38,6 +33,7 @@
   .logo {
     svg {
       height: 8vh;
+      transition: all 0.3s ease-out;
     }
 
     svg:hover path {
@@ -53,11 +49,15 @@
 
     li {
       display: inline;
+      margin-right: 1vw;
+      font-size: 3vh;
     }
   }
 
-  // Logo
+  // Search
   .search {
+    input {
+    }
   }
 
   a {
@@ -72,9 +72,5 @@
 .topMenu.open {
   opacity: 0;
   transform: translate3d(0, -100%, 0);
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
   transition: all 1s;
 }

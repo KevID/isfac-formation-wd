@@ -8,6 +8,11 @@
 @import 'pagepiling';
 @import 'topmenu';
 @import 'mainmenu';
+@import 'page1';
+@import 'page2';
+@import 'page3';
+@import 'page4';
+@import 'page5';
 
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
 form, fieldset, input, textarea, p, blockquote, th, td {
@@ -26,8 +31,6 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $primary-color-text;
   text-decoration: none;
-  -webkit-transition: color 0.3s ease-out;
-  -o-transition: color 0.3s ease-out;
   transition: color 0.3s ease-out;
 
   &:hover {
@@ -35,7 +38,43 @@ a {
   }
 }
 
+// -------------------------------------------------------
+// Formulaires
+
+input, textarea, select, button {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  height: 4vh;
+  color: $primary-color;
+  background-color: #f9f7ef;
+  padding: 0 5px;
+}
+
+input[type=submit], button {
+  color: #f9f7ef;
+  background-color: $primary-color;
+  height: 4vh;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: $primary-color;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $primary-color;
+}
+
+// -------------------------------------------------------
 // Scrallbar
+
+html {
+  scrallbar-color: $primary-color;
+  scrallbar-width: 10px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
