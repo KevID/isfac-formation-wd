@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="decompte"></span>
+<script type="text/javascript">
+    function wait(ms, i) {
+        var d = new Date();
+        var d2 = null;
+        do {
+            d2 = new Date();
+        }
+        while (d2 - d < ms);
+    }
+
+    for (let i = 5; i > 0; i--) {
+        console.log(i);
+        document.getElementById("decompte").innerHTML = 'Auto destruction dans x seconde(s).';
+        wait(2000, i);
+    }
+    // document.getElementById("decompte").innerHTML = 'Boom !!!';
+</script>
+</body>
+</html>

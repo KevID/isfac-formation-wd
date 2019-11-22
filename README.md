@@ -21,6 +21,9 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
     * [Exemple contact](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/example/contact.png)
     * [Résultat](https://kevid.gitlab.io/isfac-formation-wd/integration/02-css/exercice-1/index.html)
 * 03 - SASS / SCSS - Premier test sous VSCode avec compilation en temps réel (Plugin: Live Sass Compiler)
+* 04 - Réalisation du site "Au coeur de Montmartre".
+    * [Cahier des charges](https://kevid.gitlab.io/isfac-formation-wd/integration/04/README.md)
+    * [Résultat](https://kevid.gitlab.io/isfac-formation-wd/integration/04/index.html)
 
 ### PHP
 
@@ -38,7 +41,9 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 43 - array() et foreach() - Exercices 4 à 9
 * 47 - include() / require()
 * 48 - PHP/BDD (connexion, requêtes, manipulation de résultats)
-* 49 - Cookies
+* 49 - Les cookies $_COOKIE[]
+* 50 - Les sessions $_SESSION[]
+* 51 - Les fonctions
 
 ### SGBD
 
@@ -53,6 +58,9 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
   * Technique SMART
   * Les états de moi, analyse transactionnelle
   * Parlez à tous ! Suivez le guide !
+* 2019-11-22
+  * Gestion du stress
+  * Gestion de la voix
 
 ## Planning
 

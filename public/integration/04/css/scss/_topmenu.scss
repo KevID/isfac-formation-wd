@@ -1,6 +1,7 @@
 .topMenu {
   position: absolute;
   display: flex;
+  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
   justify-content: space-around;
   z-index: 990;
@@ -18,7 +19,31 @@
 
   .item {
     text-align: center;
+    flex: 1 100%;
   }
+
+    @media all and (min-width: 600px) {
+      .item {
+        flex: 1 0 0;
+      }
+      .mainMenuIcon {
+        order: 1;
+      }
+      .search {
+        display: none;
+      }
+      .logo {
+        order: 2;
+      }
+      .phone {
+        order: 3;
+      }
+      .socialLinks {
+        order: 4;
+      }
+
+    }
+
 
   // mainMenu Icon
   .mainMenuIcon {
