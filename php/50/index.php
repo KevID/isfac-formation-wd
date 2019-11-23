@@ -1,17 +1,17 @@
 <?php
 session_start();
-$login = (isset($_POST['login'])) ? $_POST['login'] : null;
-$password = (isset($_POST['password'])) ? $_POST['password'] : null;
 
-if (($login === 'admin' && $password === 'admin') || (isset($_SESSION['loged']) && $_SESSION['loged'] === true)) {
-    $_SESSION['loged'] = true;
-    //    echo 'Tu es connecté ' . $login;
+if (isset($_SESSION['loged']) && $_SESSION['loged'] === true) {
     header('Location: info.php');
-
 } else {
+    $login = (isset($_POST['login'])) ? $_POST['login'] : null;
+    $password = (isset($_POST['password'])) ? $_POST['password'] : null;
     $_SESSION['loged'] = false;
 
-    if (($login || $password)) {
+    if ($login === 'admin' && $password === 'admin') {
+        $_SESSION['loged'] = true;
+        header('Location: info.php');
+    } elseif ($login || $password) {
         $error = 'Veuillez vérifier vos identifiants de connexion.';
     }
     ?>
@@ -24,7 +24,7 @@ if (($login === 'admin' && $password === 'admin') || (isset($_SESSION['loged']) 
     </head>
     <body>
     <?php if (isset($error)): ?>
-        <span><?= $error ?></span>
+        <span style="color: red"><?= $error ?></span>
     <?php endif; ?>
     <form method="POST">
         <input type="text" name="login" value="<?= $login ?>" placeholder="Login">
