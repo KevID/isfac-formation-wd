@@ -120,3 +120,26 @@ function mainMenu(e) {
         document.getElementsByClassName('topMenu')[0].classList.add('open');
     }
 }
+
+/*
+    Popup
+ */
+function popupOpen(e) {
+    document.getElementsByClassName('ppNav')[0].style.display = 'none';
+    pagepiling.getElementsByClassName('active')[0].classList.add('popupActive');
+    for (i = 0; i < totalPages; i++) {
+        pagepiling.getElementsByClassName("ppPage")[i].classList.add('popupBg');
+    }
+    mainMenu('close');
+    document.getElementById(e).classList.remove('close');
+}
+
+function popupClose(e) {
+    pagepiling.getElementsByClassName('active')[0].classList.remove('popupActive');
+    for (i = 0; i < totalPages; i++) {
+        pagepiling.getElementsByClassName("ppPage")[i].classList.remove('popupBg');
+    }
+    mainMenu('open');
+    document.getElementById(e).classList.add('close');
+    document.getElementsByClassName('ppNav')[0].style.display = 'block';
+}

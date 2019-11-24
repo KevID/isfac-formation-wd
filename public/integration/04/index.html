@@ -17,7 +17,7 @@
         <div class="closeIcon">
             <i class="fas fa-times" onclick="mainMenu('close')"></i>
         </div>
-        <div>
+        <div class="pages">
             <ul>
                 <li><a href="#page-1" onclick="ppNavigate(1)" title="Accueil">Accueil</a></li>
                 <li><a href="#page-2" onclick="ppNavigate(2)" title="L'appartement">L'appartement</a></li>
@@ -29,8 +29,29 @@
         </div>
         <div class="map">
             <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=2.3306679725646977%2C48.88053595745679%2C2.348692417144776%2C48.8914004279716&amp;layer=mapnik&amp;marker=48.88596848776462%2C2.3396801948547363"
-                    style="border: 1px solid black"></iframe>
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=2.3306679725646977%2C48.88053595745679%2C2.348692417144776%2C48.8914004279716&amp;layer=mapnik&amp;marker=48.88596848776462%2C2.3396801948547363"></iframe>
+        </div>
+        <div>
+            <ul>
+                <li><strong>Au coeur de Montmartre</strong></li>
+                <li>35 Rue du Chevalier de la Barre</li>
+                <li>75018 Paris</li>
+                <li><i class="fas fa-phone"></i> (+33) 6 00 00 00 00</li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="#cgu" onclick="popupOpen('cgu')" title="Mentions légales">Mentions légales</a></li>
+                <li><a href="#cgv" onclick="popupOpen('cgv')" title="Conditions générales de vente">Conditions
+                    générales de vente</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>© Kévin PAULMIER</a></li>
+                <li>Site web de démonstration</a></li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -66,13 +87,45 @@
 <div id="pagePiling">
     <div class="ppPage">
         <div class="container">
-            <section class="page1Section">
+            <section>
                 <h1>Au coeur de Montmartre</h1>
-                <p></p>
-
+                <p>Idéalement situé à quelques pas des commerces et des métros, boulevard des Batignolles. Au 2e étage
+                    avec ascenseur d'un bel immeuble sécurisé et bien entretenu.</p>
+                <p>Magnifique 4 pièces vide de 128m²
+                    traversant entièrement rénové avec prestations de qualité et avec beaucoup de goût. Il se compose
+                    d'une entrée, d'un grand séjour avec quatre fenêtres, baigné de lumière donnant sur un petit balcon,
+                    d'une cuisine ouverte aménagée et équipée, de trois chambres, d'une salle de bains avec toilettes,
+                    d'une salle d'eau, de toilettes séparées et d'un dressing. Nombreux rangements. Lumineux. Beaucoup
+                    de charme: parquet, moulures et cheminées. Une cave complète ce bien.</p>
+                <div id="captioned-gallery">
+                    <figure class="slider">
+                        <figure>
+                            <div style="background: url('img/appartement/cuisine1-m.jpg') no-repeat center"></div>
+                            <figcaption>Cuisine</figcaption>
+                        </figure>
+                        <figure>
+                            <div style="background: url('img/appartement/salon-m.jpg') no-repeat center"></div>
+                            <figcaption>Salon</figcaption>
+                        </figure>
+                        <figure>
+                            <div style="background: url('img/appartement/chambre1-m.jpg') no-repeat center"></div>
+                            <figcaption>Chambre</figcaption>
+                        </figure>
+                        <figure>
+                            <div style="background: url('img/appartement/chambre-enfant-m.jpg') no-repeat center"></div>
+                            <figcaption>Chambre enfant</figcaption>
+                        </figure>
+                        <figure>
+                            <div style="background: url('img/appartement/salle-de-bain-m.jpg') no-repeat center"></div>
+                            <figcaption>Salle de bain</figcaption>
+                        </figure>
+                    </figure>
+                </div>
             </section>
-            <aside class="page1Aside">
-
+            <aside>
+                <div class="airbnb"><a href="https://www.airbnb.fr" title="Réservez sur Airbnb"><img
+                        src="img/logo-airbnb.png"
+                        alt="Réservation Airbnb"></a></div>
             </aside>
         </div>
     </div>
@@ -95,6 +148,40 @@
         <div class="container">
             <section>Last page</section>
         </div>
+    </div>
+</div>
+<div class="popup close" id="cgu">
+    <div class="background"></div>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <h1>Mentions légales</h1>
+            </div>
+            <div class="closeIcon">
+                <i class="fas fa-times" onclick="popupClose('cgu')"></i>
+            </div>
+        </div>
+        <section>
+            Ceci est le contenu des mentions légales.
+        </section>
+        <div class="footer"></div>
+    </div>
+</div>
+<div class="popup close" id="cgv">
+    <div class="background"></div>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <h1>Conditions générales de vente</h1>
+            </div>
+            <div class="closeIcon">
+                <i class="fas fa-times" onclick="popupClose('cgv')"></i>
+            </div>
+        </div>
+        <section>
+            Ceci est le contenu des conditions générales de vente.
+        </section>
+        <div class="footer"></div>
     </div>
 </div>
 <nav class="ppNav">

@@ -3,7 +3,7 @@
 
   .background {
     position: absolute;
-    z-index: 999;
+    z-index: 994;
     width: 100vw;
     height: 100vh;
     background-color: black;
@@ -13,17 +13,21 @@
 
   .container {
     position: absolute;
-    z-index: 1000;
-    width: 30vw;
-    height: 100vh;
-    align-content: space-between;
+    z-index: 995;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow-y: auto;
     background-color: $mainMenu-background-color;
     transform: translate3d(0, 0, 0);
     transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
-
+    padding: 10px;
 
     .closeIcon {
-      margin: 2vw 2vw 0 0;
       text-align: right;
       font-size: x-large;
       opacity: 1;
@@ -41,24 +45,56 @@
     ul {
       list-style: none;
       margin-block-start: 0;
-      margin-left: 2vw;
+      margin-left: 20px;
     }
 
     a {
-      font-size: 2vw;
       font-family: 'Kalam', cursive;
+      font-size: medium;
+    }
+
+    .pages {
+      a {
+        font-size: x-large;
+      }
     }
 
     .map {
       width: 100%;
+      filter: sepia(20%);
 
       iframe {
         width: inherit;
       }
     }
 
-    @media screen and (max-width: 600px) {
-      width: 100vw;
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {
+      width: 400px;
+      padding: 20px;
+      a {
+        font-size: large;
+      }
+      .pages {
+        a {
+          font-size: xx-large;
+        }
+      }
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) {
+      width: 400px;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {
+      width: 400px;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+      width: 400px;
     }
   }
 
