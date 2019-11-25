@@ -11,6 +11,7 @@ if (isset($_SESSION['loged']) && $_SESSION['loged'] === true) {
     if ($login === 'admin' && $password === 'admin') {
         $_SESSION['loged'] = true;
         header('Location: info.php');
+        exit;
     } elseif ($login || $password) {
         $error = 'Veuillez vérifier vos identifiants de connexion.';
     }

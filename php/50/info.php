@@ -4,6 +4,7 @@ session_start();
 // Si l'utilisateur n'est pas connecté, on le redirige sur l'accueil
 if (!(isset($_SESSION['loged']) && $_SESSION['loged'] === true)) {
     header('Location: index.php');
+    exit;
 }
 
 ?>

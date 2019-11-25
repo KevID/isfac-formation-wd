@@ -7,3 +7,4 @@ if (isset($_SESSION['loged']) && $_SESSION['loged'] === true) {
 }
 
 header('Location: index.php');
+exit;
