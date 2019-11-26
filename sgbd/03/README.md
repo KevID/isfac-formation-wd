@@ -443,3 +443,150 @@ WHERE type = 'S'
 GROUP BY code_transporteur
 HAVING code_transporteur = ':code_transporteur';
 ```
+
+## Manipulation des données
+
+### 5.1 Augmentez les salaires de 100 € pour tout le monde
+
+```sql
+UPDATE preparateur SET salaireBrut = (salaireBrut + 100);
+````
+
+### 5.2 Augmentez en plus de 50 € pour les salariés ayant une anciennete > 8
+
+```sql
+UPDATE preparateur SET salaireBrut = (salaireBrut + 50) WHERE ancienneté > 8;
+```
+
+### 5.3 Changez le nom de l’entrepot 3 pour «Frigo 3»
+
+```sql
+UPDATE entrepot
+SET libellé = 'Frigo 3'
+WHERE code_entrepot = 3;
+```
+
+### 5.4 Modifiez la capacité de l’entrepôt 1 en l’augmentant de 5%
+
+```sql
+UPDATE entrepot
+SET capacité = (capacité * 1.05)
+WHERE code_entrepot = 1;
+```
+
+### 5.5 Insérez le type de palette «EUR/25» , largeur 123 longueur 147, en Titane
+
+```sql
+INSERT INTO type (code_type, libellétype, largeur, longueur, matière)
+VALUES ('EU25','Palette Euro 25','123','147','Titane');
+```
+
+### 5.6 Insérez-vous en tant que préparateur, avec un salaire de 5 €
+
+```sql
+INSERT INTO preparateur (nomPreparateur, prenomPreparateur, ancienneté, salaireBrut)
+VALUES ('PAULMIER', 'Kévin', '1', '5');
+```
+
+### 5.7 Insérez une intervention surla palette ABWG214306 à la date du jour, vous concernant
+
+```sql
+INSERT INTO intervention (refpalette, code_preparateur, date_inter) 
+VALUES ('ABWG214306', 31, '2019-11-26');
+```
+
+### 5.8 Insérez les transporteurs suivant, en une requête: XPO Logistic, SCHENKER J, STEF TFE, FL Transport
+
+```sql
+INSERT INTO transporteur (nomTransporteur)
+VALUES ('XPO Logistic'), ('SCHENKER J'), ('STEF TFE'), ('FL Transport']);
+```
+
+### 5.9 Copiez la table intervention en «anomaliesoct2015». Insérez dans celle-ci uniquement les interventions d’octobre 2015
+
+```sql
+INSERT INTO anomaliesoct2015 (RefPalette, code_preparateur, date_inter)
+SELECT RefPalette, code_preparateur, date_inter
+FROM intervention
+WHERE YEAR(date_inter) = '2015'
+    AND MONTH(date_inter) = '10';
+```
+
+### 5.10 Copiez la table intervention en «biginter» et copiez dans celle-ci les interventions concernant des palettes en bois de plus de 500 Kg
+
+```sql
+CREATE TABLE biginter LIKE intervention;
+
+INSERT INTO biginter (RefPalette, code_preparateur, date_inter)
+SELECT i.RefPalette, code_preparateur, date_inter
+FROM intervention i
+    INNER JOIN palette p ON i.refpalette = p.refpalette
+    INNER JOIN type t ON p.code_type = t.code_type
+WHERE matière = 'Bois'
+    AND poids > 500;
+```
+
+### 5.11 Supprimez de la table intervention les interventions de 2014
+
+```sql
+DELETE FROM intervention WHERE YEAR(date_inter) = '2014';
+```
+
+### 5.12 Supprimez les préparateurs n’ayant réalisés aucune intervention
+
+```sql
+DELETE FROM preparateur
+WHERE code_preparateur IN (
+    SELECT code_preparateur
+    FROM (
+        SELECT DISTINCT p.code_preparateur
+        FROM preparateur p
+            LEFT JOIN intervention i ON p.code_preparateur = i.code_preparateur
+        WHERE i.code_preparateur IS NULL
+    ) AS a
+)
+```
+
+Obligé d'ajouter `SELECT * FROM (...) AS a` à cause de l'erreur:
+#1093 - You can't specify target table 'palette' for update in FROM clause
+
+### 5.13 Ne garder dans la base que les palettes encore en stock
+
+```sql
+-- Nettoyage de la table Palette et indirectement sur Intervention car la structure possède une jonction sur la clé RefPalette.
+
+DELETE FROM palette
+WHERE refPalette NOT IN (
+    SELECT *
+    FROM (
+        SELECT p.refPalette
+        FROM palette p 
+            INNER JOIN transport t ON p.refPalette = t.refPalette
+        WHERE t.refPalette NOT IN (
+            SELECT refPalette
+            FROM transport
+            WHERE type = 'S'
+        )
+    ) AS a
+)
+
+-- Pas de clé refPalette sur la table Transport, il faut donc une autre requette sql pour nettoyer la table Transport
+
+DELETE FROM transport
+WHERE refPalette NOT IN (
+    SELECT *
+    FROM (
+        SELECT p.refPalette
+        FROM palette p 
+            INNER JOIN transport t ON p.refPalette = t.refPalette
+        WHERE t.refPalette NOT IN (
+            SELECT refPalette
+            FROM transport
+            WHERE type = 'S'
+        )
+    ) AS a
+)
+```
+
+Obligé d'ajouter `SELECT * FROM (...) AS a` à cause de l'erreur:
+#1093 - You can't specify target table 'palette' for update in FROM clause
