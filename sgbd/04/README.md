@@ -22,7 +22,20 @@ CREATE TABLE IF NOT EXISTS `action` (
   `TempsAction` decimal(10,0) NOT NULL,
   `id_FichePanne` int(11) NOT NULL,
   `id_Operateur` int(11) NOT NULL,
-  PRIMARY KEY (`n°Action`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`n°Action`),
+  KEY `id_FichePanne` (`id_FichePanne`),
+  KEY `id_Operateur` (`id_Operateur`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `action`
+--
+ALTER TABLE `action`
+  ADD CONSTRAINT `action1` FOREIGN KEY (`id_FichePanne`) REFERENCES `fichepanne` (`n°FichePanne`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `action2` FOREIGN KEY (`id_Operateur`) REFERENCES `operateur` (`n°Operateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 ```
