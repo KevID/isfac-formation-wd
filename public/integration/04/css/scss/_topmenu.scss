@@ -1,14 +1,14 @@
 .topMenu {
   position: absolute;
   display: flex;
-  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   z-index: 990;
   width: 100%;
-  height: 8vh;
+  padding: 10px 20px 0px 20px;
+  box-sizing: border-box;
   padding: 1vh 2vh 0 2vh;
-  align-items: center;
   overflow: hidden;
   color: $primary-color;
   font-size: 2vh;
@@ -19,35 +19,12 @@
 
   .item {
     text-align: center;
-    flex: 1 100%;
   }
-
-    @media all and (min-width: 600px) {
-      .item {
-        flex: 1 0 0;
-      }
-      .mainMenuIcon {
-        order: 1;
-      }
-      .search {
-        display: none;
-      }
-      .logo {
-        order: 2;
-      }
-      .phone {
-        order: 3;
-      }
-      .socialLinks {
-        order: 4;
-      }
-
-    }
-
 
   // mainMenu Icon
   .mainMenuIcon {
     font-size: x-large;
+    flex: 1 min-content;
 
     i {
       cursor: pointer;
@@ -56,8 +33,12 @@
 
   // Logo
   .logo {
+    flex: 3 min-content;
+    height: 40px;
+
     svg {
-      height: 8vh;
+      max-width: 100%;
+      max-height: 100%;
       transition: all 0.3s ease-out;
     }
 
@@ -68,6 +49,8 @@
 
   // Social links
   .socialLinks {
+    flex: 2 min-content;
+
     ul {
       list-style: none;
     }
@@ -81,6 +64,9 @@
 
   // Search
   .search {
+    flex: 2 min-content;
+    display: none;
+
     input {
     }
   }
@@ -91,6 +77,55 @@
     &:hover {
       color: $primary-color-text;
     }
+  }
+
+  // Phone
+  .phone {
+    flex: 2 min-content;
+  }
+
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+
+  @media all and (min-width: 768px) {
+    padding: 10px 50px 0px 50px;
+    flex-flow: row nowrap;
+
+    .item {
+    }
+    .mainMenuIcon {
+      order: 1;
+    }
+    .search {
+      display: block;
+      order: 2;
+    }
+    .logo {
+      order: 3;
+      height: 70px;
+    }
+    .phone::before {
+      display: none;
+    }
+    .phone {
+      order: 4;
+    }
+    .socialLinks {
+      order: 5;
+    }
+    .break {
+      display: none;
+    }
+
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    width: 1200px;
+    margin: 0 auto;
   }
 }
 

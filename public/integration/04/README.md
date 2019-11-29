@@ -27,9 +27,8 @@ Ressources graphiques :
 
 Option en Bonus :
 
-Mise en place d’une FancyBox en Js sur les images de galerie : http://fancyapps.com/fancybox/3/
-
-Mise en place d’un slider html/css sur la home (en trouver un sur codepen et essayer de l’intégrer).
+- Mise en place d’une FancyBox en Js sur les images de galerie : http://fancyapps.com/fancybox/3/
+- Mise en place d’un slider html/css sur la home (en trouver un sur codepen et essayer de l’intégrer).
 
 Bon courage,
 

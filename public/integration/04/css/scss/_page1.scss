@@ -1,125 +1,121 @@
 #page-1 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-
-  section {
-    flex: 1 100%;
-
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
 
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {
-      flex: 2;
-      padding-right: 10px;
-    }
-  }
+    section {
+        flex: 1 100%;
 
-  aside {
-    flex: 1 auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: stretch;
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {
-      flex: 1;
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            flex: 2;
+            padding-right: 10px;
+        }
     }
 
-    div, img {
-      width: 100%;
+    aside {
+        flex: 1 auto;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+
+        // Medium devices (tablets, 768px and up)
+        @media (min-width: 768px) {
+            flex: 1;
+        }
+
+        div, img {
+            width: 100%;
+        }
+
+        .airbnb {
+            border-radius: 5px;
+        }
     }
 
-    .airbnb {
-      border-radius: 5px;
-    }
-  }
 
-
-  /*
-    Slider
-   */
-  #captioned-gallery {
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-
-    @keyframes slidy {
-      0% {
-        left: 0%;
-      }
-      20% {
-        left: 0%;
-      }
-      25% {
-        left: -100%;
-      }
-      45% {
-        left: -100%;
-      }
-      50% {
-        left: -200%;
-      }
-      70% {
-        left: -200%;
-      }
-      75% {
-        left: -300%;
-      }
-      95% {
-        left: -300%;
-      }
-      100% {
-        left: -400%;
-      }
-    }
-
-    figure {
-      margin: 0;
-      background: #101010;
-    }
-
-    figure.slider {
-      position: relative;
-      width: 500%;
-      height: 100%;
-      font-size: 0;
-      animation: 10s slidy infinite;
-
-      figure {
-        width: 20%;
-        height: 100%;
-        display: inline-block;
-        position: inherit;
-      }
-
-      figure figcaption {
-        position: absolute;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
-        color: #fff;
+    /*
+      Slider
+     */
+    #captioned-gallery {
         width: 100%;
-        font-size: 2rem;
-        padding: .6rem;
-      }
+        height: 300px;
+        overflow: hidden;
 
-      div {
-        width: 100%;
-        height: 100%;
-        background-size: cover !important;
-      }
+        @keyframes slidy {
+            0% {
+                left: 0%;
+            }
+            20% {
+                left: 0%;
+            }
+            25% {
+                left: -100%;
+            }
+            45% {
+                left: -100%;
+            }
+            50% {
+                left: -200%;
+            }
+            70% {
+                left: -200%;
+            }
+            75% {
+                left: -300%;
+            }
+            95% {
+                left: -300%;
+            }
+            100% {
+                left: -400%;
+            }
+        }
+
+        figure {
+            margin: 0;
+            background: #101010;
+        }
+
+        figure.slider {
+            position: relative;
+            width: 500%;
+            height: 100%;
+            font-size: 0;
+            animation: 10s slidy infinite;
+
+            figure {
+                width: 20%;
+                height: 100%;
+                display: inline-block;
+                position: inherit;
+            }
+
+            figure figcaption {
+                position: absolute;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+                color: #fff;
+                width: 100%;
+                font-size: 2rem;
+                padding: .6rem;
+            }
+
+            div {
+                width: 100%;
+                height: 100%;
+                background-size: cover !important;
+            }
+        }
     }
-  }
-
-  #captioned-gallery, .airbnb {
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  }
 }
