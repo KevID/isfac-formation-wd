@@ -23,7 +23,7 @@ if ($linkGetId > 0) {
         $action = 'update';
 
         require_once 'bdd.php';
-        $requete = 'SELECT * FROM links WHERE id = "' . $linkGetId . '"';
+        $requete = 'SELECT * FROM links WHERE id = ' . $linkGetId;
         $reponse = $bdd->query($requete);
 
         if ($reponse->rowCount() === 1) {
@@ -34,7 +34,7 @@ if ($linkGetId > 0) {
         }
     } elseif ($linkGetAction === 'del') {
         require_once 'bdd.php';
-        $requete = 'DELETE FROM links WHERE id = "' . $linkGetId . '"';
+        $requete = 'DELETE FROM links WHERE id = ' . $linkGetId;
         $reponse = $bdd->exec($requete);
 
         // La suppression faite, on retourne sur la liste des liens.
@@ -74,7 +74,7 @@ if ($action === 'update' && $linkPostId > 0) {
     if ($link && $title && $description) {
         require_once 'bdd.php';
         $requete = 'UPDATE links SET link = "' . $link . '", title = "' . $title . '", description = "' .
-            $description . '"WHERE id = "' . $linkPostId . '"';
+            $description . '"WHERE id = ' . $linkPostId;
         $exec = $bdd->exec($requete);
 
         // L'enregistrement fait, on retourne sur la liste des liens.

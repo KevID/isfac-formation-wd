@@ -547,6 +547,16 @@ WHERE code_preparateur IN (
 )
 ```
 
+OR
+
+```sql
+DELETE
+FROM preparateur
+WHERE code_preparateur NOT IN (SELECT code_preparateur FROM intervention)
+
+-- Pas besoin de SELECT DISTINCT dans un IN / NOT IN
+```
+
 Obligé d'ajouter `SELECT * FROM (...) AS a` à cause de l'erreur:
 #1093 - You can't specify target table 'palette' for update in FROM clause
 

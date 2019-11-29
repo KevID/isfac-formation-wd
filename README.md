@@ -50,7 +50,8 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * SQL
   * 01 - Cas Facturation (exercices select)
   * 02 - Table Salariés (exercices select)
-  * 03 - MACIF (exercices jointures)
+  * 03 - MACIF (exercices jointures, insert, delete, update)
+  * 04 - QUAL (création de la structure d'une base de données)
 
 ## Communication
 
