@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 7</title>
+</head>
+<body>
+<p>Bonjour <span id="prenom"></span>, ta formation va durer <span id="dureeFormation"></span> heures</p>
+<script>
+    /*
+Pour un calcul de temps de formation, demander un prénom, un nombre de semaines, un nombre d’heures/semaine.
+Puis afficher un résultat personnalisé “Bonjour xxx, ta formation va durer xxx heures”
+
+*/
+
+    var prenom = prompt("Quel est ton prénom?");
+    var nbSemaines = prompt("Combien de semaines dure t'a formation?");
+    var nbHeuresSemaine = prompt("Combien d'heures de formation as-tu par semaine?");
+
+    var dureeFormation = nbHeuresSemaine * nbSemaines;
+
+    document.getElementById("prenom").innerHTML = prenom;
+    document.getElementById("dureeFormation").innerHTML = dureeFormation;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4</title>
+</head>
+<body>
+<script>
+    /*
+        Le médecin m’a prescrit 2 gélules,  à prendre 3 fois par jour pendant 5 jours.
+Une boite contient 8 gélules, combien faut-il de boîtes ?
+
+*/
+    var nbGelulesParBoite = 8;
+
+    var nbGélules = 2;
+    var nbFoisJour = 3;
+    var nbJours = 5;
+
+    var totalGelulesAPrendre = (nbGélules * nbFoisJour) * nbJours;
+
+    var nbBoites = totalGelulesAPrendre / nbGelulesParBoite;
+
+    document.write("Nombre de boites: " + Math.ceil(nbBoites));
+
+</script>
+</body>
+</html>

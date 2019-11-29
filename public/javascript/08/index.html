@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 8</title>
+</head>
+<body>
+<p>Selon moi, tu-as <span id="age">?</span> ans.</p>
+<script>
+    /*
+Écrire un programme qui permet le calcul d’un âge en fonction de son année de naissance saisie au clavier.
+Conseil : Utilisez 3 variables
+*/
+
+    var anneeNaissance = prompt("Quelle est ton année de naissance?");
+    var anneeActuelle = 2019;
+    var age = anneeActuelle - anneeNaissance;
+
+    document.getElementById("age").innerHTML = age;
+
+
+</script>
+</body>
+</html>

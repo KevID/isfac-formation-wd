@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 4</title>
+</head>
+<body>
+<div>La largeur d'une colonne doit être de:<strong id="largeurColonne"></strong></div>
+<script>
+    /*
+Objectif : construire un petit programme qui calcule la largeur d’une colonne de page connaissant au préalable :
+la largeur du conteneur,
+la largeur des marges intérieures,
+le  nombre de colonnes
+la largeur des gouttières;
+Afficher le résultat dans la page
+
+Conseils :
+- lister les choses à faire dans l’ordre :
+- définir les variables utiles à nos calcul
+- écrire le raisonnement
+- faire le calcul et afficher le résultat
+
+
+Il faut calculer:
+la longueur totale hors largeur colonne
+puis la déduire de longueur du container
+puis diviser par nombre de colonnes
+
+
+*/
+
+    var container = prompt("Largeur du container ?");
+    var margeInterieur = prompt("Largeur de la marge intérieure?");
+    var gouttiere = prompt("Largeur de la goutière?");
+    var nbColonnes = prompt("Nombre de colonnes?");
+
+    var largeurTotaleSansColonnes = (gouttiere * 2) + (margeInterieur * (nbColonnes - 1));
+
+    var largeurDispoPourColonnes = (container - largeurTotaleSansColonnes);
+
+    var largeurColonne = largeurDispoPourColonnes / nbColonnes;
+
+    //document.write("La largeur d'une colonne doit être de:" + largeurColonne);
+
+    document.getElementById("largeurColonne").innerHTML = largeurColonne;
+
+</script>
+</body>
+</html>
