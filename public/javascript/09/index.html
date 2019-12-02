@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exo 9</title>
+</head>
+<body>
+<script>
+    var age = prompt('Quel age as-tu?')
+
+    if (parseInt(age) >= 18)
+        document.write('Tu peux rentrer.')
+    else if (parseInt(age) >= 16)
+        document.write('Tu peux rentrer avec un adulte.')
+    else
+        document.write('Tu dois rester chez tes parents, mon petit.')
+
+
+    switch (true) {
+        case (age >= 18):
+            document.write('Tu peux rentrer.')
+            break;
+        case (age >= 16):
+            document.write('Tu peux rentrer avec un adulte.')
+            break;
+        default:
+            document.write('Tu dois rester chez tes parents, mon petit.')
+
+    }
+
+    var sexe = prompt('Est-tu une femme, un homme ou inconnu?')
+
+    switch (sexe) {
+        case 'femme':
+            document.write('Tu es une femme.')
+            break
+        case 'homme':
+            document.write('Tu es un homme.')
+            break
+        default:
+            document.write('Tu n\'as pas souhaité le préciser.')
+    }
+
+    var jourNb = prompt('Donne un chiffre entre 1 et 7 ?')
+    var jour
+
+    switch (parseInt(jourNb)) {
+        case 1:
+            jour = 'Lundi'
+            break
+        case 2:
+            jour = 'Mardi'
+            break
+        case 3:
+            jour = 'Mercredi'
+            break
+        case 4:
+            jour = 'Jeudi'
+            break
+        case 5:
+            jour = 'Vendredi'
+            break
+        case 6:
+            jour = 'Samedi'
+            break
+        case 7:
+            jour = 'Dimanche'
+            break
+    }
+
+    document.write(jour + ' est le jour correspondant au chiffre ' + jourNb)
+</script>
+
+<h2 id="jour"></h2>
+
+<script>
+    var jour
+    var day = new Date()
+    var jourNb = day.getDay()
+
+    switch (parseInt(jourNb)) {
+        case 0:
+            jour = 'Dimanche'
+            break
+        case 1:
+            jour = 'Lundi'
+            break
+        case 2:
+            jour = 'Mardi'
+            break
+        case 3:
+            jour = 'Mercredi'
+            break
+        case 4:
+            jour = 'Jeudi'
+            break
+        case 5:
+            jour = 'Vendredi'
+            break
+        case 6:
+            jour = 'Samedi'
+            break
+    }
+
+    document.getElementById('jour').innerHTML = 'Aujourd\'hui nous sommes ' + jour;
+
+</script>
+</body>
+</html>

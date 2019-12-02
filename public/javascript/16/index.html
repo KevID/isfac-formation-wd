@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 16</title>
+</head>
+<body>
+<div id="mr"></div>
+<div id="mme"></div>
+
+<button onclick="monsieur()" id="btnMr">Afficher Monsieur</button>
+<button onclick="madame()" id="btnMme">Afficher Madame</button>
+
+<script>
+    function monsieur() {
+        console.log(document.getElementById('mr').length);
+        if (!document.getElementById('mr').length) {
+            document.getElementById('mr').innerHTML = 'Bonjour Monsieur';
+            document.getElementById('btnMr').innerHTML = 'Effacer Monsieur';
+        } else {
+            document.getElementById('mr').innerHTML = '';
+            document.getElementById('btnMr').innerHTML = 'Afficher Monsieur';
+        }
+    }
+
+    function madame() {
+        document.getElementById('mme').innerHTML = 'Bonjour Madame';
+    }
+
+</script>
+</body>
+</html>
