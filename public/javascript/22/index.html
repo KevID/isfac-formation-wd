@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 22</title>
+</head>
+<body>
+<h1>Convertisseur Francs/Euros</h1>
+<input type="number" name="francs" id="francs" placeholder="Francs">
+<button onclick="convertir()">Convertir en €</button>
+<br><br>
+<div id="euros"></div>
+
+<script>
+    function convertir() {
+        // Récupérer la valeur du champ de formulaire "francs", et convertir le type en nombre
+        var nbFrancs = document.getElementById('francs').value;
+        nbFrancs = parseFloat(nbFrancs);
+
+        // Calculer en euros, puis arrondir 2 chiffres après la virgule
+        var nbEuros = nbFrancs / 6.55957;
+        nbEuros = nbEuros.toFixed(2);
+
+        // Afficher le résultat à l'utilisateur
+        document.getElementById('euros').innerHTML = nbEuros + ' €';
+    }
+</script>
+</body>
+</html>

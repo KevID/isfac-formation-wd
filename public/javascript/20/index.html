@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Exercice 20</title>
 </head>
 <body>
+<h1>Écriture d'une fonction simple sans paramètre ni return</h1>
+<p>Cliquez sur le bouton pour lancer la fonction :</p>
+<button onclick="calculerSurface()">Lancer la fonction</button>
+<br>
+<br>
+<span id="resultat"></span>
 
+<script>
+    function calculerSurface() {
+        var hauteur = prompt('Quelle est la hauteur du rectangle?');
+        //console.log('Hauteur: ' + hauteur);
+        var largeur = prompt('Quelle est la largeur du rectangle?');
+        //console.log('Largeur: ' + largeur);
+
+        resultatTxt = 'Le rectangle de ' + hauteur + 'x' + largeur;
+        resultatTxt += ' possède une surface de ' + (hauteur * largeur) + '.';
+
+        document.getElementById('resultat').innerHTML = resultatTxt;
+    }
+</script>
 </body>
 </html>
