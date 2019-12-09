@@ -1,0 +1,127 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.block {
+    height: 300px;
+}
+
+.block-1 {
+    background: red;
+}
+
+.block-2 {
+    background: blue;
+}
+
+.block-3 {
+    background: green;
+}
+
+.block-4 {
+    background: orange;
+}
+
+.block-5 {
+    background: pink;
+}
+
+.block-6 {
+    background: purple;
+}
+
+.block-7 {
+    background: black;
+}
+
+.block-8 {
+    background: yellow;
+}
+
+.block-9 {
+    background: yellowgreen;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        width: 700px;
+    }
+
+    .container-1 .block {
+        width: 33.33334%;
+    }
+
+    .container-2 .block {
+        width: 25%;
+    }
+
+    .container-3 .block {
+        width: 50%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .container {
+        width: 900px;
+    }
+
+    .container-1 .block {
+        width: 25%;
+    }
+
+    .container-1 .block-1 {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px)  and (max-width: 1199px) {
+
+    .block-4 {
+        order: 3;
+    }
+
+    .block-5 {
+        order: 2;
+    }
+
+    .block-6 {
+        order: 4;
+    }
+
+    .block-7 {
+        order: 1;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1100px;
+    }
+
+    .container-1 .block, .container-2 .block {
+        width: 16.66667%;
+    }
+
+    .container-1 .block-1 {
+        width: 66.66667%;
+    }
+
+    .container-2 .block-4 {
+        width: 50%;
+    }
+
+    .container-3 {
+        flex-direction: row-reverse;
+    }
+}

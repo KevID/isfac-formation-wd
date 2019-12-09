@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Exercice 27</title>
+</head>
+<body>
+<form onsubmit="return verifForm()">
+    Nom: <input type="text" name="lastname" id="lastname"><br>
+    Prénom: <input type="text" name="firstname" id="firstname"><br>
+    CGU: <input type="checkbox" name="cgu" id="cgu"><br>
+    Password: <input type="password" name="password1" id="password1"> 7 caractères minimum<br>
+    Confirmer Password: <input type="password" name="password2" id="password2"><br>
+    Sexe:
+    H: <input type="radio" name="sex" value="M" id="sex">
+    F: <input type="radio" name="sex" value="F" id="sex"><br>
+    Ville:
+    <select name="country" id="country">
+        <option value="Poitiers">Poitiers</option>
+        <option value="Tours">Tours</option>
+        <option value="Bordeaux">Bordeaux</option>
+    </select><br>
+    <button>Envoyer</button>
+</form>
+
+<script>
+    var displayError = (idError, isError = true) => {
+        if (isError) {
+            document.getElementById(idError).style.borderColor = 'red';
+        } else {
+            document.getElementById(idError).style.borderColor = 'black';
+        }
+    }
+
+    var getInput = (inputName, nbCharMini = 1) => {
+        if (document.getElementById(inputName).value.length < nbCharMini) {
+            displayError(inputName, true);
+            return false;
+        } else {
+            displayError(inputName, false);
+            return true;
+        }
+    }
+
+    var verifForm = () => {
+        var error = false;
+
+        if (!getInput('lastname')) error = true;
+        if (!getInput('firstname')) error = true;
+
+        if (!getInput('password1', 7)) error = true;
+        if (!getInput('password2', 7)) error = true;
+
+        // Vérifie que le password a été saisi
+        if (document.getElementById('password1').value != document.getElementById('password2').value) {
+            error = true;
+            displayError('password1', true);
+            displayError('password2', true);
+        } else {
+            displayError('password1', false);
+            displayError('password2', true);
+        }
+
+        return !error;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Exercice 26</title>
+</head>
+<body>
+<form onsubmit="return getForm()">
+    Nom: <input type="text" name="lastname" id="lastname"> <span id="lastnameError"></span><br><br>
+    Prenom: <input type="text" name="firstname" id="firstname"> <span id="firstnameError"></span><br><br>
+    <button>OK</button>
+</form>
+
+<script>
+    const getInput = (inputName, spanErrorName, SpanErrorMessage) => {
+        if (document.getElementById(inputName).value === '') {
+            document.getElementById(spanErrorName).innerHTML = 'Veuillez saisir votre ' + SpanErrorMessage + '.';
+            return false;
+        } else {
+            document.getElementById(spanErrorName).innerHTML = '';
+            return true;
+        }
+    }
+
+    const getForm = () => {
+        var error = false;
+
+        if (!getInput('lastname', 'lastnameError', 'nom')) {
+            error = true;
+        }
+        if (!getInput('firstname', 'firstnameError', 'prénom')) {
+            error = true;
+        }
+
+        return !error;
+    }
+</script>
+</body>
+</html>

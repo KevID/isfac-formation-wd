@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Exercice 28</title>
+</head>
+<body>
+<div id="texte">Message à cacher</div>
+<button onclick="cachecache('texte')">Cache-Cache</button>
+<button onclick="changeStyle('texte')">Changer style</button>
+
+<br><br>
+
+<input type="password" id="pwd" name="pwd">
+<button onClick="pwdVisibility()">Voir en clair</button>
+
+<script>
+    var cachecache = id => {
+        if (document.getElementById(id).style.visibility === 'hidden') {
+            document.getElementById(id).style.visibility = 'visible';
+        } else {
+            document.getElementById(id).style.visibility = 'hidden';
+        }
+    }
+
+    var changeStyle = id => {
+        document.getElementById(id).style.fontSize = 'x-large';
+        document.getElementById(id).style.color = 'red';
+        document.getElementById(id).style.fontStyle = 'italic';
+    }
+
+    var pwdVisibility = () => {
+        var el = document.getElementById('pwd')
+        if (el.type === 'password')
+            el.type = 'text'
+        else
+            el.type = 'password'
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Exercice 29</title>
+</head>
+<body>
+<input type="password" id="pwd" name="pwd" oninput="pwdVerif()">
+<button onClick="pwdVisibility()">Voir en clair</button>
+<br><br>
+<span id="test1">Entre 8 et 16 caractères</span><br>
+<span id="test2">Au moins une minuscule</span><br>
+<span id="test3">Au moins une majuscule</span><br>
+<span id="test4">Au moins un chiffre</span>
+
+<script>
+    var el = document.getElementById('pwd')
+
+    var pwdVisibility = () => {
+        el.type = (el.type === 'password') ? 'text' : 'password';
+    }
+
+    var displayError = (testId, test = false) => {
+        test ? document.getElementById(testId).style.color = 'red' : document.getElementById(testId).style.color =
+            'black';
+    }
+
+    var pwdVerif = () => {
+        var test1 = test2 = test3 = test4 = true;                               // Par défaut error = true
+
+        if (el.value.length > 0) {                                              // Si le champ est renseigné
+            if (el.value.length >= 8 && el.value.length <= 16) test1 = false;   // OK si contient entre 8 et 16 caractères
+            if (el.value.match(/[A-Z]/g)) test2 = false;                        // OK si contient mini une Majuscule
+            if (el.value.match(/[a-z]/g)) test3 = false;                        // OK si contient mini une Minuscule
+            if (el.value.match(/[0-9]/g)) test4 = false;                        // OK si contient mini un nombre
+
+        } else {
+            test1 = test2 = test3 = test4 = false;
+        }
+        displayError('test1', test1);
+        displayError('test2', test2);
+        displayError('test3', test3);
+        displayError('test4', test4);
+    }
+</script>
+</body>
+</html>

@@ -14,18 +14,21 @@
 <script>
 
     // Demander à l'utilisateur les 3 nombres, et convertir de suite le "string" en "float"
-    var nb1 = parseFloat(prompt('Renseignez un 1er nombre:'));
-    var nb2 = parseFloat(prompt('Renseignez un 2e  nombre:'));
-    var nb3 = parseFloat(prompt('Renseignez un 3e  nombre:'));
+    var nb1 = parseFloat(prompt('Renseignez un 1er nombre :'));
+    var nb2 = parseFloat(prompt('Renseignez un 2e nombre :'));
+    var nb3 = +prompt('Renseignez un 3e nombre :');
 
     // Calculer la moyenne, puis l'arrondir 2 chiffres après la virgule
     var nbMoyenne = (nb1 + nb2 + nb3) / 3;
     nbMoyenne = nbMoyenne.toFixed(2);
 
     // Trouver le nombre le plus petit
+    /*
     var nbPlusPetit = nb1;
     if (nbPlusPetit > nb2) nbPlusPetit = nb2;
     if (nbPlusPetit > nb3) nbPlusPetit = nb3;
+    */
+    nbPlusPetit = Math.min(nb1, nb2, nb3);
 
     // Afficher les résultats à l'utilisateur
     document.getElementById('val1').innerHTML = 'Nombre 1: ' + nb1;
