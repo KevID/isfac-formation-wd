@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Au coeur de Montmartre</title>
-    <link href="favicon.ico" rel="icon" type="image/x-icon"/>
-    <link href="css/main.min.css" rel="stylesheet"/>
-
+    <link href="css/main.min.css" rel="stylesheet">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
 </head>
 <body>
 <nav class="mainMenu close">
-    <div class="background"></div>
+    <div class="background" onclick="mainMenu('close')"></div>
     <div class="container">
         <div class="closeIcon">
             <i class="fas fa-times" onclick="mainMenu('close')"></i>
@@ -84,161 +84,186 @@
         </ul>
     </div>
 </nav>
-<div id="pagePiling">
+<main id="pagePiling">
     <div class="ppPage">
-        <div class="container">
-            <section>
-                <h1>Au coeur de Montmartre</h1>
-                <p>Idéalement situé à quelques pas des commerces et des métros, boulevard des Batignolles. Au 2e étage
-                    avec ascenseur d'un bel immeuble sécurisé et bien entretenu.</p>
-                <p>Magnifique 4 pièces vide de 128m²
-                    traversant entièrement rénové avec prestations de qualité et avec beaucoup de goût. Il se compose
-                    d'une entrée, d'un grand séjour avec quatre fenêtres, baigné de lumière donnant sur un petit balcon,
-                    d'une cuisine ouverte aménagée et équipée, de trois chambres, d'une salle de bains avec toilettes,
-                    d'une salle d'eau, de toilettes séparées et d'un dressing. Nombreux rangements. Lumineux. Beaucoup
-                    de charme: parquet, moulures et cheminées. Une cave complète ce bien.</p>
-                <div id="captioned-gallery" class="shadow">
-                    <figure class="slider">
-                        <figure>
-                            <div style="background: url('img/appartement/cuisine1-m.jpg') no-repeat center"></div>
-                            <figcaption>Cuisine</figcaption>
+        <div class="ppOverflow">
+            <div class="container">
+                <section>
+                    <h1>Au coeur de Montmartre</h1>
+                    <p>Idéalement situé à quelques pas des commerces et des métros, boulevard des Batignolles. Au 2e
+                        étage
+                        avec ascenseur d'un bel immeuble sécurisé et bien entretenu.</p>
+                    <p>Magnifique 4 pièces vide de 128m²
+                        traversant entièrement rénové avec prestations de qualité et avec beaucoup de goût. Il se
+                        compose
+                        d'une entrée, d'un grand séjour avec quatre fenêtres, baigné de lumière donnant sur un petit
+                        balcon,
+                        d'une cuisine ouverte aménagée et équipée, de trois chambres, d'une salle de bains avec
+                        toilettes,
+                        d'une salle d'eau, de toilettes séparées et d'un dressing. Nombreux rangements. Lumineux.
+                        Beaucoup
+                        de charme: parquet, moulures et cheminées. Une cave complète ce bien.</p>
+                    <div id="captioned-gallery" class="shadow">
+                        <figure class="slider">
+                            <figure>
+                                <div style="background: url('img/appartement/cuisine1-m.jpg') no-repeat center"></div>
+                                <figcaption>Cuisine</figcaption>
+                            </figure>
+                            <figure>
+                                <div style="background: url('img/appartement/salon-m.jpg') no-repeat center"></div>
+                                <figcaption>Salon</figcaption>
+                            </figure>
+                            <figure>
+                                <div style="background: url('img/appartement/chambre1-m.jpg') no-repeat center"></div>
+                                <figcaption>Chambre</figcaption>
+                            </figure>
+                            <figure>
+                                <div style="background: url('img/appartement/chambre-enfant-m.jpg') no-repeat center"></div>
+                                <figcaption>Chambre enfant</figcaption>
+                            </figure>
+                            <figure>
+                                <div style="background: url('img/appartement/salle-de-bain-m.jpg') no-repeat center"></div>
+                                <figcaption>Salle de bain</figcaption>
+                            </figure>
                         </figure>
-                        <figure>
-                            <div style="background: url('img/appartement/salon-m.jpg') no-repeat center"></div>
-                            <figcaption>Salon</figcaption>
-                        </figure>
-                        <figure>
-                            <div style="background: url('img/appartement/chambre1-m.jpg') no-repeat center"></div>
-                            <figcaption>Chambre</figcaption>
-                        </figure>
-                        <figure>
-                            <div style="background: url('img/appartement/chambre-enfant-m.jpg') no-repeat center"></div>
-                            <figcaption>Chambre enfant</figcaption>
-                        </figure>
-                        <figure>
-                            <div style="background: url('img/appartement/salle-de-bain-m.jpg') no-repeat center"></div>
-                            <figcaption>Salle de bain</figcaption>
-                        </figure>
-                    </figure>
-                </div>
-            </section>
-            <aside>
-                <div class="airbnb shadow"><a href="https://www.airbnb.fr" title="Réservez sur Airbnb"><img
-                        src="img/logo-airbnb.png"
-                        alt="Réservation Airbnb"></a></div>
-            </aside>
+                    </div>
+                </section>
+                <aside>
+                    <div class="airbnb shadow"><a href="https://www.airbnb.fr" title="Réservez sur Airbnb"><img
+                            src="img/logo-airbnb.png"
+                            alt="Réservation Airbnb"></a></div>
+                </aside>
+            </div>
         </div>
     </div>
     <div class="ppPage">
-        <div class="container">
-            <section>
-                <div class="vignette vignette-1">
-                    <div class="info shadow">
-                        <h2>Montmartre insolite</h2>
-                        <p>Découvrez la face cachée de Montmartre : ruelles, vignes, maisons anciennes… Sur les traces
-                            des grands noms qui hantent la butte : artistes, révolutionnaires, bohèmes, combattants,
-                            ivrognes et abbés. Montmartre, ce n’est pas que la place du Tertre et le Sacré-Coeur, c’est
-                            une histoire, une culture : un pays en soi ! Ici, c’est une visite loin des sentiers
-                            touristiques qui permet de revenir avec humour sur l’histoire mouvementée de Montmartre.</p>
-                    </div>
-                    <div class="date">23 Nov. 2019</div>
-                    <div class="card shadow">
-                        <img src="img/news/metrolamarck.png" alt="Montmartre insolite">
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="vignette vignette-2">
-                    <div class="info shadow">
-                        <h2>Cyrano !</h2>
-                        <p>Le Théâtre Les Pieds Nus a voulu revisiter l’histoire à sa manière ; parce que nous pensons
-                            que changer de point de vue c’est parfois révéler. À ce que nous connaissons par cœur il
-                            faut de l’inédit.</p>
-                        <p><strong>Tout a été dit, montré, monté. Vraiment?<br>
-                            Et si c’était joué par 3 femmes?<br>
-                            Cyrano aurait adoré.</strong></p>
-                    </div>
-                    <div class="date">09 Juil - 11 Déc. 2019</div>
-                    <div class="card shadow">
-                        <img src="img/news/cyrano.jpg" alt="Cyrano">
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="vignette vignette-3">
-                    <div class="info shadow">
-                        <h2>Le Moulin Rouge</h2>
-                        <p>La balade se poursuit en redescendant vers le Moulin Rouge, cabaret historique aux soirées
-                            endiablées et mondialement connues. Sur votre chemin, vous apprécierez les vitrines
-                            créatives et tendance des rues des Abbesses et Tardieu, les commerces de la rue Lepic, le
-                            cosmopolisme de la rue de Steinkerque et le
-                            cimetière de Montmartre.</p>
-                    </div>
-                    <div class="date">01 Nov. 2019</div>
-                    <div class="card shadow">
-                        <img src="img/quartier/moulin-rouge.jpg" alt="Le Moulin Rouge">
-                    </div>
-                </div>
-            </section>
+        <div class="ppOverflow">
+            <div class="container">
+                <section>Page 2
+                </section>
+            </div>
         </div>
     </div>
     <div class="ppPage">
-        <div class="container">
-            <section>
-                <div class="vignette vignette-1">
-                    <div class="info shadow">
-                        <h2>Le Sacré-Cœur</h2>
-                        <p>Montmartre est un quartier au charme authentique, célèbre pour la basilique du Sacré-Cœur et
-                            sa vue magnifique sur Paris. Le haut de la colline se découvre en empruntant le funiculaire,
-                            au prix d’un ticket de métro. Les plus sportifs effectuent l’ascension des 222 marches à
-                            travers le square Louise Michel.</p>
+        <div class="ppOverflow">
+            <div class="container">
+                <section>
+                    <div class="vignette vignette-1">
+                        <div class="info shadow">
+                            <h2>Le Sacré-Cœur</h2>
+                            <p>Montmartre est un quartier au charme authentique, célèbre pour la basilique du Sacré-Cœur
+                                et
+                                sa vue magnifique sur Paris. Le haut de la colline se découvre en empruntant le
+                                funiculaire,
+                                au prix d’un ticket de métro. Les plus sportifs effectuent l’ascension des 222 marches à
+                                travers le square Louise Michel.</p>
+                        </div>
+                        <div class="card shadow">
+                            <img src="img/quartier/sacre-coeur.jpg" alt="Le Sacré-Coeur">
+                        </div>
                     </div>
-                    <div class="card shadow">
-                        <img src="img/quartier/sacre-coeur.jpg" alt="Le Sacré-Coeur">
+                </section>
+                <section>
+                    <div class="vignette vignette-2">
+                        <div class="info shadow">
+                            <h2>La Butte Montmartre</h2>
+                            <p>Après l’incontournable visite de la basilique, partez pour une flânerie
+                                historique sur la Butte Montmartre : la place du Tertre et ses célèbres caricaturistes,
+                                l’espace Dalí, les vignes de Montmartre, le cabaret du Lapin Agile, le musée
+                                Montmartre…</p>
+                        </div>
+                        <div class="card shadow">
+                            <img src="img/quartier/butte-montmartre.jpg" alt="La Butte Montmartre">
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section>
-                <div class="vignette vignette-2">
-                    <div class="info shadow">
-                        <h2>La Butte Montmartre</h2>
-                        <p>Après l’incontournable visite de la basilique, partez pour une flânerie
-                            historique sur la Butte Montmartre : la place du Tertre et ses célèbres caricaturistes,
-                            l’espace Dalí, les vignes de Montmartre, le cabaret du Lapin Agile, le musée Montmartre…</p>
+                </section>
+                <section>
+                    <div class="vignette vignette-3">
+                        <div class="info shadow">
+                            <h2>Le Moulin Rouge</h2>
+                            <p>La balade se poursuit en redescendant vers le Moulin Rouge, cabaret historique aux
+                                soirées
+                                endiablées et mondialement connues. Sur votre chemin, vous apprécierez les vitrines
+                                créatives et tendance des rues des Abbesses et Tardieu, les commerces de la rue Lepic,
+                                le
+                                cosmopolisme de la rue de Steinkerque et le
+                                cimetière de Montmartre.</p>
+                        </div>
+                        <div class="card shadow">
+                            <img src="img/quartier/moulin-rouge.jpg" alt="Le Moulin Rouge">
+                        </div>
                     </div>
-                    <div class="card shadow">
-                        <img src="img/quartier/butte-montmartre.jpg" alt="La Butte Montmartre">
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="vignette vignette-3">
-                    <div class="info shadow">
-                        <h2>Le Moulin Rouge</h2>
-                        <p>La balade se poursuit en redescendant vers le Moulin Rouge, cabaret historique aux soirées
-                            endiablées et mondialement connues. Sur votre chemin, vous apprécierez les vitrines
-                            créatives et tendance des rues des Abbesses et Tardieu, les commerces de la rue Lepic, le
-                            cosmopolisme de la rue de Steinkerque et le
-                            cimetière de Montmartre.</p>
-                    </div>
-                    <div class="card shadow">
-                        <img src="img/quartier/moulin-rouge.jpg" alt="Le Moulin Rouge">
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
     <div class="ppPage">
-        <div class="container">
-            <section>Page 4</section>
+        <div class="ppOverflow">
+            <div class="container">
+                <section>
+                    <div class="vignette vignette-1">
+                        <div class="info shadow">
+                            <h2>Montmartre insolite</h2>
+                            <p>Découvrez la face cachée de Montmartre : ruelles, vignes, maisons anciennes… Sur les
+                                traces
+                                des grands noms qui hantent la butte : artistes, révolutionnaires, bohèmes, combattants,
+                                ivrognes et abbés. Montmartre, ce n’est pas que la place du Tertre et le Sacré-Coeur,
+                                c’est
+                                une histoire, une culture : un pays en soi ! Ici, c’est une visite loin des sentiers
+                                touristiques qui permet de revenir avec humour sur l’histoire mouvementée de
+                                Montmartre.</p>
+                        </div>
+                        <div class="date">23 Nov. 2019</div>
+                        <div class="card shadow">
+                            <img src="img/news/metrolamarck.png" alt="Montmartre insolite">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="vignette vignette-2">
+                        <div class="info shadow">
+                            <h2>Cyrano !</h2>
+                            <p>Le Théâtre Les Pieds Nus a voulu revisiter l’histoire à sa manière ; parce que nous
+                                pensons
+                                que changer de point de vue c’est parfois révéler. À ce que nous connaissons par cœur il
+                                faut de l’inédit.</p>
+                            <p><strong>Tout a été dit, montré, monté. Vraiment?<br>
+                                Et si c’était joué par 3 femmes?<br>
+                                Cyrano aurait adoré.</strong></p>
+                        </div>
+                        <div class="date">09 Juil - 11 Déc. 2019</div>
+                        <div class="card shadow">
+                            <img src="img/news/cyrano.jpg" alt="Cyrano">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="vignette vignette-3">
+                        <div class="info shadow">
+                            <h2>Weisman & Michel</h2>
+                            <p>Du 11 octobre 2019 au 19 janvier 2020, le Musée de Montmartre présente une nouvelles
+                                exposition, « La collection Weisman & Michel, Fin de siècle – Belle Epoque (1880-1916)
+                                », une collection de deux américains passionnés par Montmartre.</p>
+                            <p>La collection est composée d’un ensemble de plus de 150 œuvres des plus grandes figures
+                                montmartroises, en particulier de la fin de XIXème siècle et début du XXème siècle.</p>
+                        </div>
+                        <div class="date">11 Oct. 2019 - 19 Janv. 2020</div>
+                        <div class="card shadow">
+                            <img src="img/news/weisman-michel.jpg" alt="Collection Weisman & Michel">
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
     <div class="ppPage">
-        <div class="container">
-            <section>Last page</section>
+        <div class="ppOverflow">
+            <div class="container">
+                <section>Last page</section>
+            </div>
         </div>
     </div>
-</div>
+</main>
 <div class="popup close" id="cgu">
     <div class="background"></div>
     <div class="container">
@@ -251,7 +276,123 @@
             </div>
         </div>
         <section>
-            Ceci est le contenu des mentions légales.
+            <h3>1. Présentation du site.</h3>
+            <p>En vertu de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie
+                numérique, il est précisé aux utilisateurs du site Au Coeur de Montmartre l’identité des
+                différents intervenants dans le cadre de sa réalisation et de son suivi :</p>
+            <p>Propriétaire : PAULMIER Kévin<br>
+                Créateur : PAULMIER Kévin<br>
+                Responsable publication : PAULMIER Kévin<br>
+                Le responsable publication est une personne physique.<br>
+                Webmaster : PAULMIER Kévin<br>
+                Hébergeur : GitLab</p>
+            <h3>2. Conditions générales d’utilisation du site et des services proposés.</h3>
+            <p>L’utilisation du site Au Coeur de Montmartre implique l’acceptation pleine et entière des
+                conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles
+                d’être modifiées ou complétées à tout moment, les utilisateurs du site Au Coeur de Montmartre sont
+                donc invités à les consulter de manière régulière.</p>
+            <p>Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de
+                maintenance technique peut être toutefois décidée par Au Coeur de Montmartre, qui s’efforcera alors
+                de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.</p>
+            <p>Le site Au Coeur de Montmartre est mis à jour régulièrement. De la même façon,
+                les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur
+                qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance.</p>
+            <h3>3. Description des services fournis.</h3>
+            <p>Le site Au Coeur de Montmartre a pour objet de fournir une information concernant l’ensemble
+                des activités de la société.</p>
+            <p>Montmartre Apartments Management s’efforce de fournir sur le site Au Coeur de Montmartre des
+                informations aussi précises que possible. Toutefois, il ne pourra être tenue responsable des omissions,
+                des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers
+                partenaires qui lui fournissent ces informations.</p>
+            <p>Tous les informations indiquées sur le site Au Coeur de Montmartre sont données à titre
+                indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site Au
+                Coeur de Montmartre ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été
+                apportées depuis leur mise en ligne.</p>
+            <h3>4. Limitations contractuelles sur les données techniques.</h3>
+            <p>Le site utilise la technologie JavaScript.</p>
+            <p>Le site Internet ne pourra être tenu responsable de dommages matériels liés à l’utilisation du site. De
+                plus, l’utilisateur du site s’engage à accéder au site en utilisant un matériel récent, ne contenant pas
+                de virus et avec un navigateur de dernière génération mis-à-jour</p>
+            <h3>5. Propriété intellectuelle et contrefaçons.</h3>
+            <p>Montmartre Apartments Management est propriétaire des droits de propriété intellectuelle ou détient les
+                droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes,
+                logo, icônes, sons, logiciels.</p>
+            <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments
+                du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable
+                de : Montmartre Apartments Management.</p>
+            <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera
+                considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles
+                L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+            <h3>6. Limitations de responsabilité.</h3>
+            <p>Montmartre Apartments Management ne pourra être tenue responsable des dommages directs et indirects
+                causés au matériel de l’utilisateur, lors de l’accès au site Montmartre Apartments Management, et
+                résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées au point 4,
+                soit de l’apparition d’un bug ou d’une incompatibilité.</p>
+            <p>Montmartre Apartments Management ne pourra également être tenue responsable des dommages indirects (tels
+                par exemple qu’une perte de marché ou perte d’une chance) consécutifs à l’utilisation du site Au
+                Coeur de Montmartre.</p>
+            <p>Des espaces interactifs (possibilité de poser des questions dans l’espace contact) sont à la disposition
+                des utilisateurs. Montmartre Apartments Management se réserve le droit de supprimer, sans mise en
+                demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable
+                en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant,
+                Montmartre Apartments Management se réserve également la possibilité de mettre en cause la
+                responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste,
+                injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie…).</p>
+            <h3>7. Gestion des données personnelles.</h3>
+            <p>En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la
+                loi n° 2004-801 du 6 août 2004, l’article L. 226-13 du Code pénal et la Directive Européenne du 24
+                octobre 1995.</p>
+            <p>A l’occasion de l’utilisation du site Au Coeur de Montmartre, peuvent êtres recueillies : l’URL des
+                liens par l’intermédiaire desquels l’utilisateur a accédé au site Au Coeur de Montmartre, le
+                fournisseur d’accès de l’utilisateur, l’adresse de protocole Internet (IP) de l’utilisateur.</p>
+            <p>En tout état de cause Montmartre Apartments Management ne collecte des informations personnelles
+                relatives à l’utilisateur que pour le besoin de certains services proposés par le site Au Coeur de
+                Montmartre. L’utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu’il
+                procède par lui-même à leur saisie. Il est alors précisé à l’utilisateur du site Au Coeur de
+                Montmartre l’obligation ou non de fournir ces informations.</p>
+            <p>Conformément aux dispositions des articles 38 et suivants de la loi 78-17 du 6 janvier 1978 relative à
+                l’informatique, aux fichiers et aux libertés, tout utilisateur dispose d’un droit d’accès, de
+                rectification et d’opposition aux données personnelles le concernant, en effectuant sa demande écrite et
+                signée, accompagnée d’une copie du titre d’identité avec signature du titulaire de la pièce, en
+                précisant l’adresse à laquelle la réponse doit être envoyée.</p>
+            <p>Aucune information personnelle de l’utilisateur du site Au Coeur de Montmartre n’est publiée à
+                l’insu de l’utilisateur, échangée, transférée, cédée ou vendue sur un support quelconque à des tiers.
+                Seule l’hypothèse du rachat de Montmartre Apartments Management et de ses droits permettrait la
+                transmission des dites informations à l’éventuel acquéreur qui serait à son tour tenu de la même
+                obligation de conservation et de modification des données vis à vis de l’utilisateur du site Au
+                Coeur de Montmartre.</p>
+            <p>Le site n’est pas déclaré à la CNIL car il ne recueille pas d’informations personnelles. .</p>
+            <p>Les bases de données sont protégées par les dispositions de la loi du 1er juillet 1998 transposant la
+                directive 96/9 du 11 mars 1996 relative à la protection juridique des bases de données.</p>
+            <h3>8. Liens hypertextes et cookies.</h3>
+            <p>Le site Au Coeur de Montmartre contient un certain nombre de liens hypertextes vers d’autres
+                sites, mis en place avec l’autorisation de Montmartre Apartments Management. Cependant, Montmartre
+                Apartments Management n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et
+                n’assumera en conséquence aucune responsabilité de ce fait.</p>
+            <p>La navigation sur le site Au Coeur de Montmartre est susceptible de provoquer l’installation de
+                cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille, qui ne permet
+                pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation
+                d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur
+                le site, et ont également vocation à permettre diverses mesures de fréquentation.</p>
+            <p>Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certains services.
+                L’utilisateur peut toutefois configurer son ordinateur de la manière suivante, pour refuser
+                l’installation des cookies :<br>
+                Sous Internet Explorer : onglet outil / options internet. Cliquez sur Confidentialité et choisissez
+                Bloquer tous les cookies. Validez sur Ok.<br>
+                Sous Netscape : onglet édition / préférences. Cliquez sur Avancées et choisissez Désactiver les cookies.
+                Validez sur Ok.</p>
+            <h3>9. Droit applicable et attribution de juridiction.</h3>
+            <p>Tout litige en relation avec l’utilisation du site Au Coeur de Montmartre est soumis au droit
+                français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris.</p>
+            <h3>10. Les principales lois concernées.</h3>
+            <p>Loi n° 78-87 du 6 janvier 1978, notamment modifiée par la loi n° 2004-801 du 6 août 2004 relative à
+                l’informatique, aux fichiers et aux libertés.</p>
+            <p>Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.</p>
+            <h3>11. Lexique.</h3>
+            <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
+            <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit,
+                directement ou non, l’identification des personnes physiques auxquelles elles s’appliquent » (article 4
+                de la loi n° 78-17 du 6 janvier 1978).</p>
         </section>
         <div class="footer"></div>
     </div>

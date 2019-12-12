@@ -14,7 +14,8 @@
             margin: 0;
             height: 500px;
             margin-top: 50px;
-            transition: all 1s cubic-bezier(0.550, 0.085, 0.000, 0.990);
+            opacity: 0;
+            transition: all 1.2s cubic-bezier(1, 0, 1, 0);
 
             @media all and (min-width: 768px) {
                 height: 100%;
@@ -31,11 +32,9 @@
                 border-radius: 5px;
 
                 img {
-                    position: absolute;
                     height: 100%;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    object-fit: cover;
                 }
             }
 
@@ -45,7 +44,7 @@
                 min-height: 60%;
                 bottom: 10px;
                 left: 5%;
-                background-color: white;
+                background-color: $background-color;
                 border-radius: 5px;
                 padding: 65px 10px 10px 10px;
                 font-weight: lighter;
@@ -76,6 +75,8 @@
 
 #page-3.active .container {
     .vignette {
+        opacity: 1;
         transform: translateX(0) !important;
+        transition: all 1s cubic-bezier(0.7, 0, 0.7, 1);
     }
 }

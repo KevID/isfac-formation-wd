@@ -27,7 +27,7 @@ for (i = 0; i < totalPages; i++) {
     }
 }
 
-function ppNavigateUp(e) {
+var ppNavigateUp = e => {
     if (curPage === 1) return;
     pagepiling.getElementsByClassName("ppPage")[curPage - 1].classList.remove("active");
     pagepiling.getElementsByClassName("ppPage")[curPage - 2].classList.add("active");
@@ -37,7 +37,7 @@ function ppNavigateUp(e) {
     curPage--;
 }
 
-function ppNavigateDown(e) {
+var ppNavigateDown = e => {
     if (curPage === totalPages) return;
     pagepiling.getElementsByClassName("ppPage")[curPage - 1].classList.remove("active");
     ppNav.getElementsByTagName("li")[curPage - 1].classList.remove("active");
@@ -52,7 +52,7 @@ document.addEventListener('wheel', ppScrall);
 document.addEventListener('mousewheel', ppScrall);
 document.addEventListener('DOMMouseScroll', ppScrall);
 
-function ppScrall(e) {
+var ppScrall = e => {
     var t1 = performance.now();
     if ((t1 - window.t0) < 1000) {
         return;
@@ -73,7 +73,7 @@ function ppScrall(e) {
 
 document.addEventListener('keydown', logKey);
 
-function logKey(e) {
+var logKey = e => {
     if (e.code === 'ArrowUp' || e.code === 'ArrowLeft') {
         ppNavigateUp();
     }
@@ -82,7 +82,7 @@ function logKey(e) {
     }
 }
 
-function ppNavigate(pageNb) {
+var ppNavigate = pageNb => {
     if (pageNb > 0 && pageNb < curPage) {
         mainMenu('close');
         for (var i = curPage; i > pageNb; i--) {
@@ -111,7 +111,7 @@ if (!isNaN(pageNb) && pageNb >= curPage && pageNb <= totalPages) {
 /*
     Menu
  */
-function mainMenu(e) {
+var mainMenu = e => {
     if (e === 'close') {
         document.getElementsByClassName('mainMenu')[0].classList.add('close');
         document.getElementsByClassName('topMenu')[0].classList.remove('open');
@@ -124,7 +124,7 @@ function mainMenu(e) {
 /*
     Popup
  */
-function popupOpen(e) {
+var popupOpen = e => {
     document.getElementsByClassName('ppNav')[0].style.display = 'none';
     pagepiling.getElementsByClassName('active')[0].classList.add('popupActive');
     for (i = 0; i < totalPages; i++) {
@@ -134,7 +134,7 @@ function popupOpen(e) {
     document.getElementById(e).classList.remove('close');
 }
 
-function popupClose(e) {
+var popupClose = e => {
     pagepiling.getElementsByClassName('active')[0].classList.remove('popupActive');
     for (i = 0; i < totalPages; i++) {
         pagepiling.getElementsByClassName("ppPage")[i].classList.remove('popupBg');
