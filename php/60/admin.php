@@ -28,7 +28,7 @@ $reponse = $bdd->query($requete);
     <?php foreach ($reponse AS $rowLink): ?>
         <li>
             <?= $rowLink['title'] ?>
-            <a href="admin-link.php?action=update&id=<?= $rowLink['id'] ?>">Modifier</a>
+            <a href="admin-link.php?action=update-view&id=<?= $rowLink['id'] ?>">Modifier</a>
             /
             <a href="admin-link.php?action=del&id=<?= $rowLink['id'] ?>">Supprimer</a>
             <br><br>

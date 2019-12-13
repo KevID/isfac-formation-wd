@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-$admin = (isset($_SESSION['auth']) && $_SESSION['auth']) ? true : false;
+$admin = (isset($_SESSION['level']) && $_SESSION['level'] === 9); // Level 9 = Admin
+
+require_once 'bdd.php';
+$requete = 'SELECT * FROM links';
+$reponse = $bdd->query($requete);
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +53,6 @@ $admin = (isset($_SESSION['auth']) && $_SESSION['auth']) ? true : false;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             }
 
-
             .navigation li:last-of-type a {
                 border-bottom: none;
             }
@@ -66,6 +69,16 @@ $admin = (isset($_SESSION['auth']) && $_SESSION['auth']) ? true : false;
     <?php endif; ?>
 </ul>
 
-
+<h1>Links:</h1>
+<ul>
+    <?php foreach ($reponse AS $rowLink): ?>
+        <li>
+            <h2><?= $rowLink['title'] ?></h2>
+            <?= $rowLink['description'] ?><br>
+            <a href="<?= $rowLink['link'] ?>"><?= $rowLink['link'] ?></a>
+            <br><br>
+        </li>
+    <?php endforeach; ?>
+</ul>
 </body>
 </html>

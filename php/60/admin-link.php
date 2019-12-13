@@ -19,9 +19,7 @@ $title = '';
 $description = '';
 
 if ($linkGetId > 0) {
-    if ($linkGetAction === 'update') {
-        $action = 'update';
-
+    if ($linkGetAction === 'update-view') { // On récupère les valeurs pour les placer dans le formulaire
         require_once 'bdd.php';
         $requete = 'SELECT * FROM links WHERE id = ' . $linkGetId;
         $reponse = $bdd->query($requete);
@@ -32,7 +30,7 @@ if ($linkGetId > 0) {
             $title = $row['title'];
             $description = $row['description'];
         }
-    } elseif ($linkGetAction === 'del') {
+    } elseif ($linkGetAction === 'del') {   // On supprime
         require_once 'bdd.php';
         $requete = 'DELETE FROM links WHERE id = ' . $linkGetId;
         $reponse = $bdd->exec($requete);
@@ -47,34 +45,23 @@ if ($linkGetId > 0) {
     $action = 'add';
 }
 
-// Si on fait un ajout
-if ($action === 'add') {
+// Si on fait un ajout ou un update
+if (isset($action) && ($action === 'add' OR ($action === 'update' AND $linkPostId > 0))) {
     $link = (isset($_POST['link'])) ? $_POST['link'] : null;
     $title = (isset($_POST['title'])) ? $_POST['title'] : null;
     $description = (isset($_POST['description'])) ? $_POST['description'] : null;
 
     if ($link && $title && $description) {
         require_once 'bdd.php';
-        $requete = 'INSERT INTO links (link, title, description)' .
-            'VALUES ("' . $link . '", "' . $title . '", "' . $description . '")';
-        $exec = $bdd->exec($requete);
 
-        // L'enregistrement fait, on retourne sur la liste des liens.
-        header('Location: admin.php');
-        exit;
-    }
-}
+        if ($action === 'add') {    // Si ajout
+            $requete = 'INSERT INTO links (link, title, description)' .
+                'VALUES ("' . $link . '", "' . $title . '", "' . $description . '")';
+        } else {                    // Sinon update
+            $requete = 'UPDATE links SET link = "' . $link . '", title = "' . $title . '", description = "' .
+                $description . '"WHERE id = ' . $linkPostId;
+        }
 
-// Si on fait un update
-if ($action === 'update' && $linkPostId > 0) {
-    $link = (isset($_POST['link'])) ? $_POST['link'] : null;
-    $title = (isset($_POST['title'])) ? $_POST['title'] : null;
-    $description = (isset($_POST['description'])) ? $_POST['description'] : null;
-
-    if ($link && $title && $description) {
-        require_once 'bdd.php';
-        $requete = 'UPDATE links SET link = "' . $link . '", title = "' . $title . '", description = "' .
-            $description . '"WHERE id = ' . $linkPostId;
         $exec = $bdd->exec($requete);
 
         // L'enregistrement fait, on retourne sur la liste des liens.
@@ -93,7 +80,7 @@ if ($action === 'update' && $linkPostId > 0) {
 <?php if (isset($error)): ?>
     <div style="color: red"><?= $error ?></div>
 <?php endif; ?>
-<form method="post">
+<form method="post" action="admin-link.php">
     Lien <input type="text" name="link" value="<?= $link ?>"><br><br>
     Titre <input type="text" name="title" value="<?= $title ?>"><br><br>
     Description <input type="text" name="description" value="<?= $description ?>"><br><br>

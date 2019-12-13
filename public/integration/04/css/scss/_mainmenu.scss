@@ -67,6 +67,11 @@
             }
         }
 
+        iframe {
+            border: 0;
+            margin: 0;
+        }
+
         // Small devices (landscape phones, 576px and up)
         @media (min-height: 576px) {
             flex-direction: column;

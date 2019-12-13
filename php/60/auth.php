@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['level'])) {    // Si déjà connecté
+if (isset($_SESSION['level'])) {    // Si déjà connecté et qu'il revient ici, on le déconnecte
     unset($_SESSION['level']);
     header('Location: index.php');
     exit;
@@ -16,7 +16,7 @@ $reponse = $bdd->query($requete);
 
 if ($reponse->rowCount() === 1) {
     $row = $reponse->fetch();
-    $_SESSION['level'] = $row['level'];
+    $_SESSION['level'] = (int)$row['level'];
     header('Location: index.php');
     exit;
 } elseif ($login || $password) {
@@ -25,7 +25,7 @@ if ($reponse->rowCount() === 1) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta doctype="UTF-8">
     <title>Connexion</title>
