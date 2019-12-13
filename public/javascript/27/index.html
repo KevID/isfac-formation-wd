@@ -5,17 +5,18 @@
     <title>Javascript - Exercice 27</title>
 </head>
 <body>
-<form onsubmit="return verifForm()">
+<form onsubmit="return formVerif()">
     Nom: <input type="text" name="lastname" id="lastname"><br>
     Prénom: <input type="text" name="firstname" id="firstname"><br>
     CGU: <input type="checkbox" name="cgu" id="cgu"><br>
     Password: <input type="password" name="password1" id="password1"> 7 caractères minimum<br>
     Confirmer Password: <input type="password" name="password2" id="password2"><br>
     Sexe:
-    H: <input type="radio" name="sex" value="M" id="sex">
-    F: <input type="radio" name="sex" value="F" id="sex"><br>
+    H: <input type="radio" name="gender" value="M" id="genderH">
+    F: <input type="radio" name="gender" value="F" id="genderF"><br>
     Ville:
     <select name="country" id="country">
+        <option value="">Choisir</option>
         <option value="Poitiers">Poitiers</option>
         <option value="Tours">Tours</option>
         <option value="Bordeaux">Bordeaux</option>
@@ -24,44 +25,74 @@
 </form>
 
 <script>
+    /* Fonction pour afficher les erreurs */
     var displayError = (idError, isError = true) => {
         if (isError) {
-            document.getElementById(idError).style.borderColor = 'red';
+            document.getElementById(idError).style.outline = '1px solid red';
         } else {
-            document.getElementById(idError).style.borderColor = 'black';
+            document.getElementById(idError).style.outline = null;
         }
     }
 
-    var getInput = (inputName, nbCharMini = 1) => {
-        if (document.getElementById(inputName).value.length < nbCharMini) {
-            displayError(inputName, true);
+    /* Fonction pour vérifier qu'un champ contient une valeur et en option un nombre de caractères minimum */
+    var getInput = (idName, nbCharMini = 1) => {
+        if (document.getElementById(idName).value.length < nbCharMini) {
+            displayError(idName, true);
             return false;
         } else {
-            displayError(inputName, false);
+            displayError(idName, false);
             return true;
         }
     }
 
-    var verifForm = () => {
+    /* Fonction de vérification de la saisie du formulaire */
+    var formVerif = () => {
         var error = false;
 
+        // Vérifie qu'une valeur est saisie ou sélectionnée
         if (!getInput('lastname')) error = true;
         if (!getInput('firstname')) error = true;
+        if (!getInput('country')) error = true;
 
-        if (!getInput('password1', 7)) error = true;
-        if (!getInput('password2', 7)) error = true;
-
-        // Vérifie que le password a été saisi
-        if (document.getElementById('password1').value != document.getElementById('password2').value) {
+        // Vérifie que les 2 passwords sont identiques
+        if (getInput('password1', 7) && document.getElementById('password1').value ===
+            document.getElementById('password2').value) {
+            displayError('password1', false);
+            displayError('password2', false);
+        } else {
             error = true;
             displayError('password1', true);
             displayError('password2', true);
+        }
+
+        // Vérifie que les CGU sont cochés
+        if (document.getElementById('cgu').checked === true) {
+            displayError('cgu', false);
         } else {
-            displayError('password1', false);
-            displayError('password2', true);
+            error = true;
+            displayError('cgu', true);
+        }
+
+        // Vérifie si le genre est coché
+        if (document.getElementById('genderH').checked === true || document.getElementById('genderF').checked ===
+            true) {
+            displayError('genderH', false);
+            displayError('genderF', false);
+        } else {
+            error = true;
+            displayError('genderH', true);
+            displayError('genderF', true);
         }
 
         return !error;
+
+        /* Identique à:
+        if (error) {
+            return false;
+        } else {
+            return true;
+        }
+        */
     }
 </script>
 </body>
