@@ -12,7 +12,7 @@
     Password: <input type="password" name="password1" id="password1"> 7 caractères minimum<br>
     Confirmer Password: <input type="password" name="password2" id="password2"><br>
     Sexe:
-    H: <input type="radio" name="gender" value="M" id="genderH">
+    H: <input type="radio" name="gender" value="H" id="genderH">
     F: <input type="radio" name="gender" value="F" id="genderF"><br>
     Ville:
     <select name="country" id="country">
@@ -49,7 +49,7 @@
     var formVerif = () => {
         var error = false;
 
-        // Vérifie qu'une valeur est saisie ou sélectionnée
+        // Vérifie qu'une valeur est saisie ou non null
         if (!getInput('lastname')) error = true;
         if (!getInput('firstname')) error = true;
         if (!getInput('country')) error = true;
