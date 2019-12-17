@@ -23,6 +23,7 @@ $sqlSelect = 'SELECT id_article, titre, description, date, login
                 INNER JOIN user u ON a.id_user = u.id_user';
 
 $articles = $bdd->query($sqlSelect);
+$before = true;
 
 echo '<figure>';
 foreach ($articles AS $article) {
@@ -31,13 +32,16 @@ foreach ($articles AS $article) {
         echo '<figcaption>' . $article['description'] . '</figcaption><br>';
         echo '<div>Publié par ' . $article['login'] . '<br>Le ' . $article['date'] . '</div>';
         echo '</tr>';
+        $before = false;
     } else {
         // Récupération id précédant et suivant
+        if ($before) $idBefore = $article['id_article'];
+        if (!$before && $idAfter === 0) $idAfter = $article['id_article'];
     }
 }
 echo '</figure>';
 
-if ($idBefore > 0) echo '<a href="article.php?id=' . $idBefore . '">Précédent</a>';
+if ($idBefore > 0) echo '<a href="article.php?id=' . $idBefore . '">Précédent</a> ';
 if ($idAfter > 0) echo '<a href="article.php?id=' . $idAfter . '">Suivant</a>';
 ?>
 
