@@ -29,11 +29,16 @@ while 1 == 1:
 
     if action == 'A':
         ingredient = input('Indiquez l\'ingredient: ')
-        if ingredient not in ma_liste:
-            ma_liste[ingredient] = ''
-            print(ingredient, 'a été ajouté à la liste.')
+        if ',' in ingredient:
+            liste_ingredients = ingredient.split(',')
+            for ingredient in liste_ingredients:
+                if ingredient not in ma_liste:
+                    ma_liste[ingredient] = ''
+                    print(ingredient, ' a été ajouté à la liste.')
         else:
-            print(ingredient, ' est déjà dans votre liste.')
+            if ingredient not in ma_liste:
+                ma_liste[ingredient] = ''
+                print(ingredient, ' a été ajouté à la liste.')
 
     if action == 'P':
         ingredient = input('Indiquez l\'ingredient: ')
