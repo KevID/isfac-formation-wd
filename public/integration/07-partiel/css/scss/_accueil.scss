@@ -2,7 +2,10 @@
     width: 100%;
     height: 300px;
     background: url("../img/all/tree.webp") no-repeat fixed center;
-    background-size: cover;
+
+    @media screen and (min-width: 1200px) {
+        background-size: cover;
+    }
 }
 
 .pictos {
@@ -27,6 +30,7 @@
 
             &:hover {
                 text-decoration: none;
+                color: $color2;
             }
         }
     }
