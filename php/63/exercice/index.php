@@ -13,7 +13,9 @@ try {
 }
 
 if (isset($_FILES['file']['size']) && $_FILES['file']['size'] > 0) {
-    $fileName = preg_replace('/[^a-z0-9\._-]+/', '-', date('Y-m-d') . '-' . strtolower($_FILES['file']['name']));
+
+    // Formater le nom du fichier avec la date, une chaîne de 5 caractères aléatoires et le nom du fichier.
+    $fileName = preg_replace('/[^a-z0-9\._-]+/', '-', date('Y-m-d') . '-' . random_bytes(5) . '-' . strtolower($_FILES['file']['name']));
 
     if (move_uploaded_file($_FILES['file']['tmp_name'], 'avatars/' . $fileName)) {
 
