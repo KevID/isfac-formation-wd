@@ -44,6 +44,8 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 49 - Les cookies $_COOKIE[]
 * 50 - Les sessions $_SESSION[]
 * 51 - Les fonctions
+* 62 - Examen partiel sur 7h
+* 63 - Requêtes préparées
 
 ### SGBD
 
@@ -52,6 +54,13 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
   * 02 - Table Salariés (exercices select)
   * 03 - MACIF (exercices jointures, insert, delete, update)
   * 04 - QUAL (création de la structure d'une base de données)
+
+## Python
+* 01
+* 02
+* 03 - Fonctions,
+* d - Modules
+* e - Packages
 
 ## Communication
 
