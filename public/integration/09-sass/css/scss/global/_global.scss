@@ -1,0 +1,9 @@
+h1 {
+    color: blue;
+}
+
+.custom-btn {
+    display: inline-block;
+    text-decoration: none;
+    @include btn(green, white, 5px 10px, 5px, 600);
+}

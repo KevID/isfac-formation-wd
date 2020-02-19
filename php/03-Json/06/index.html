@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax - Exo 06</title>
+</head>
+<body>
+<label for="choix_villes">Indiquez votre ville :</label>
+<input list="villes" type="text" id="choix_villes" oninput="villes()">
+<datalist id="villes"></datalist>
+
+
+<script>
+    function villes() {
+        // Récupère le début du nom de la ville
+        var txtVille = document.getElementById('choix_villes').value;
+
+        // Recherche et efface les options de datalist
+        var datalist = document.getElementById('villes');
+        while (datalist.hasChildNodes()) {
+            datalist.removeChild(datalist.firstChild);
+        }
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                var dataVilles = JSON.parse(this.responseText);
+                if (dataVilles) {
+                    for ($i = 0; $i < dataVilles.length; $i++) {
+                        var option = document.createElement('option');
+                        option.value = dataVilles[$i].ville;
+                        datalist.appendChild(option);
+                    }
+                    document.querySelector('#villes').setAttribute('list', "villes");
+                }
+            }
+        };
+        xhttp.open("GET", "villes.php?ville=" + txtVille, true);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>

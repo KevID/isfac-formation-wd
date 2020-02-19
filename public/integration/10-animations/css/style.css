@@ -1,0 +1,29 @@
+.balance {
+    transition: all 1s ease-in-out;
+    transform-origin: 50% 0%;
+
+    animation: balance 3s ease-in-out infinite;
+    margin-top: -70px;
+}
+
+@keyframes balance {
+    0% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+
+div {
+    text-align: center;
+}
+
+body {
+    background: url('https://www.cirquedusoleil.com/-/media/cds/images/shows/amaluna/highlights_carousel_jpg_1280x853/amaluna-act-teeterboard.jpg');
+    color: white;
+}

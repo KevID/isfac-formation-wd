@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax - Exo 01</title>
+</head>
+<body>
+<div id="texte"></div>
+<input type="button" value="Hello" onclick="hello()">
+<script>
+    function hello() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("texte").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "bonjour.txt", true);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>

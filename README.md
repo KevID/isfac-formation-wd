@@ -46,6 +46,7 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
 * 51 - Les fonctions
 * 62 - Examen partiel sur 7h
 * 63 - Requêtes préparées
+* 65 - Ajax
 
 ### SGBD
 
@@ -72,28 +73,3 @@ Formation "Développeur web et web mobile" à l'[ISFAC de Poitiers](https://www.
   * Gestion du stress
   * Gestion de la voix
 
-## Planning
-
-```mermaid
-gantt
-  dateFormat  DD-MM-YYYY
-  title Planning semaine 4
-  section semaine 4
-    PHP - Tableaux numérotés et associatifs     :   28-10-2019, 1d
-    SQL - Select, jointures                     :   29-10-2019, 2d
-    Assimilation                                :   31-10-2019, 1d
-```
-
-```mermaid
-gantt
-  dateFormat  DD-MM-YYYY
-  title Planning semaine 5
-  section semaine 5
-    PHP                 : 04-10-2019, 1d
-    SQL                 : 1d
-    PHP                 : 12h
-    Assimilation        : 12h
-    Intégration         : 1d
-    PHP                 : 12h
-    Communication       : 12h
-```

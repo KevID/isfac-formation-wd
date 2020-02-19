@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax - Exo 05</title>
+</head>
+<body>
+<div id="txtFantomes"></div>
+<input type="button" value="Hello" onclick="fantomes()">
+<script>
+    function fantomes() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var fantomes = JSON.parse(this.responseText);
+                $text = '';
+                for ($i = 0; $i < fantomes.length; $i++) {
+                    $text = $text + ', ' + fantomes[$i].name;
+                }
+                document.getElementById('txtFantomes').innerHTML = $text;
+            }
+        };
+        xhttp.open("GET", "fantomes.php", true);
+        xhttp.send();
+    }
+</script>
+</body>
+</html>

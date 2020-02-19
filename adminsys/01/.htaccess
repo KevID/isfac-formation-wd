@@ -1,0 +1,12 @@
+Options +FollowSymlinks
+ErrorDocument 404 /formation/public/adminsys/01/404.html
+
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "C:\wamp\www\formation\public\adminsys\01\.htpasswd"
+Require valid-user
+
+RewriteEngine On
+RewriteRule ^create$  creer.php
+RewriteRule ^update/([0-9]+)$  edit.php?id=$1
+
